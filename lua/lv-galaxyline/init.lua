@@ -1,8 +1,9 @@
+-- local reference to galaxyline api. Eg. subsequent references to 'gls.left' = 'galaxyline.section.left'
 local gl = require('galaxyline')
--- get my theme in galaxyline repo
--- local colors = require('galaxyline.theme').default
+local gls = gl.section
+local condition = require('galaxyline.condition')
+
 local colors = {
-    -- bg = '#2E2E2E',
     bg = '#292D38',
     yellow = '#DCDCAA',
     dark_yellow = '#D7BA7D',
@@ -21,8 +22,7 @@ local colors = {
     error_red = '#F44747',
     info_yellow = '#FFCC66'
 }
-local condition = require('galaxyline.condition')
-local gls = gl.section
+
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 table.insert(gls.left, {
@@ -138,7 +138,7 @@ table.insert(gls.right, {
             if tbl[vim.bo.filetype] then return false end
             return true
         end,
-        icon = '  ',
+        icon = ' ',
         highlight = {colors.grey, colors.bg}
     }
 })
@@ -155,23 +155,23 @@ table.insert(gls.right, {
 table.insert(gls.right, {
     PerCent = {
         provider = 'LinePercent',
-        separator = ' ',
+        separator = '',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.grey, colors.bg}
     }
 })
 
-table.insert(gls.right, {
-    Tabstop = {
-        provider = function()
-            return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
-        end,
-        condition = condition.hide_in_width,
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-})
+-- table.insert(gls.right, {
+--     Tabstop = {
+--         provider = function()
+--             return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
+--         end,
+--         condition = condition.hide_in_width,
+--         separator = ' ',
+--         separator_highlight = {'NONE', colors.bg},
+--         highlight = {colors.grey, colors.bg}
+--     }
+-- })
 
 table.insert(gls.right, {
     BufferType = {
@@ -183,22 +183,22 @@ table.insert(gls.right, {
     }
 })
 
-table.insert(gls.right, {
-    FileEncode = {
-        provider = 'FileEncode',
-        condition = condition.hide_in_width,
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-})
+-- table.insert(gls.right, {
+--     FileEncode = {
+--         provider = 'FileEncode',
+--         condition = condition.hide_in_width,
+--         separator = ' ',
+--         separator_highlight = {'NONE', colors.bg},
+--         highlight = {colors.grey, colors.bg}
+--     }
+-- })
 
 table.insert(gls.right, {
     Space = {
         provider = function()
             return ' '
         end,
-        separator = ' ',
+        separator = '',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.orange, colors.bg}
     }
