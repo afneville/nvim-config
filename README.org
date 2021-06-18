@@ -8,7 +8,6 @@
   :)     ()  ;  | |__| |_| | | | | (_| | |  \ V / | | | | | | |
   `.   .   .|   |_____\___,|_| |_|\__,_|_|   \_/  |_|_| |_| |_|
     `-...-`'
-
 #+end_src
 
-This config for neovim is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was forked.
+This config for neovim is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
