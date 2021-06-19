@@ -5,9 +5,9 @@ require("which-key").setup {
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = false, -- adds help for operators like d, y, ...
-            motions = false, -- adds help for motions
-            text_objects = false, -- help for text objects triggered after entering an operator
+            operators = false,
+            motions = false,
+            text_objects = false,
             windows = true, -- default bindings on <c-w>
             nav = true, -- misc bindings to work with windows
             z = true, -- bindings for folds, spelling and others prefixed with z
@@ -17,10 +17,10 @@ require("which-key").setup {
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "+" -- symbol prepended to a group
+        group = "*" -- symbol prepended to a group
     },
     window = {
-        border = "single", -- none, single, double, shadow
+        border = "double", -- none, single, double, shadow
         position = "bottom", -- bottom, top
         margin = {1, 0, 1, 0}, -- extra window margin [top, right, bottom, left]
         padding = {2, 2, 2, 2} -- extra window padding [top, right, bottom, left]
@@ -28,7 +28,8 @@ require("which-key").setup {
     layout = {
         height = {min = 4, max = 25}, -- min and max height of the columns
         width = {min = 20, max = 50}, -- min and max width of the columns
-        spacing = 3 -- spacing between columns
+        spacing = 3, -- spacing between columns
+        align = "center"
     },
     hidden = {"<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
     show_help = true -- show help message on the command line when the popup is visible
@@ -42,10 +43,6 @@ local opts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = false -- use `nowait` when creating keymaps
 }
-
--- Set leader
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
-vim.g.mapleader = ' '
 
 -- no hl
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
@@ -149,6 +146,13 @@ local mappings = {
         s = {"<cmd>TZBottom<cr>", "toggle status line"},
         t = {"<cmd>TZTop<cr>", "toggle tab bar"},
         z = {"<cmd>TZAtaraxis<cr>", "toggle zen"},
+    },
+
+    i = {
+        name = "+Insert",
+        ["j"] = "Line below",
+        ["k"] = "Line above",
+
     }
 }
 
