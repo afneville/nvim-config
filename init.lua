@@ -3,7 +3,7 @@ require('lv-globals') -- global settings
 require('editor_settings')
 require('lv-gitblame')
 require('plugins')
-require('lv-utils')
+require('lua_utils')
 require('lv-autocommands')
 require('keymappings')
 require('lv-nvimtree') -- must be required before colorscheme
@@ -23,19 +23,6 @@ require('lv-rnvimr')
 require('lv-which-key')
 require('lv-lsp-rooter')
 require('lv-zen')
-
--- extras
-if O.extras then
-    require('lv-numb')
-    require('lv-dial')
-    require('lv-hop')
-    require('lv-colorizer')
-    require('lv-symbols-outline')
-end
-
-
-
-vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')
 
 -- LSP
 require('lsp')
@@ -68,3 +55,14 @@ require('lsp.vim-ls')
 require('lsp.vue-ls')
 require('lsp.yaml-ls')
 require('lsp.elixir-ls')
+
+-- extras
+if O.extras then
+    require('lv-numb')
+    require('lv-dial')
+    require('lv-hop')
+    require('lv-colorizer')
+    require('lv-symbols-outline')
+end
+
+vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')

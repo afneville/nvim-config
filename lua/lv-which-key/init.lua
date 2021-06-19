@@ -1,7 +1,7 @@
 require("which-key").setup {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
-        registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+        registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
@@ -153,6 +153,22 @@ local mappings = {
         ["j"] = "Line below",
         ["k"] = "Line above",
 
+    },
+
+    t = {
+        name = "+Toggle",
+        c = {
+            name = "+Cursor",
+            ["c"] = "Column",
+            ["l"] = "Line"
+        }
+    },
+    w = {
+        name = "Window",
+        ["h"] = "Focus left",
+        ["j"] = "Focus down",
+        ["k"] = "Focus up",
+        ["l"] = "Focus right",
     }
 }
 

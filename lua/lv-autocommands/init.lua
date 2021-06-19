@@ -1,4 +1,4 @@
-local utils = require('lv-utils')
+local utils = require('lua_utils')
 
 local auto_formatters = {            }
 
