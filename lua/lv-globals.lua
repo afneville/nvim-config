@@ -3,6 +3,7 @@ DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
 O = {
+    document_highlight = true,
     auto_close_tree = 0,
     auto_complete = true,
     colorscheme = 'lunar',
@@ -13,7 +14,7 @@ O = {
     shell = 'bash',
 	timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
-    extras = false,
+    extras = true,
 
     -- @usage pass a table with your desired languages
     treesitter = {
@@ -26,10 +27,10 @@ O = {
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
     python = {
-        linter = '',
+        linter = nil,
         -- @usage can be 'yapf', 'black'
-        formatter = '',
-        autoformat = false,
+        formatter = 'yapf',
+        autoformat = true,
         isort = false,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
 		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
@@ -37,7 +38,7 @@ O = {
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
     lua = {
         -- @usage can be 'lua-format'
-        formatter = '',
+        formatter = 'lua-format',
         autoformat = false,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
@@ -51,16 +52,16 @@ O = {
     },
     tsserver = {
         -- @usage can be 'eslint'
-        linter = '',
+        linter = nil,
         -- @usage can be 'prettier'
-        formatter = '',
-        autoformat = false,
+        formatter = 'prettier',
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     json = {
         -- @usage can be 'prettier'
-        formatter = '',
-        autoformat = false,
+        formatter = 'prettier',
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},
