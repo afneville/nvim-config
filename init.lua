@@ -1,4 +1,4 @@
-require('lv-globals') -- global settings
+require('global_settings')
 -- vim.cmd('luafile '..CONFIG_PATH..'/lv-settings.lua') -- now redundant user settings
 require('editor_settings')
 require('lv-gitblame')
@@ -57,7 +57,7 @@ require('lsp.yaml-ls')
 require('lsp.elixir-ls')
 
 -- extras
-if O.extras then
+if Global.extras then
     require('lv-numb')
     require('lv-dial')
     require('lv-hop')
@@ -66,3 +66,4 @@ if O.extras then
 end
 
 vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')
+vim.g.nvim_tree_auto_close = 1 -- 0 by default, closes the tree when it's the last window
