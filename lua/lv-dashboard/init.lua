@@ -17,7 +17,7 @@
 --
 -- }
 
-vim.g.dashboard_custom_header = O.dashboard.custom_header
+vim.g.dashboard_custom_header = Global.dashboard.custom_header
 
 vim.g.dashboard_default_executive = 'telescope'
 
@@ -42,4 +42,4 @@ vim.g.dashboard_custom_section = {
 -- find_history = 'SPC f h',
 
 -- vim.g.dashboard_session_directory = CACHE_PATH..'/session'
-vim.g.dashboard_custom_footer = O.dashboard.footer
+vim.g.dashboard_custom_footer = Global.dashboard.footer

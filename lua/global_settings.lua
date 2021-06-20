@@ -1,10 +1,9 @@
 CONFIG_PATH = vim.fn.stdpath('config')
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
-
-O = {
+Global = {
     document_highlight = true,
-    auto_close_tree = 0,
+    auto_close_tree = 1,
     auto_complete = true,
     colorscheme = 'lunar',
     hidden_files = true,

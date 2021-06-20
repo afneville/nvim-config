@@ -121,7 +121,7 @@ return require("packer").startup(function(use)
     require_plugin("nvim-ts-context-commentstring")
 
     -- Extras
-    if O.extras then
+    if Global.extras then
         use {'metakirby5/codi.vim', opt = true}
         require_plugin('codi.vim')
         use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true}
