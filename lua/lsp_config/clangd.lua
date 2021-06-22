@@ -6,7 +6,7 @@ require'lspconfig'.clangd.setup {
             virtual_text = Global.clang.diagnostics.virtual_text,
             signs = Global.clang.diagnostics.signs,
             underline = Global.clang.diagnostics.underline,
-            update_in_insert = true
+            update_in_insert = false
 
         })
     }
