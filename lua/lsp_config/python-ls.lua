@@ -7,7 +7,7 @@ require'lspconfig'.pyright.setup {
             virtual_text = Global.python.diagnostics.virtual_text,
             signs = Global.python.diagnostics.signs,
             underline = Global.python.diagnostics.underline,
-            update_in_insert = true
+            update_in_insert = false
         })
     },
 	 settings = {
