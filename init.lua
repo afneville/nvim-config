@@ -1,28 +1,26 @@
-require('global_settings')
--- vim.cmd('luafile '..CONFIG_PATH..'/lv-settings.lua') -- now redundant user settings
-require('editor_settings')
-require('lv-gitblame')
-require('plugins')
 require('lua_utils')
+require('global_settings')
+require('editor_settings')
+require('plugins')
 require('autocommands')
 require('autopairs')
 require('keymappings')
-require('lv-nvimtree') -- must be required before colorscheme
-require('colorscheme') -- must be required after nvimtree
+require('nvimtree_config') -- must be required before colorscheme
 require('galaxyline_config')
-require('lv-comment')
-require('lv-gitblame')
+require('comment_config')
+require('gitblame_config')
+require('gitsigns_config')
 require('compe_config')
 require('barbar_config')
 require('dashboard_config')
 require('telescope_config')
-require('lv-gitsigns')
-require('lv-treesitter')
-require('lv-matchup')
-require('lv-rnvimr')
-require('lv-which-key')
-require('lv-lsp-rooter')
-require('lv-zen')
+require('treesitter_config')
+require('matchup_config')
+require('rnvimr_config')
+require('which-key_config')
+require('lsp-rooter_config')
+require('zen_config')
+require('colorscheme') -- must be required after nvimtree
 
 -- LSP
 require('lsp_config')
@@ -58,12 +56,9 @@ require('lsp_config.elixir-ls')
 
 -- extras
 if Global.extras then
-    require('lv-numb')
-    require('lv-dial')
-    require('lv-hop')
-    require('lv-colorizer')
-    require('lv-symbols-outline')
+    -- require('lv-hop')
+    require('colorizer_config')
+    require('symbols-outline_config')
 end
 
 vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')
-vim.g.nvim_tree_auto_close = 1 -- 0 by default, closes the tree when it's the last window

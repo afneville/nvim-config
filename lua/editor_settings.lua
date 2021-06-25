@@ -26,7 +26,7 @@ vim.cmd('set expandtab') -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
 vim.wo.number = Global.number -- set numbered lines
 vim.wo.relativenumber = Global.relative_number -- set relative number
-vim.wo.cursorcolumn = true -- Enable highlighting of the current line
+vim.wo.cursorcolumn = false
 vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.o.showtabline = 2 -- Always show the tab bar
 vim.o.showmode = false -- Do not show current mode in the command area
