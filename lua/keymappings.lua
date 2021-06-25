@@ -42,3 +42,7 @@ lua_utils.map('', '<leader>wk', '<C-w>k')
 lua_utils.map('', '<leader>wl', '<C-w>l')
 lua_utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 lua_utils.map('', '<leader>tcl', ':set cursorline!<CR>')
+
+lua_utils.map('', '<leader>ff', ':Telescope find_files<CR>')
+lua_utils.map('', '<leader>sb', ':Telescope current_buffer_fuzzy_find<CR>')
+lua_utils.map('', '<leader>sa', ':Telescope live_grep<CR>')

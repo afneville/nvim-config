@@ -18,22 +18,24 @@ Global = {
     -- @usage pass a table with your desired languages
     treesitter = {
         ensure_installed = "all",
-        ignore_install = {"haskell"},
+        ignore_install = {},
         highlight = {enabled = true},
-        playground = {enabled = true},
+        -- playground = {enabled = true},
         rainbow = {enabled = false}
     },
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
+
     python = {
         linter = nil,
         -- @usage can be 'yapf', 'black'
-        formatter = 'yapf',
-        autoformat = true,
+        formatter = nil,
+        autoformat = false,
         isort = false,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
-		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
+		analysis = {type_checking = false, auto_search_paths = true, use_library_code_types = true}
     },
+
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
     lua = {
         -- @usage can be 'lua-format'
