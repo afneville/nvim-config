@@ -61,7 +61,6 @@ return require("packer").startup(function(use)
     use "kevinhwang91/rnvimr"
 
     use {"lewis6991/gitsigns.nvim", opt = true}
-    use {'f-person/git-blame.nvim', opt = true}
     use {"folke/which-key.nvim", opt = true}
     use {"ChristianChiarulli/dashboard-nvim", opt = true}
     use {"windwp/nvim-autopairs", opt = true}
@@ -73,14 +72,15 @@ return require("packer").startup(function(use)
 
     -- Color
     use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-
+    use 'Mofiqul/dracula.nvim'
+    use {'morhetz/gruvbox', as = 'gruv'}
+    use 'ii14/onedark.nvim'
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
 
     -- Status Line and Bufferline
     use {"glepnir/galaxyline.nvim", opt = true}
     use {"romgrk/barbar.nvim", opt = true}
-
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
@@ -101,7 +101,6 @@ return require("packer").startup(function(use)
     require_plugin('vim-matchup')
     require_plugin("nvim-tree.lua")
     require_plugin("gitsigns.nvim")
-    require_plugin("git-blame.nvim")
     require_plugin("which-key.nvim")
     require_plugin("dashboard-nvim")
     require_plugin("nvim-autopairs")
