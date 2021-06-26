@@ -12,11 +12,10 @@
 
 This config for neovim is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
 
-Many files, folders and functions may begin with =lv-=, that comes from lunarvim. I may replace some of these occurrences with something more meaningful to me. In either case, these initials are designed to prevent clashes between config files and the plugins themselves.
-
-*Changes:*
+*My Changes:*
 
 - replace some customised plugin configs with their defaults
 - remove vscode/vscodium interoperability
 - move <leader> keybindings out of which-key config
+- create unique/personalised keybindings
 - create wrapper functions for setting options/keybindings

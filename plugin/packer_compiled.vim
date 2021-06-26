@@ -87,25 +87,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
   },
-  ["bracey.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/bracey.vim"
-  },
-  ["codi.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/codi.vim"
-  },
   ["dashboard-nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
-  ["dial.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/dial.nvim"
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/dracula.nvim"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -117,20 +106,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
   },
-  ["git-blame.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/git-blame.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
-  ["hop.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/hop.nvim"
+  gruv = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/gruv"
   },
   ["lsp-rooter.nvim"] = {
     loaded = false,
@@ -141,16 +124,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
-  },
-  ["numb.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/numb.nvim"
   },
   ["nvcode-color-schemes.vim"] = {
     loaded = false,
@@ -198,11 +171,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
-  ["nvim-spectre"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-spectre"
-  },
   ["nvim-tree.lua"] = {
     loaded = false,
     needs_bufread = false,
@@ -226,6 +194,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -254,16 +226,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/symbols-outline.nvim"
-  },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/telescope-fzy-native.nvim"
-  },
-  ["telescope-project.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
     loaded = false,

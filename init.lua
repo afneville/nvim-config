@@ -5,24 +5,27 @@ require('plugins')
 require('autocommands')
 require('autopairs')
 require('keymappings')
-require('nvimtree_config') -- must be required before colorscheme
-require('galaxyline_config')
-require('comment_config')
-require('gitblame_config')
-require('gitsigns_config')
-require('compe_config')
-require('barbar_config')
-require('dashboard_config')
-require('telescope_config')
-require('treesitter_config')
-require('matchup_config')
+
 require('rnvimr_config')
-require('which-key_config')
+require('nvimtree_config') -- must be required before colorscheme
 require('lsp-rooter_config')
+require('galaxyline_config')
+require('dashboard_config')
+require('barbar_config')
+require('gitsigns_config')
+require('comment_config')
+require('matchup_config')
+require('which-key_config')
 require('zen_config')
 require('colorscheme') -- must be required after nvimtree
+require('compe_config')
+require('treesitter_config')
+require('telescope_config')
+
+-- require("highlights") -- will add soon
 
 -- LSP
+
 require('lsp_config')
 require('lsp_config.angular-ls')
 require('lsp_config.bash-ls')
