@@ -83,7 +83,7 @@ local function documentHighlight(client)
 end
 local lsp_config = {}
 
-if Global.document_highlight then
+if O.document_highlight then
     function lsp_config.common_on_attach(client, bufnr)
         documentHighlight(client)
     end

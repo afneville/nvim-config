@@ -1,5 +1,5 @@
 require'lspconfig'.dartls.setup{
-    cmd = { "dart", Global.dart.sdk_path, "--lsp" },
+    cmd = { "dart", O.dart.sdk_path, "--lsp" },
     on_attach = require'lsp_config'.common_on_attach,
     init_options = {
       closingLabels = false,

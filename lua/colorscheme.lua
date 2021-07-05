@@ -1,2 +1,2 @@
 vim.cmd('let g:nvcode_termcolors=256')
-vim.cmd('colorscheme ' .. Global.colorscheme)
+vim.cmd('colorscheme ' .. O.colorscheme)

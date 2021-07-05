@@ -73,7 +73,6 @@ return require("packer").startup(function(use)
     -- Color
     use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
     use 'Mofiqul/dracula.nvim'
-    use {'morhetz/gruvbox', as = 'gruv'}
     use 'ii14/onedark.nvim'
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
@@ -83,6 +82,11 @@ return require("packer").startup(function(use)
     use {"romgrk/barbar.nvim", opt = true}
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
+
+    use {'numToStr/FTerm.nvim', opt = true}
+    use {'norcalli/nvim-colorizer.lua', opt = true}
+    use {'simrat39/symbols-outline.nvim', opt = true}
+    use {'nvim-treesitter/playground', opt = true}
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
@@ -113,22 +117,9 @@ return require("packer").startup(function(use)
     require_plugin('lsp-rooter.nvim')
     require_plugin("TrueZen.nvim")
     require_plugin("nvim-ts-context-commentstring")
-
-    -- Extras
-    if Global.extras then
-
-        use {'numToStr/FTerm.nvim', opt = true}
-        require_plugin('numToStr/FTerm.nvim')
-
-        use {'norcalli/nvim-colorizer.lua', opt = true}
-        require_plugin('nvim-colorizer.lua')
-
-        use {'simrat39/symbols-outline.nvim', opt = true}
-        require_plugin('symbols-outline.nvim')
-
-        use {'nvim-treesitter/playground', opt = true}
-        require_plugin('playground')
-
-    end
+    require_plugin('numToStr/FTerm.nvim')
+    require_plugin('nvim-colorizer.lua')
+    require_plugin('symbols-outline.nvim')
+    require_plugin('playground')
 
 end)

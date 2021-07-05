@@ -14,18 +14,18 @@ require'lspconfig'.pyright.setup {
     on_attach = require'lsp_config'.common_on_attach,
     handlers = {
         ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = Global.python.diagnostics.virtual_text,
-            signs = Global.python.diagnostics.signs,
-            underline = Global.python.diagnostics.underline,
+            virtual_text = O.python.diagnostics.virtual_text,
+            signs = O.python.diagnostics.signs,
+            underline = O.python.diagnostics.underline,
             update_in_insert = false
         })
     },
 	 settings = {
 	       python = {
 	         analysis = {
-	 		  typeCheckingMode = Global.python.analysis.type_checking,
-	 		  autoSearchPaths = Global.python.analysis.auto_search_paths,
-	          useLibraryCodeForTypes = Global.python.analysis.use_library_code_types
+	 		  typeCheckingMode = O.python.analysis.type_checking,
+	 		  autoSearchPaths = O.python.analysis.auto_search_paths,
+	          useLibraryCodeForTypes = O.python.analysis.use_library_code_types
 	         }
 	       }
 	     }
