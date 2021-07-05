@@ -27,22 +27,22 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silen
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
-
--- toggle the quickfix popup
 vim.api.nvim_set_keymap('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
 
--- lines above and below from normal mode
+-- insert lines above & below
 lua_utils.map('', '<leader>ij', 'o<esc>0Dk')
 lua_utils.map('', '<leader>ik', 'O<esc>0Dj')
 
--- more comfortable window navigation
+-- improve window navigation
 lua_utils.map('', '<leader>wh', '<C-w>h')
 lua_utils.map('', '<leader>wj', '<C-w>j')
 lua_utils.map('', '<leader>wk', '<C-w>k')
 lua_utils.map('', '<leader>wl', '<C-w>l')
+lua_utils.map('', '<leader>q', ':wqa<CR>')
+
+-- gereral bindings
 lua_utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 lua_utils.map('', '<leader>tcl', ':set cursorline!<CR>')
-
 lua_utils.map('', '<leader>ht', ':Telescope colorscheme<CR>')
 lua_utils.map('', '<leader>ff', ':Telescope find_files<CR>')
 lua_utils.map('', '<leader>sb', ':Telescope current_buffer_fuzzy_find<CR>')

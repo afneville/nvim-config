@@ -1,21 +1,9 @@
 #+TITLE: Neovim Config
 
-#+begin_src
+My neovim configuration is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was originally forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
 
-    _..._
-  .'   (_`.    _                         __     ___
- :  .      :  | |   _   _ _ __   __ _ _ _\ \   / (_)_ __ ___
- :)    ()  :  | |  | | | | '_ \ / _` | '__\ \ / /| | '_ ` _ \
- `.   .   .'  | |__| |_| | | | | (_| | |   \ V / | | | | | | |
-   `-...-'    |_____\__,_|_| |_|\__,_|_|    \_/  |_|_| |_| |_|
-#+end_src
+I use neovim for programming and the native LSP client, built-in to neovim 0.5, and accompanying setup from /nvim-lsp/ and /compe/ is very useful. Language server configuration for most languages is taken from the afore-mentioned project.
 
-This config for neovim is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
+*Screenshot:*
 
-*My Changes:*
-
-- replace some customised plugin configs with their defaults
-- remove vscode/vscodium interoperability
-- move <leader> keybindings out of which-key config
-- create unique/personalised keybindings
-- create wrapper functions for setting options/keybindings
+[[./nvim_gruvbox.png]]
