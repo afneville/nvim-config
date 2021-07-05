@@ -21,8 +21,8 @@ require('colorscheme') -- must be required after nvimtree
 require('compe_config')
 require('treesitter_config')
 require('telescope_config')
-
--- require("highlights") -- will add soon
+require('colorizer_config')
+require('symbols-outline_config')
 
 -- LSP
 
@@ -56,12 +56,5 @@ require('lsp_config.vue-ls')
 require('lsp_config.yaml-ls')
 require('lsp_config.elixir-ls')
 -- require('lsp.tailwindcss-ls')
-
--- extras
-if Global.extras then
-    -- require('lv-hop')
-    require('colorizer_config')
-    require('symbols-outline_config')
-end
 
 vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')

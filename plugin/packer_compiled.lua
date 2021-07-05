@@ -1,17 +1,14 @@
-" Automatically generated packer.nvim plugin loader code
+-- Automatically generated packer.nvim plugin loader code
 
-if !has('nvim-0.5')
-  echohl WarningMsg
-  echom "Invalid Neovim version for packer.nvim!"
-  echohl None
-  finish
-endif
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
+  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
+  return
+end
 
-packadd packer.nvim
+vim.api.nvim_command('packadd packer.nvim')
 
-try
+local no_errors = pcall(function()
 
-lua << END
   local time
   local profile_info
   local should_profile = false
@@ -72,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/FTerm.nvim"
-  },
   ["TrueZen.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -111,10 +103,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
-  gruv = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/gruv"
-  },
   ["lsp-rooter.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -139,11 +127,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-bqf"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     loaded = false,
@@ -203,11 +186,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
-  playground = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/playground"
-  },
   ["plenary.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -221,11 +199,6 @@ _G.packer_plugins = {
   rnvimr = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/rnvimr"
-  },
-  ["symbols-outline.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/symbols-outline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = false,
@@ -258,11 +231,8 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 if should_profile then save_profiles() end
 
-END
+end)
 
-catch
-  echohl ErrorMsg
-  echom "Error in packer_compiled: " .. v:exception
-  echom "Please check your config for correctness"
-  echohl None
-endtry
+if not no_errors then
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+end

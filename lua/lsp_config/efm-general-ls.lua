@@ -15,13 +15,13 @@ local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 local yapf = {formatCommand = "yapf --quiet", formatStdin = true}
 local black = {formatCommand = "black --quiet -", formatStdin = true}
 
-if Global.python.linter == 'flake8' then table.insert(python_arguments, flake8) end
+if O.python.linter == 'flake8' then table.insert(python_arguments, flake8) end
 
-if Global.python.isort then table.insert(python_arguments, isort) end
+if O.python.isort then table.insert(python_arguments, isort) end
 
-if Global.python.formatter == 'yapf' then
+if O.python.formatter == 'yapf' then
     table.insert(python_arguments, yapf)
-elseif Global.python.formatter == 'black' then
+elseif O.python.formatter == 'black' then
     table.insert(python_arguments, black)
 end
 
@@ -38,9 +38,9 @@ local lua_fmt = {
     formatStdin = true
 }
 
-if Global.lua.formatter == 'lua-format' then
+if O.lua.formatter == 'lua-format' then
   table.insert(lua_arguments, luaFormat)
-elseif Global.lua.formatter == 'lua-fmt' then
+elseif O.lua.formatter == 'lua-fmt' then
   table.insert(lua_arguments, lua_fmt)
 end
 
@@ -54,9 +54,9 @@ local shellcheck = {
     lintFormats = {'%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m'}
 }
 
-if Global.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
+if O.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
 
-if Global.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
+if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
@@ -74,9 +74,9 @@ local eslint = {
 
 local tsserver_args = {}
 
-if Global.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettier) end
+if O.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettier) end
 
-if Global.tsserver.linter == 'eslint' then table.insert(tsserver_args, eslint) end
+if O.tsserver.linter == 'eslint' then table.insert(tsserver_args, eslint) end
 
 -- local markdownlint = {
 --     -- TODO default to global lintrc
