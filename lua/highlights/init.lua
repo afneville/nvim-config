@@ -1,6 +1,6 @@
 local cmd = vim.cmd
 
-local global_theme = "themes/"..vim.g.nvchad_theme
+local global_theme = "themes/"..O.colorscheme
 local colors = require(global_theme)
 
 local white = colors.white
@@ -40,10 +40,13 @@ end
 fg("IndentBlanklineChar", line)
 
 -- misc --
+bg("signcolumn", black)
 fg("LineNr", grey)
+bg("LineNr", black)
 fg("Comment", grey)
 fg("NvimInternalError", red)
 fg("VertSplit", line)
+bg("VertSplit", black)
 fg("EndOfBuffer", black)
 
 -- Pmenu
@@ -51,18 +54,44 @@ bg("Pmenu", one_bg)
 bg("PmenuSbar", one_bg2)
 bg("PmenuSel", green)
 bg("PmenuThumb", nord_blue)
-
 -- inactive statuslines as thin splitlines
 cmd("hi! StatusLineNC gui=underline guifg=" .. line)
 
 -- line n.o
 cmd "hi clear CursorLine"
 fg("cursorlinenr", white)
+bg("cursorlinenr", black)
+bg("cursorline", black2)
 
 -- git signs ---
-fg_bg("DiffAdd", nord_blue, "none")
-fg_bg("DiffChange", one_bg2, "none")
-fg_bg("DiffModified", nord_blue, "none")
+-- fg("DiffAdd", nord_blue)
+-- bg("DiffAdd", black)
+-- fg("DiffChange", one_bg2)
+-- bg("DiffChange", black)
+-- fg("DiffModified", nord_blue)
+-- bg("DiffModified", black)
+
+
+fg("GitSignsAdd", green)
+fg("GitSignsAddLn", green)
+fg("GitSignsAddNr", green)
+bg("GitSignsAdd", black)
+bg("GitSignsAddLn", black)
+bg("GitSignsAddNr", black)
+
+fg("GitSignsChange", yellow)
+fg("GitSignsChangeLn", yellow)
+fg("GitSignsChangeNr", yellow)
+bg("GitSignsChange", black)
+bg("GitSignsChangeLn", black)
+bg("GitSignsChangeNr", black)
+
+fg("GitSignsDelete", red)
+fg("GitSignsDeleteLn", red)
+fg("GitSignsDeleteNr", red)
+bg("GitSignsDelete", black)
+bg("GitSignsDeleteLn", black)
+bg("GitSignsDeleteNr", black)
 
 -- NvimTree
 fg("NvimTreeFolderIcon", blue)
@@ -78,10 +107,10 @@ bg("NvimTreeNormal", darker_black)
 fg_bg("NvimTreeStatuslineNc", darker_black, darker_black)
 
 -- telescope
-fg("TelescopeBorder", line)
-fg("TelescopePromptBorder", line)
-fg("TelescopeResultsBorder", line)
-fg("TelescopePreviewBorder", grey)
+fg("TelescopeBorder", white)
+fg("TelescopePromptBorder", white)
+fg("TelescopeResultsBorder", white)
+fg("TelescopePreviewBorder", white)
 
 -- LspDiagnostics ---
 
