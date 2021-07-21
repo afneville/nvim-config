@@ -2,10 +2,10 @@ CONFIG_PATH = vim.fn.stdpath('config')
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 O = {
-    document_highlight = false,
+    document_highlight = true,
     auto_close_tree = 1,
     auto_complete = true,
-    colorscheme = 'lunar',
+    colorscheme = 'nord',
     hidden_files = true,
     wrap_lines = false,
     number = true,
@@ -20,8 +20,8 @@ O = {
         ensure_installed = "all",
         ignore_install = {},
         highlight = {enabled = true},
-        -- playground = {enabled = true},
-        rainbow = {enabled = false}
+        playground = {enabled = true},
+        rainbow = {enabled = true}
     },
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
@@ -77,12 +77,14 @@ O = {
 
 	dashboard = {
 		custom_header = {
-'                 _..._                                                                           ',
-'               .\'   (_`.    _                         __     ___           ',
-'              :  .      :  | |   _   _ _ __   __ _ _ _\\ \\   / (_)_ __ ___  ',
-'              :)    ()  :  | |  | | | | \'_ \\ / _` | \'__\\ \\ / /| | \'_ ` _ \\ ',
-'              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
-'                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|',
+
+        ' ███╗   ██╗ ███████╗  ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ',
+        ' ████╗  ██║ ██╔════╝ ██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ',
+        ' ██╔██╗ ██║ █████╗   ██║   ██║ ██║   ██║ ██║ ██╔████╝██║ ',
+        ' ██║╚██╗██║ ██╔══╝   ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╝ ██║ ',
+        ' ██║ ╚████║ ███████╗ ╚██████╔╝  ╚████╔╝  ██║ ██║     ██║ ',
+        ' ╚═╝  ╚═══╝ ╚══════╝  ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ',
+
 		},
 		footer= {'hello alex'}
 	}

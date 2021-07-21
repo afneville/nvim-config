@@ -5,13 +5,13 @@ require('plugins')
 require('autocommands')
 require('autopairs')
 require('keymappings')
-
 require('rnvimr_config')
 require('nvimtree_config') -- must be required before colorscheme
 require('lsp-rooter_config')
 require('galaxyline_config')
 require('dashboard_config')
-require('barbar_config')
+require('bufferline_config')
+
 require('gitsigns_config')
 require('comment_config')
 require('matchup_config')

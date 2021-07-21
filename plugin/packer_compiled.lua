@@ -7,7 +7,7 @@ end
 
 vim.api.nvim_command('packadd packer.nvim')
 
-local no_errors = pcall(function()
+local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
@@ -69,24 +69,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FTerm.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/FTerm.nvim"
+  },
   ["TrueZen.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
   },
-  ["barbar.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
-  },
   ["dashboard-nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
-  },
-  ["dracula.nvim"] = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/dracula.nvim"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -108,25 +104,28 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/lsp-rooter.nvim"
   },
-  ["lspsaga.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
-  },
-  ["nvcode-color-schemes.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvcode-color-schemes.vim"
-  },
   ["nvim-autopairs"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-autopairs"
   },
+  ["nvim-base16.lua"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
+  },
   ["nvim-bqf"] = {
     loaded = false,
     needs_bufread = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-bqf"
+  },
+  ["nvim-bufferline.lua"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     loaded = false,
@@ -178,13 +177,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  playground = {
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/playground"
   },
   ["plenary.nvim"] = {
     loaded = false,
@@ -199,6 +199,11 @@ _G.packer_plugins = {
   rnvimr = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/rnvimr"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/symbols-outline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = false,
@@ -234,5 +239,5 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
