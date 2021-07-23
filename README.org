@@ -1,9 +1,9 @@
 #+TITLE: Neovim Config
 
-I typically use Neovim for programming and general text editing. I have lately been using the development branch of Neovim 0.5 with its built in LSP client and extensive Lua API. Depending on your distribution, this might be ahead of the latest /stable/ version.
+My neovim configuration is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was originally forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
 
-My Neovim configuration is heavily inspired by =ChristianChiarulli/LunarVim= & =siduck76/NvChad=. Most of the functions, utilities and features of this configuration are drawn from /LunarVim/, while the UI elements and themes come from /NvChad/.
+I use neovim for programming and the native LSP client, built-in to neovim 0.5, and accompanying setup from /nvim-lsp/ and /compe/ is very useful. Language server configuration for most languages is taken from the afore-mentioned project.
 
 *Screenshot:*
 
-[[./nvim_nord.png]]
+[[./nvim_gruvbox.png]]
