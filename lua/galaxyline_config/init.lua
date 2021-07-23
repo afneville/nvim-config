@@ -1,16 +1,11 @@
 -- local reference to galaxyline api. Eg. subsequent references to 'gls.left' = 'galaxyline.section.left'
-local global_theme = "themes/" .. O.colorscheme
-local colors = require(global_theme)
-
 local gl = require('galaxyline')
 local gls = gl.section
 local condition = require('galaxyline.condition')
 
 local colors = {
-    -- bg = '#383735', -- gruvbox
-    bg = '#292D38', -- nord, aurora, lunar
-    -- bg = '#24282F', -- onedark
-    -- bg = '#68217A',
+    -- bg = '#383735',
+    bg = '#292D38',
     yellow = '#DCDCAA',
     dark_yellow = '#D7BA7D',
     cyan = '#4EC9B0',

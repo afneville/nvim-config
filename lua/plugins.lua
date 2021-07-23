@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
 
     use {"neovim/nvim-lspconfig", opt = true}
+    use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {"folke/trouble.nvim", opt = true}
 
@@ -70,20 +71,15 @@ return require("packer").startup(function(use)
     use {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
 
     -- Color
-    -- use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-    -- use 'Mofiqul/dracula.nvim'
-    -- use 'ii14/onedark.nvim'
-    -- use {'sainnhe/sonokai'}
-    -- use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    use {"norcalli/nvim-base16.lua"}
-
+    use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
+    use 'Mofiqul/dracula.nvim'
+    use 'ii14/onedark.nvim'
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
 
     -- Status Line and Bufferline
     use {"glepnir/galaxyline.nvim", opt = true}
-    -- use {"romgrk/barbar.nvim", opt = true}
-    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+    use {"romgrk/barbar.nvim", opt = true}
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
@@ -93,6 +89,7 @@ return require("packer").startup(function(use)
     use {'nvim-treesitter/playground', opt = true}
 
     require_plugin("nvim-lspconfig")
+    require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
     require_plugin('trouble.nvim')
     require_plugin("friendly-snippets")

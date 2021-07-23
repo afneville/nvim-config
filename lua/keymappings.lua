@@ -40,40 +40,9 @@ lua_utils.map('', '<leader>wk', '<C-w>k')
 lua_utils.map('', '<leader>wl', '<C-w>l')
 lua_utils.map('', '<leader>q', ':wqa<CR>')
 
---lsp
-
-lua_utils.map('', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
-lua_utils.map('', '<leader>ld', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-
-vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
-vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
-vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
-vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.cmd("nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>")
--- vim.cmd('inoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
-vim.cmd("nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>")
-
--- buffers
-
-lua_utils.map('', '<leader>b]', ':bnext<CR>')
-lua_utils.map('', '<leader>b[', ':bprevious<CR>')
-lua_utils.map('', '<leader>be', ':BufferLineSortByExtension<CR>')
-lua_utils.map('', '<leader>be', ':BufferLineSortByDirectory<CR>')
-lua_utils.map('', 'gt', ':BufferLinePick<CR>')
-lua_utils.map('', '<leader>c', ':BufferLinePickClose<CR>')
-
 -- gereral bindings
 lua_utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 lua_utils.map('', '<leader>tcl', ':set cursorline!<CR>')
--- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
--- dashboard
-vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
--- Comments
-vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-
--- Telescope
 lua_utils.map('', '<leader>ht', ':Telescope colorscheme<CR>')
 lua_utils.map('', '<leader>ff', ':Telescope find_files<CR>')
 lua_utils.map('', '<leader>sb', ':Telescope current_buffer_fuzzy_find<CR>')
