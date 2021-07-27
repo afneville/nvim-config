@@ -23,6 +23,9 @@ vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 -- use tab key to switch buffer in normal mode
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gt', ':BufferPick<CR>', {})
+-- close buffer
+vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
 
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
@@ -38,14 +41,29 @@ lua_utils.map('', '<leader>wh', '<C-w>h')
 lua_utils.map('', '<leader>wj', '<C-w>j')
 lua_utils.map('', '<leader>wk', '<C-w>k')
 lua_utils.map('', '<leader>wl', '<C-w>l')
-lua_utils.map('', '<leader>q', ':wqa<CR>')
+lua_utils.map('', '<leader>q', ':lua require \'tree\'.close()<CR> :wqa<CR>')
 
 -- gereral bindings
 lua_utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 lua_utils.map('', '<leader>tcl', ':set cursorline!<CR>')
+
+-- explorer
+-- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>e', ':lua require \'tree\'.open()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>E', ':lua require \'tree\'.close()<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+-- dashboard
+vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
+-- Comments
+vim.api.nvim_set_keymap("n", "gc", ":CommentToggle<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "gc", ":CommentToggle<CR>", {noremap = true, silent = true})
+
+-- telescope
 lua_utils.map('', '<leader>ht', ':Telescope colorscheme<CR>')
 lua_utils.map('', '<leader>ff', ':Telescope find_files<CR>')
-lua_utils.map('', '<leader>sb', ':Telescope current_buffer_fuzzy_find<CR>')
+lua_utils.map('', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>')
 lua_utils.map('', '<leader>sg', ':Telescope live_grep<CR>')
 lua_utils.map('', '<leader>sf', ':Telescope find_files<CR>')
 lua_utils.map('', '<leader>sc', ':Telescope colorscheme<CR>')
+lua_utils.map('', '<leader>bs', ':Telescope buffers<CR>')
