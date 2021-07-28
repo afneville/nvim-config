@@ -94,4 +94,5 @@ function lsp_config.tsserver_on_attach(client, bufnr)
     client.resolved_capabilities.document_formatting = false
 end
 
+
 return lsp_config

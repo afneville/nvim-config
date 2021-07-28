@@ -6,7 +6,7 @@ vim.o.hidden = true -- allow multiple buffers
 vim.o.title = true
 TERMINAL = vim.fn.expand('$TERMINAL')
 vim.cmd('let &titleold="'..TERMINAL..'"')
-vim.o.titlestring="%<%F%=%l/%L - nvim"
+-- vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.wo.wrap = O.wrap_lines -- Display long lines as just one line
 vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 vim.cmd('syntax on') -- syntax highlighting
@@ -39,6 +39,8 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.g.nvim_tree_disable_netrw = O.nvim_tree_disable_netrw -- enable netrw for remote gx gf support (must be set before plugin's packadd)
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd('filetype plugin on') -- filetype detection
+vim.cmd('let g:nvcode_termcolors=256')
+vim.cmd('colorscheme ' .. O.colorscheme)
 
 -- setting options with a wrapper function
 -- eventually all options will be set like this
