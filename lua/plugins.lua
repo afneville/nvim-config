@@ -74,12 +74,25 @@ return require("packer").startup(function(use)
     use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
     use 'Mofiqul/dracula.nvim'
     use 'ii14/onedark.nvim'
+    -- use 'glepnir/zephyr-nvim'
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
 
     -- Status Line and Bufferline
-    use {"glepnir/galaxyline.nvim", opt = true}
-    use {"romgrk/barbar.nvim", opt = true}
+    use {
+        "glepnir/galaxyline.nvim",
+        config = function()
+          require "core.galaxyline"
+        end,
+        event = "BufWinEnter",
+    }
+    use {
+        "romgrk/barbar.nvim",
+        config = function()
+          require "core.bufferline"
+        end,
+        event = "BufWinEnter",
+    }
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
