@@ -51,12 +51,24 @@ return require("packer").startup(function(use)
     use {"rafamadriz/friendly-snippets", opt = true}
 
     -- Treesitter
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
+        config = function()
+          require "core.treesitter"
+        end,
+        event = "BufWinEnter",
+        opt = true,
+    }
     use {"windwp/nvim-ts-autotag", opt = true}
     use {'andymass/vim-matchup', opt = true}
 
     -- Explorer
-    use {"kyazdani42/nvim-tree.lua", opt = true}
+    use {"kyazdani42/nvim-tree.lua", 
+        config = function()
+          require "core.nvim_tree"
+        end,
+        event = "BufWinEnter",
+        opt = true
+    }
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
     use "kevinhwang91/rnvimr"
 

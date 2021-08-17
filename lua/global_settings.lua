@@ -5,7 +5,7 @@ O = {
     document_highlight = false,
     auto_close_tree = 1,
     auto_complete = true,
-    colorscheme = 'spacegray',
+    colorscheme = 'nord',
     hidden_files = true,
     wrap_lines = false,
     number = true,
@@ -20,8 +20,8 @@ O = {
         ensure_installed = "all",
         ignore_install = {},
         highlight = {enabled = true},
-        -- playground = {enabled = true},
-        rainbow = {enabled = false}
+        playground = {enabled = true},
+        rainbow = {enabled = true}
     },
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
