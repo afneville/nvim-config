@@ -43,7 +43,7 @@ local LSP = {
   NvimTreeGitMerge = { fg = C.sign_change },
   NvimTreeGitRenamed = { fg = C.sign_change },
   NvimTreeSymlink = { fg = C.cyan },
-  NvimTreeRootFolder = { fg = C.fg, style = "bold" },
+  NvimTreeRootFolder = { fg = C.fg, style = "italic" },
   NvimTreeExecFile = { fg = C.green },
   BufferCurrent = { fg = C.fg, bg = C.bg },
   BufferCurrentIndex = { fg = C.fg, bg = C.bg },

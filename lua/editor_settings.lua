@@ -15,7 +15,7 @@ vim.wo.number = O.number
 vim.wo.relativenumber = O.relative_number
 vim.wo.cursorcolumn = false
 vim.wo.cursorline = true
-vim.o.showtabline = 2
+vim.o.showtabline = 3
 vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
@@ -35,7 +35,7 @@ vim.cmd('colorscheme ' .. O.colorscheme)
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')
-vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
+vim.cmd('set whichwrap=<,>,[,]') -- move to next line with theses keys
 vim.cmd('syntax on')
 vim.cmd('set iskeyword+=-')
 vim.cmd('set shortmess+=c')

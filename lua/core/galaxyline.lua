@@ -7,7 +7,7 @@ if not status_ok then
 end
 
 -- NOTE: if someone defines colors but doesn't have them then this will break
-local palette_status_ok, colors = pcall(require, O.colorscheme .. ".palette")
+local palette_status_ok, colors = pcall(require, "colors." .. O.colorscheme .. ".palette")
 
 local condition = require "galaxyline.condition"
 local gls = gl.section
