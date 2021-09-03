@@ -1,4 +1,5 @@
-local actions = require('telescope.actions')require('telescope').setup{
+local actions = require('telescope.actions')
+require('telescope').setup{
 
   defaults = {
     mappings = {
@@ -26,6 +27,8 @@ local actions = require('telescope.actions')require('telescope').setup{
     layout_config = {
       horizontal = {
         mirror = false,
+        width = 0.95,
+        height = 0.95
       },
       vertical = {
         mirror = false,

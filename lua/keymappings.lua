@@ -3,7 +3,6 @@ local utils = require('utils')
 -- set the leader key
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
--- most keybindings involving the leader key are set in the which key config file
 
 -- resize with arrows
 vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', {silent = true})
@@ -23,8 +22,15 @@ vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 -- use tab key to switch buffer in normal mode (using bar-bar instead)
 -- vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<S-l>", ":BufferNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<TAB>', ':BufferNext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':BufferPrevious<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'gt', ':BufferPick<CR>', {})
 vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>C", ":BufferCloseAllButCurrent<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>p", ":BufferPin<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>P", ":BufferCloseAllButPinned<CR>", {noremap = true, silent = true})
 
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')

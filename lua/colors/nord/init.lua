@@ -6,15 +6,15 @@ vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.g.colors_name = "nord"
 
-local util = require "nord.util"
-Config = require "nord.config"
-C = require "nord.palette"
-local highlights = require "nord.highlights"
-local Treesitter = require "nord.Treesitter"
-local markdown = require "nord.markdown"
-local Whichkey = require "nord.Whichkey"
-local Git = require "nord.Git"
-local LSP = require "nord.LSP"
+local util = require "colors.util"
+Config = require "colors.config"
+C = require "colors.nord.palette"
+local highlights = require "colors.highlights"
+local Treesitter = require "colors.Treesitter"
+local markdown = require "colors.markdown"
+local Whichkey = require "colors.Whichkey"
+local Git = require "colors.Git"
+local LSP = require "colors.LSP"
 
 local skeletons = {
   highlights,
