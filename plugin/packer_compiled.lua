@@ -94,6 +94,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = false,
     needs_bufread = false,

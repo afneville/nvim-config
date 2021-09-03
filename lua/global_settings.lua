@@ -3,7 +3,8 @@ DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
 O = {
-    document_highlight = false,
+
+    document_highlight = true,
     auto_close_tree = 1,
     auto_complete = true,
     colorscheme = 'nord',
@@ -34,31 +35,37 @@ O = {
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
 		analysis = {type_checking = false, auto_search_paths = true, use_library_code_types = true}
     },
-    lua = { 
-        formatter = 'lua-format', 
+
+    lua = {
+        formatter = 'lua-format',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""},
-        signs = true, underline = true} },
-    sh = { 
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = false,
+    },
+
+    sh = {
         linter = '',
         formatter = '',
         autoformat = false,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""},
         signs = true,
-        underline = true} 
+        underline = true}
     },
+
     css = {
         formatter = '',
         autoformat = false,
         virtual_text = true
     },
+
     tsserver = {linter = nil,
         formatter = 'prettier',
         autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""},
         signs = true,
-        underline = true} 
+        underline = true}
     },
+
     json = {
         formatter = 'prettier',
         autoformat = true,
@@ -66,6 +73,7 @@ O = {
         signs = true,
         underline = true}
     },
+
     clang = {
         diagnostics = {virtual_text = {spacing = 0, prefix = ""},
         signs = true,
