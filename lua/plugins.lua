@@ -29,104 +29,46 @@ end
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 return require("packer").startup(function(use)
-    -- Packer can manage itself as an optional plugin
+
     use "wbthomason/packer.nvim"
 
     use {"neovim/nvim-lspconfig", opt = true}
     use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
-    use {"folke/trouble.nvim", opt = true}
-
     use {"nvim-lua/popup.nvim", opt = true}
     use {"nvim-lua/plenary.nvim", opt = true}
-
     use {"nvim-telescope/telescope.nvim", opt = true}
-
-    -- Debugging
-    use {"mfussenegger/nvim-dap", opt = true}
-
-    -- Autocomplete
     use {"hrsh7th/nvim-compe", opt = true}
     use {"hrsh7th/vim-vsnip", opt = true}
     use {"rafamadriz/friendly-snippets", opt = true}
-
-    -- Treesitter
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
-        config = function()
-          require "core.treesitter"
-        end,
-        event = "BufWinEnter",
-        opt = true,
-    }
-    use {"windwp/nvim-ts-autotag", opt = true}
+    use {"nvim-treesitter/nvim-treesitter", opt = true}
     use {'andymass/vim-matchup', opt = true}
-
-    -- Explorer
-    use {"kyazdani42/nvim-tree.lua", 
-        config = function()
-          require "core.nvim_tree"
-        end,
-        event = "BufWinEnter",
-        opt = true
-    }
-    use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
-    use "kevinhwang91/rnvimr"
-
-    use {"lewis6991/gitsigns.nvim", opt = true}
+    use {"kyazdani42/nvim-tree.lua", opt = true}
+    use {"kevinhwang91/rnvimr", opt = true}
     use {"folke/which-key.nvim", opt = true}
+    use {"lewis6991/gitsigns.nvim", opt = true}
     use {"ChristianChiarulli/dashboard-nvim", opt = true}
     use {"windwp/nvim-autopairs", opt = true}
     use {"kevinhwang91/nvim-bqf", opt = true}
-
-    -- Comments
     use {"terrortylor/nvim-comment", opt = true}
     use {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
-
-    -- Color
-    use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-    use 'Mofiqul/dracula.nvim'
-    use 'ii14/onedark.nvim'
-    -- use 'glepnir/zephyr-nvim'
-    -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
-
-    -- Status Line and Bufferline
-    use {
-        "glepnir/galaxyline.nvim",
-        config = function()
-          require "core.galaxyline"
-        end,
-        event = "BufWinEnter",
-    }
-    use {
-        "romgrk/barbar.nvim",
-        config = function()
-          require "core.bufferline"
-        end,
-        event = "BufWinEnter",
-    }
-    -- Zen Mode
-    use {"Pocco81/TrueZen.nvim", opt = true}
-
-    use {'numToStr/FTerm.nvim', opt = true}
+    use {"glepnir/galaxyline.nvim", opt= true}
+    use {"romgrk/barbar.nvim", opt = true}
     use {'norcalli/nvim-colorizer.lua', opt = true}
-    use {'simrat39/symbols-outline.nvim', opt = true}
     use {'nvim-treesitter/playground', opt = true}
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
-    require_plugin('trouble.nvim')
     require_plugin("friendly-snippets")
     require_plugin("popup.nvim")
     require_plugin("plenary.nvim")
     require_plugin("telescope.nvim")
     require_plugin('telescope-project.nvim')
-    require_plugin("nvim-dap")
     require_plugin("nvim-compe")
     require_plugin("vim-vsnip")
     require_plugin("nvim-treesitter")
-    require_plugin("nvim-ts-autotag")
     require_plugin('vim-matchup')
     require_plugin("nvim-tree.lua")
     require_plugin("gitsigns.nvim")
@@ -139,12 +81,7 @@ return require("packer").startup(function(use)
     require_plugin("nvim-web-devicons")
     require_plugin("galaxyline.nvim")
     require_plugin("barbar.nvim")
-    require_plugin('lsp-rooter.nvim')
-    require_plugin("TrueZen.nvim")
-    require_plugin("nvim-ts-context-commentstring")
-    require_plugin('numToStr/FTerm.nvim')
     require_plugin('nvim-colorizer.lua')
-    require_plugin('symbols-outline.nvim')
     require_plugin('playground')
 
 end)

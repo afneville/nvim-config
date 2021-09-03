@@ -69,18 +69,7 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/FTerm.nvim"
-  },
-  ["TrueZen.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
-  },
   ["barbar.nvim"] = {
-    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20core.bufferline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
@@ -90,17 +79,12 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
-  ["dracula.nvim"] = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/dracula.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20core.galaxyline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
@@ -110,20 +94,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
-  ["lsp-rooter.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/lsp-rooter.nvim"
-  },
   ["lspsaga.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
-  },
-  ["nvcode-color-schemes.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvcode-color-schemes.vim"
   },
   ["nvim-autopairs"] = {
     loaded = false,
@@ -151,11 +125,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-compe"
   },
-  ["nvim-dap"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-dap"
-  },
   ["nvim-lspconfig"] = {
     loaded = false,
     needs_bufread = false,
@@ -167,21 +136,14 @@ _G.packer_plugins = {
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19core.nvim_tree\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20core.treesitter\frequire\0" },
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
-  },
-  ["nvim-ts-autotag"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
   },
   ["nvim-ts-context-commentstring"] = {
     loaded = false,
@@ -192,10 +154,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -217,23 +175,14 @@ _G.packer_plugins = {
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/popup.nvim"
   },
   rnvimr = {
-    loaded = true,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/start/rnvimr"
-  },
-  ["symbols-outline.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/symbols-outline.nvim"
+    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/rnvimr"
   },
   ["telescope.nvim"] = {
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
-  },
-  ["trouble.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/trouble.nvim"
   },
   ["vim-matchup"] = {
     after_files = { "/home/alex/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
@@ -254,13 +203,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter', 'galaxyline.nvim', 'barbar.nvim', 'nvim-tree.lua'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

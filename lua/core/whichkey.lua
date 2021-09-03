@@ -1,9 +1,7 @@
 require("which-key").setup {
     plugins = {
-        marks = true, -- shows a list of your marks on ' and `
-        registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-        -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-        -- No actual key bindings are created
+        marks = false,
+        registers = false,
         presets = {
             operators = false,
             motions = false,
@@ -17,7 +15,7 @@ require("which-key").setup {
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "*" -- symbol prepended to a group
+        group = "#" -- symbol prepended to a group
     },
     window = {
         border = "double", -- none, single, double, shadow
@@ -110,12 +108,12 @@ local mappings = {
     S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
 
     -- extras
-    z = {
-        name = "+Zen",
-        s = {"<cmd>TZBottom<cr>", "toggle status line"},
-        t = {"<cmd>TZTop<cr>", "toggle tab bar"},
-        z = {"<cmd>TZAtaraxis<cr>", "toggle zen"},
-    },
+--    z = {
+--        name = "+Zen",
+--        s = {"<cmd>TZBottom<cr>", "toggle status line"},
+--        t = {"<cmd>TZTop<cr>", "toggle tab bar"},
+--        z = {"<cmd>TZAtaraxis<cr>", "toggle zen"},
+--    },
 
     i = {
         name = "+Insert",

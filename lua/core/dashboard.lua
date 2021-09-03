@@ -1,3 +1,4 @@
+
 vim.g.dashboard_custom_header = O.dashboard.custom_header
 
 vim.g.dashboard_default_executive = 'telescope'

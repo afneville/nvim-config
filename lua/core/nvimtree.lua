@@ -55,7 +55,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
       { key = "q",                            cb = tree_cb("close") },
       { key = "g?",                           cb = tree_cb("toggle_help") },
     }
--- vim.g.nvim_tree_show_icons = {git = 1, folders = 1, files = 1}
+vim.g.nvim_tree_show_icons = {git = 0, folders = 1, files = 1}
 vim.g.nvim_tree_icons = {
     default = '',
     symlink = '',
