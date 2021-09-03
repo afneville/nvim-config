@@ -57,6 +57,7 @@ return require("packer").startup(function(use)
     use {"romgrk/barbar.nvim", opt = true}
     use {'norcalli/nvim-colorizer.lua', opt = true}
     use {'nvim-treesitter/playground', opt = true}
+    use "lukas-reineke/indent-blankline.nvim"
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
@@ -83,5 +84,6 @@ return require("packer").startup(function(use)
     require_plugin("barbar.nvim")
     require_plugin('nvim-colorizer.lua')
     require_plugin('playground')
+    require_plugin('lukas-reineke/indent-blankline.nvim')
 
 end)
