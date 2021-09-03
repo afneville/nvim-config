@@ -12,13 +12,12 @@ vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 vim.cmd('syntax on') -- syntax highlighting
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.fileencoding = "utf-8" -- The encoding written to file
-vim.o.cmdheight = 1 -- More space for displaying messages
+vim.o.cmdheight = 1
 -- vim.cmd('set colorcolumn=99999') -- fix indentline for now
 -- vim.o.mouse = "a" -- Enable your mouse
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 vim.o.termguicolors = true -- set term gui colors most terminals support this
--- vim.o.t_Co = "256" -- Support 256 colors
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.cmd('set ts=4') -- Insert 2 spaces for a tab
 vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
