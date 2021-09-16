@@ -1,3 +1,4 @@
+
 CONFIG_PATH = vim.fn.stdpath('config')
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
@@ -32,7 +33,8 @@ O = {
         formatter = nil,
         autoformat = false,
         isort = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
+        diagnostics = {virtual_text = false, signs = true, underline = true},
 		analysis = {type_checking = false, auto_search_paths = true, use_library_code_types = true}
     },
 
@@ -75,9 +77,8 @@ O = {
     },
 
     clang = {
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""},
-        signs = true,
-        underline = true}
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
 	dashboard = {

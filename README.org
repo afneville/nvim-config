@@ -1,9 +1,6 @@
 #+TITLE: Neovim Config
 
-My neovim configuration is heavily inspired by =ChristianChiarulli/LunarVim=, from which it was originally forked. Find out more about that project [[https://github.com/ChristianChiarulli/LunarVim][here]], it is a really good example of what can be done with vim/neovim.
+Neovim is a highly extensible modal text editor, this is my configuration.
 
-I use neovim for programming and the native LSP client, built-in to neovim 0.5, and accompanying setup from /nvim-lsp/ and /compe/ is very useful. Language server configuration for most languages is taken from the afore-mentioned project.
-
-*Screenshot:*
-
-[[./nvim_gruvbox.png]]
+#+CAPTION: Screenshot
+[[./screenshot.png]]

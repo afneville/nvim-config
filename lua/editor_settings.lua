@@ -1,3 +1,4 @@
+
 vim.o.hidden = true
 vim.o.title = true
 TERMINAL = vim.fn.expand('$TERMINAL')
