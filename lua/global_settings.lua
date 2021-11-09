@@ -6,16 +6,14 @@ CACHE_PATH = vim.fn.stdpath('cache')
 O = {
 
     document_highlight = true,
-    auto_close_tree = 1,
     auto_complete = true,
-    colorscheme = 'nord',
+    colorscheme = 'onedark',
     hidden_files = true,
     wrap_lines = false,
     number = true,
     relative_number = true,
     shell = 'zsh',
-	timeoutlen = 100,
-    nvim_tree_disable_netrw = 0,
+    timeoutlen = 100,
     extras = true,
 
     treesitter = {
@@ -35,23 +33,24 @@ O = {
         isort = false,
         -- diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
         diagnostics = {virtual_text = false, signs = true, underline = true},
-		analysis = {type_checking = false, auto_search_paths = true, use_library_code_types = true}
+        analysis = {type_checking = false, auto_search_paths = true, use_library_code_types = true}
     },
 
     lua = {
         formatter = 'lua-format',
         autoformat = false,
         -- diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
-        diagnostics = false,
+        diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
     sh = {
         linter = '',
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""},
-        signs = true,
-        underline = true}
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""},
+        -- signs = true,
+        -- underline = true}
+        diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
     css = {
@@ -63,17 +62,19 @@ O = {
     tsserver = {linter = nil,
         formatter = 'prettier',
         autoformat = true,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""},
-        signs = true,
-        underline = true}
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""},
+        -- signs = true,
+        -- underline = true}
+        diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
     json = {
         formatter = 'prettier',
         autoformat = true,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""},
-        signs = true,
-        underline = true}
+        -- diagnostics = {virtual_text = {spacing = 0, prefix = ""},
+        -- signs = true,
+        -- underline = true}
+        diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
     clang = {
@@ -81,8 +82,8 @@ O = {
         diagnostics = {virtual_text = false, signs = true, underline = true}
     },
 
-	dashboard = {
-		custom_header = {
+    dashboard = {
+        custom_header = {
 
 
         ' ███╗   ██╗ ███████╗  ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ',
@@ -92,7 +93,7 @@ O = {
         ' ██║ ╚████║ ███████╗ ╚██████╔╝  ╚████╔╝  ██║ ██║     ██║ ',
         ' ╚═╝  ╚═══╝ ╚══════╝  ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ',
 
-		},
-		footer= {''}
-	}
+        },
+        footer= {''}
+    }
 }
