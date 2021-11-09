@@ -27,7 +27,7 @@ require'compe'.setup {
         -- vim_dadbod_completion = true,
         -- snippets_nvim = {kind = "  "},
         -- ultisnips = {kind = "  "},
-        treesitter = {kind = "  "},
+        -- treesitter = {kind = "  "},
         -- treesitter = false,
         -- emoji = {kind = " ﲃ  (Emoji)", filetypes={"markdown", "text"}}
         -- for emoji press : (idk if that in compe tho)
@@ -130,8 +130,6 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
   elseif check_back_space() then
     return t "<Tab>"
   else
@@ -141,8 +139,6 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
   else
     return t "<S-Tab>"
   end
