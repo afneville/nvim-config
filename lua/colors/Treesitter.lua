@@ -1,5 +1,5 @@
 local Treesitter = {
-  TSComment = { fg = C.gray },
+  TSComment = { fg = C.gray, style = "italic" },
   TSAnnotation = { fg = C.purple },
   TSAttribute = { fg = C.cyan },
   TSConstructor = { fg = C.purple },
@@ -19,7 +19,7 @@ local Treesitter = {
   TSNumber = { fg = C.red },
   TSBoolean = { fg = C.red },
   TSCharacter = { fg = C.light_green },
-  TSError = { fg = C.error_red },
+  TSError = { fg = C.red },
   TSFunction = { fg = C.yellow },
   TSFuncBuiltin = { fg = C.yellow },
   TSMethod = { fg = C.yellow },
@@ -50,7 +50,7 @@ local Treesitter = {
   TSKeywordOperator = { fg = C.blue },
   TSStructure = { fg = C.purple_test },
   TSStrong = { fg = C.yellow },
-  TSQueryLinterError = { fg = C.warning_orange },
+  TSQueryLinterError = { fg = C.orange },
 }
 
 return Treesitter
