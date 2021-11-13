@@ -50,6 +50,12 @@ return require("packer").startup(function(use)
     use {'nvim-treesitter/playground', opt = true}
     use { 'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
     use {'junegunn/fzf.vim'}
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require'nvim-tree'.setup {} end
+    }
+
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
@@ -68,5 +74,6 @@ return require("packer").startup(function(use)
     -- require_plugin("galaxyline.nvim")
     require_plugin('nvim-colorizer.lua')
     require_plugin('playground')
+    require_plugin("nvim-tree")
 
 end)
