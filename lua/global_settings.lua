@@ -5,9 +5,9 @@ CACHE_PATH = vim.fn.stdpath('cache')
 
 O = {
 
-    document_highlight = true,
+    document_highlight = false,
     auto_complete = true,
-    colorscheme = 'onedark',
+    colorscheme = 'nord',
     hidden_files = true,
     wrap_lines = false,
     number = true,

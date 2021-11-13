@@ -28,10 +28,10 @@ vim.o.sidescrolloff = 8
 vim.o.wrap = false
 vim.o.smartcase = true
 
+vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
-vim.cmd('syntax on')
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme ' .. O.colorscheme)
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')
