@@ -42,6 +42,7 @@ utils.map('', '<leader>wl', '<C-w>l')
 
 
 utils.map('', '<leader>ff', ':Files<CR>')
+utils.map('', '<leader>bb', ':Buffers<CR>')
 
 -- gereral bindings
 utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
