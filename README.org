@@ -1,6 +1,0 @@
-#+TITLE: Neovim Config
-
-Neovim is a highly extensible modal text editor, this is my configuration.
-
-#+CAPTION: Screenshot
-[[./screenshot.png]]

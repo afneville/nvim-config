@@ -1,12 +1,12 @@
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = O.treesitter.ensure_installed,
-    ignore_install = O.treesitter.ignore_install,
+    ensure_installed = "all",
+    ignore_install = {},
     matchup = {
-        enable = true,              -- mandatory, false will disable the whole extension
-        -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+        enable = true,
+        disable = {},
     },
     highlight = {
-        enable = O.treesitter.highlight.enabled, 
+        enable = true,
         additional_vim_regex_highlighting = true,
     },
     context_commentstring = {
@@ -15,13 +15,14 @@ require'nvim-treesitter.configs'.setup {
           css = '// %s'
         }
       },
-    indent = {enable = true, disable = {}},
-    -- TODO seems to be broken
+    indent = {
+        enable = true,
+        disable = {}
+    },
     autotag = {enable = true},
     rainbow = {
       enable = true,
-      extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-      max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
+      extended_mode = true,
+      max_file_lines = 1000,
     },
 }
-
