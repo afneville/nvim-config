@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silen
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
-vim.api.nvim_set_keymap('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('', '<C-q>', ':cclose<CR>', {noremap = true, silent = true})
 
 -- insert lines above & below
 utils.map('', '<leader>ij', 'o<esc>0Dk')
