@@ -4,6 +4,13 @@ local utils = require('utils')
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
+vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
+vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
+vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
+vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.cmd("nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>")
+vim.cmd('inoremap <silent> <C-k> <cmd>lua vim.lsp.buf.hover()<CR>')
+
 -- resize with arrows
 vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +2<CR>', {silent = true})
@@ -31,6 +38,8 @@ vim.api.nvim_set_keymap('', '<C-q>', ':cclose<CR>', {noremap = true, silent = tr
 -- insert lines above & below
 utils.map('', '<leader>ij', 'o<esc>0Dk')
 utils.map('', '<leader>ik', 'O<esc>0Dj')
+
+utils.map('', '<leader>lr', ':lua vim.lsp.buf.rename()')
 
 -- improve window navigation
 utils.map('', '<leader>wh', '<C-w>h')
