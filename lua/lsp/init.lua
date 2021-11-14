@@ -1,3 +1,7 @@
+-- local pop_opts = { border = "rounded", max_width = 80 }
+-- vim.lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, pop_opts)
+-- vim.lsp.handlers["textDocument/signatureHelp"] = lsp.with(vim.lsp.handlers.signature_help, pop_opts)
+
 vim.fn.sign_define(
     "LspDiagnosticsSignError",
     {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
@@ -34,6 +38,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true,
   }
 )
+
 
 function PrintDiagnostics(opts, bufnr, line_nr, client_id)
   opts = opts or {}

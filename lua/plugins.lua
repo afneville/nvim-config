@@ -44,6 +44,7 @@ return require('packer').startup(function()
     use {'hrsh7th/nvim-cmp'}
     use {'L3MON4D3/LuaSnip'}
     use {'windwp/nvim-autopairs'}
+--    use {'glepnir/lspsaga.nvim'}
 --    use {
 --        "kabouzeid/nvim-lspinstall",
 --        opt = true,
@@ -52,5 +53,6 @@ return require('packer').startup(function()
     use {"kabouzeid/nvim-lspinstall"}
     use {'kevinhwang91/nvim-bqf', ft = 'qf'}
     require_plugin("kabouzeid/nvim-lspinstall")
+--    require_plugin("glenpir/lspsaga.nvim")
 
 end)
