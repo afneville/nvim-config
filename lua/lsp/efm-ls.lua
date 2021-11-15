@@ -1,0 +1,13 @@
+-- require "lspconfig".efm.setup {
+--     cmd = {DATA_PATH .. "/lspinstall/efm/efm-langserver"},
+--     init_options = {documentFormatting = true, codeAction = false},
+--     filetypes = {"cpp", "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json", "yaml", "markdown", "vue"},
+--     settings = {
+--         rootMarkers = {".git/", ""},
+--         languages = {
+--             lua = {
+--                 {formatCommand = "lua-format -i", formatStdin = true}
+--             }
+--         }
+--     }
+-- }
