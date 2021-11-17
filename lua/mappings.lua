@@ -39,7 +39,8 @@ vim.api.nvim_set_keymap('', '<C-q>', ':cclose<CR>', {noremap = true, silent = tr
 utils.map('', '<leader>ij', 'o<esc>0Dk')
 utils.map('', '<leader>ik', 'O<esc>0Dj')
 
-utils.map('', '<leader>lr', ':lua vim.lsp.buf.rename()')
+utils.map('', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
+utils.map('', '<leader>ld', ':Lspsaga show_line_diagnostics<CR>')
 
 -- improve window navigation
 utils.map('', '<leader>wh', '<C-w>h')
