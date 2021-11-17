@@ -31,7 +31,7 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when th
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim'}
     use {"morhetz/gruvbox"}
     use {"nvim-treesitter/nvim-treesitter"}
     use {'junegunn/fzf.vim'}
@@ -45,15 +45,17 @@ return require('packer').startup(function()
     use {'L3MON4D3/LuaSnip'}
     use {'windwp/nvim-autopairs'}
     use {'glepnir/lspsaga.nvim'}
---    use {
---        "kabouzeid/nvim-lspinstall",
---        opt = true,
---        config = function() require("core.nvim-lspinstall") end
---    }
+    use {'glepnir/zephyr-nvim'}
+
+    use {'navarasu/onedark.nvim'}
     use {"kabouzeid/nvim-lspinstall"}
     use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+    use {
+        'glepnir/galaxyline.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+    require_plugin('kyazdani42/nvim-web-devicons')
     require_plugin("kabouzeid/nvim-lspinstall")
     require_plugin("neovim/nvim-lspfconfig")
---    require_plugin("glenpir/lspsaga.nvim")
 
 end)
