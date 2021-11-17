@@ -3,12 +3,11 @@ require("editor_settings")
 require("mappings")
 require("plugins")
 
--- require("core.nvim-lspinstall")
 require("core.nvim-cmp")
 require("core.nvim-autopairs")
 require("core.treesitter")
--- require("core.lspsaga")
---
+require("core.galaxyline")
+
 require("lsp")
 require('lsp.bash-ls')
 require('lsp.clangd')
