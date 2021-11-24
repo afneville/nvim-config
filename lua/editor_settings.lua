@@ -12,7 +12,7 @@ vim.bo.smartindent = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.cursorcolumn = false
-vim.wo.cursorline = false
+vim.wo.cursorline = true
 vim.o.showtabline = 0
 vim.o.showmode = false
 vim.o.backup = false
@@ -28,7 +28,7 @@ vim.o.smartcase = true
 vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme gruvbox')
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')

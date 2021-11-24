@@ -51,14 +51,14 @@ gls.left[5] = {
   }
 }
 
-gls.left[6] = {
-  LineInfo = {
-    provider = 'LineColumn',
-    separator = ' ',
-    separator_highlight = {'NONE',colors.bg},
-    highlight = {colors.fg,colors.bg},
-  },
-}
+-- gls.left[6] = {
+--   LineInfo = {
+--     provider = 'LineColumn',
+--     separator = '',
+--     separator_highlight = {'NONE',colors.bg},
+--     highlight = {colors.fg,colors.bg},
+--   },
+-- }
 
 gls.left[7] = {
   PerCent = {

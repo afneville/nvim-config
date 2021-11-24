@@ -22,9 +22,9 @@ vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 
 -- use infrequent character combinations to exit insert mode
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 
 -- use tab key to switch buffer in normal mode (using bar-bar instead)
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
@@ -57,7 +57,7 @@ utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 utils.map('', '<leader>tcl', ':set cursorline!<CR>')
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':E<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
