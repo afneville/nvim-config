@@ -152,15 +152,29 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["zephyr-nvim"] = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
+    url = "https://github.com/glepnir/zephyr-nvim"
   }
 }
 

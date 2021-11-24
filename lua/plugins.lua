@@ -46,14 +46,21 @@ return require('packer').startup(function()
     use {'windwp/nvim-autopairs'}
     use {'glepnir/lspsaga.nvim'}
     use {'glepnir/zephyr-nvim'}
-
+    use {'mhartington/oceanic-next'}
     use {'navarasu/onedark.nvim'}
     use {"kabouzeid/nvim-lspinstall"}
     use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+--    use {
+--        'glepnir/galaxyline.nvim',
+--        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+--    }
+
     use {
-        'glepnir/galaxyline.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require'nvim-tree'.setup {} end
     }
+    -- use {'glepnir/indent-guides.nvim'}
     require_plugin('kyazdani42/nvim-web-devicons')
     require_plugin("kabouzeid/nvim-lspinstall")
     require_plugin("neovim/nvim-lspfconfig")
