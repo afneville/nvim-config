@@ -8,13 +8,14 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = true,
+        disable = {"latex"}
     },
     context_commentstring = {
         enable = true,
         config = {
           css = '// %s'
         }
-      },
+    },
     indent = {
         enable = false,
         disable = {}
