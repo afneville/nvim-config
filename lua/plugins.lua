@@ -39,8 +39,8 @@ return require('packer').startup(function()
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
+    use {'hrsh7th/cmp-omni'}
     use {'hrsh7th/cmp-cmdline'}
-    use {'saadparwaiz1/cmp_luasnip' }
     use {'hrsh7th/nvim-cmp'}
     use {'L3MON4D3/LuaSnip'}
     use {'windwp/nvim-autopairs'}
@@ -48,21 +48,30 @@ return require('packer').startup(function()
     use {'glepnir/zephyr-nvim'}
     use {'mhartington/oceanic-next'}
     use {'navarasu/onedark.nvim'}
-    use {"kabouzeid/nvim-lspinstall"}
     use {'kevinhwang91/nvim-bqf', ft = 'qf'}
---    use {
---        'glepnir/galaxyline.nvim',
---        requires = {'kyazdani42/nvim-web-devicons', opt = true}
---    }
-
+    use {'shaunsingh/nord.nvim'}
+    use {'hrsh7th/vim-vsnip'}
+    use {'saadparwaiz1/cmp_luasnip' }
+    use {'SirVer/ultisnips'}
+    use {'lervag/vimtex'}
+    use {'KeitaNakamura/tex-conceal.vim'}
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function() require'nvim-tree'.setup {} end
     }
-    -- use {'glepnir/indent-guides.nvim'}
-    require_plugin('kyazdani42/nvim-web-devicons')
-    require_plugin("kabouzeid/nvim-lspinstall")
-    require_plugin("neovim/nvim-lspfconfig")
-
+    -- Lua
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+    use {'onsails/lspkind-nvim'}
+    require_plugin("glepnir/lspsaga")
 end)

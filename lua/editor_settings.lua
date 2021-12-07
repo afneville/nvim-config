@@ -28,7 +28,7 @@ vim.o.smartcase = true
 vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme nord')
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')

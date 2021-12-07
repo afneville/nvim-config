@@ -1,13 +1,24 @@
 local cmp = require'cmp'
 local luasnip = require 'luasnip'
+local lspkind = require('lspkind')
 
 cmp.setup({
+  formatting = {
+  format = require("lspkind").cmp_format({with_text = true, menu = ({
+      buffer = "[Buffer]",
+      nvim_lsp = "[LSP]",
+      luasnip = "[LuaSnip]",
+      nvim_lua = "[Lua]",
+      latex_symbols = "[Latex]",
+    })}),
+  },
+
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
     end,
   },
@@ -25,9 +36,10 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'omni' },
+    { name = 'ultisnips' },
   }, {
-    { name = 'buffer' },
+    -- { name = 'buffer' },
   })
 })
 

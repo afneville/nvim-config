@@ -1,4 +1,3 @@
-vim.cmd("let g:nvim_tree_gitignore = 1")
 vim.cmd("let g:nvim_tree_quit_on_open = 1")
 vim.cmd("let g:nvim_tree_indent_markers = 1")
 vim.cmd("let g:nvim_tree_git_hl = 0")
@@ -23,7 +22,8 @@ let g:nvim_tree_show_icons = {
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require'nvim-tree'.setup {
-  disable_netrw       = true,
+  nvim_tree_gitignore = true,
+  -- disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
