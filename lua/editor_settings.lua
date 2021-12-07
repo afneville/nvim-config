@@ -25,10 +25,13 @@ vim.o.sidescrolloff = 8
 vim.o.wrap = false
 vim.o.smartcase = true
 
+-- vim.g.vscode_style = "dark"
+-- vim.cmd[[colorscheme vscode]]
+vim.cmd('colorscheme onedark')
+
 vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
-vim.cmd('colorscheme nord')
 vim.cmd('set ts=4')
 vim.cmd('set sw=4')
 vim.cmd('set expandtab')

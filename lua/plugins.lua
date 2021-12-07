@@ -37,6 +37,7 @@ return require('packer').startup(function()
     use {'junegunn/fzf.vim'}
     use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/cmp-nvim-lsp'}
+    use {"ray-x/lsp_signature.nvim"}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
     use {'hrsh7th/cmp-omni'}
@@ -48,13 +49,23 @@ return require('packer').startup(function()
     use {'glepnir/zephyr-nvim'}
     use {'mhartington/oceanic-next'}
     use {'navarasu/onedark.nvim'}
+    use {'Mofiqul/vscode.nvim'}
     use {'kevinhwang91/nvim-bqf', ft = 'qf'}
     use {'shaunsingh/nord.nvim'}
     use {'hrsh7th/vim-vsnip'}
     use {'saadparwaiz1/cmp_luasnip' }
-    use {'SirVer/ultisnips'}
+    -- use {'SirVer/ultisnips'}
     use {'lervag/vimtex'}
     use {'KeitaNakamura/tex-conceal.vim'}
+    use {'lukas-reineke/indent-blankline.nvim'}
+
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
+
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
