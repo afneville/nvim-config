@@ -2,29 +2,19 @@
 -- vim.lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, pop_opts)
 -- vim.lsp.handlers["textDocument/signatureHelp"] = lsp.with(vim.lsp.handlers.signature_help, pop_opts)
 
-vim.fn.sign_define(
-    "LspDiagnosticsSignError",
-    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignWarning",
-    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignHint",
-    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignInformation",
-    {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
-)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  -- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  vim.fn.sign_define(hl, { text = icon, texthl = hl})
+end
 
 
 -- Set Default Prefix.
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     -- virtual_text = {
-    --   prefix = "",
+    --   prefix = "",
     --   spacing = 10,
     -- },
     virtual_text = false;

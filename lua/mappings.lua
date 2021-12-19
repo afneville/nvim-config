@@ -57,7 +57,7 @@ utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 utils.map('', '<leader>tcl', ':set cursorline!<CR>')
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
