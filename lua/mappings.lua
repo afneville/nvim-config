@@ -49,16 +49,16 @@ utils.map('', '<leader>wk', '<C-w>k')
 utils.map('', '<leader>wl', '<C-w>l')
 
 
-utils.map('', '<leader>ff', ':Files<CR>')
-utils.map('', '<leader>bb', ':Buffers<CR>')
 
 -- gereral bindings
 utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 utils.map('', '<leader>tcl', ':set cursorline!<CR>')
+utils.map('', '<leader>ff', ':Files<CR>')
+utils.map('', '<leader>bb', ':Buffers<CR>')
 
 -- explorer
--- vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- Comments
-vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
