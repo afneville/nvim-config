@@ -2,7 +2,7 @@
 -- vim.lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, pop_opts)
 -- vim.lsp.handlers["textDocument/signatureHelp"] = lsp.with(vim.lsp.handlers.signature_help, pop_opts)
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   -- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
