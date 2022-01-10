@@ -9,7 +9,7 @@ require'bufferline'.setup{
 		right_mouse_command = "Bdelete! %d",
 		left_trunc_marker = '',
     	right_trunc_marker = '',
-		offsets = {{filetype = "NvimTree", text = "", text_align = "center"}},
+		offsets = {{filetype = "netrw", text = "", text_align = "center"}},
 		show_tab_indicators = true,
 		show_close_icon = false
 	},

@@ -57,7 +57,8 @@ utils.map('', '<leader>ff', ':Files<CR>')
 utils.map('', '<leader>bb', ':Buffers<CR>')
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', {noremap = true, silent = true})
 
 -- Comments
 -- vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
