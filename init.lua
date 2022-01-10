@@ -9,6 +9,7 @@ require("core.treesitter")
 require("core.indent-blankline")
 require("core.bufferline")
 require("core.lualine")
+require("core.gitsigns")
 
 vim.cmd("source vimscript/explorer.vim")
 
