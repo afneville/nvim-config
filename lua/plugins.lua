@@ -39,11 +39,9 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip' 
     use 'lervag/vimtex'
     use 'KeitaNakamura/tex-conceal.vim'
-    -- use 'lukas-reineke/indent-blankline.nvim'
-    use {
-        'kevinhwang91/nvim-bqf',
-        ft = 'qf'
-    }
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use 'lukas-reineke/indent-blankline.nvim'
+    use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
     use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
@@ -51,18 +49,4 @@ return require('packer').startup(function()
         require("trouble").setup {}
       end
     }
-    -- use {
-    --     'glepnir/galaxyline.nvim',
-    --     branch = 'main',
-    --     requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    -- }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     requires = 'kyazdani42/nvim-web-devicons',
-    --     config = function() require'nvim-tree'.setup {} end
-    -- }
 end)

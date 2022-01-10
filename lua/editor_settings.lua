@@ -13,7 +13,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.cursorcolumn = false
 vim.wo.cursorline = true
-vim.o.showtabline = 0
+vim.o.showtabline = 2
 vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
@@ -24,13 +24,9 @@ vim.o.clipboard = "unnamedplus"
 vim.o.sidescrolloff = 8
 vim.o.wrap = false
 vim.o.smartcase = true
-
 vim.g.vscode_style = "dark"
 vim.g.gruvbox_flat_style = "hard"
--- vim.cmd[[colorscheme vscode]]
--- vim.cmd('colorscheme gruvbox-flat')
-vim.cmd('colorscheme gruvbox')
-
+vim.cmd('colorscheme vscode')
 vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
