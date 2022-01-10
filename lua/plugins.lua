@@ -43,6 +43,10 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
     use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
