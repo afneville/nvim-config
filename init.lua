@@ -11,7 +11,7 @@ require("core.bufferline")
 require("core.lualine")
 require("core.gitsigns")
 
-vim.cmd("source vimscript/explorer.vim")
+vim.cmd("source ~/.config/nvim/vimscript/explorer.vim")
 
 require("lsp")
 require('lsp.clangd')
