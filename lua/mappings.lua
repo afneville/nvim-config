@@ -33,14 +33,12 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silen
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
-vim.api.nvim_set_keymap('', '<C-q>', ':cclose<CR>', {noremap = true, silent = true})
 
 -- insert lines above & below
 utils.map('', '<leader>ij', 'o<esc>0Dk')
 utils.map('', '<leader>ik', 'O<esc>0Dj')
 
 utils.map('', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
-utils.map('', '<leader>ld', ':TroubleToggle<CR>')
 
 -- improve window navigation
 utils.map('', '<leader>wh', '<C-w>h')
@@ -48,13 +46,9 @@ utils.map('', '<leader>wj', '<C-w>j')
 utils.map('', '<leader>wk', '<C-w>k')
 utils.map('', '<leader>wl', '<C-w>l')
 
-
-
 -- gereral bindings
 utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 utils.map('', '<leader>tcl', ':set cursorline!<CR>')
-utils.map('', '<leader>ff', ':Files<CR>')
-utils.map('', '<leader>bb', ':Buffers<CR>')
 
 -- explorer
 vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<CR>', {noremap = true, silent = true})
