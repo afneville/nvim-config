@@ -24,9 +24,6 @@ vim.o.clipboard = "unnamedplus"
 vim.o.sidescrolloff = 8
 vim.o.wrap = false
 vim.o.smartcase = true
-vim.g.vscode_style = "dark"
-vim.g.gruvbox_flat_style = "hard"
-vim.cmd('colorscheme vscode')
 vim.cmd('set t_md=')
 vim.cmd('let g:nvim_termcolors=256')
 vim.cmd('filetype plugin on')
@@ -40,5 +37,4 @@ vim.cmd('set inccommand=split')
 vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
 -- vim.cmd("let g:fzf_prefer_tmux = 1")
 vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
-
--- vim.cmd("set statusline=\\ %F%m%r%h\\ %w\\ \\ CWD:\\ %r%{getcwd()}%h\\ %=\\ \\ Line:\\ %l\\ \\ Column:\\ %c\\ ")
+vim.cmd("set statusline=\\ %F%m%r%h\\ %w\\ \\ CWD:\\ %r%{getcwd()}%h\\ %=\\ \\ Line:\\ %l\\ \\ Column:\\ %c\\ ")
