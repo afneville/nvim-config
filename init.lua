@@ -1,2 +1,3 @@
-require("editor_settings")
+require("settings")
 require("mappings")
+require("plugins")
