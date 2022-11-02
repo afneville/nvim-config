@@ -29,7 +29,7 @@ write_vim () {
         [ ${c} != "base0F" ] && printf ","
         printf "\n"
     done
-    printf "\}\n"
+    printf "\})\n"
 }
 
 process_themes() {
@@ -46,9 +46,8 @@ process_themes() {
 main() {
     mkdir -p $TMP_DIR
     mkdir -p $VIM_DIR
-    mkdir -p $LUA_DIR
-#    get_schemes
-#    cp $SCHEME_REPO_NAME/*.yaml schemes/
+    get_schemes
+    cp $SCHEME_REPO_NAME/*.yaml $TMP_DIR
     process_themes
 }
 
