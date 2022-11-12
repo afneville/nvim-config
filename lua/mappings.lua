@@ -26,9 +26,8 @@ vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 
--- use tab key to switch buffer in normal mode (using bar-bar instead)
--- vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
 
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
@@ -37,6 +36,8 @@ vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 -- insert lines above & below
 utils.map('', '<leader>ij', 'o<esc>0Dk')
 utils.map('', '<leader>ik', 'O<esc>0Dj')
+
+utils.map('', '<leader>e', ':lua require"nvim-tree".toggle(false, true)<CR>')
 
 utils.map('', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
 
@@ -49,10 +50,13 @@ utils.map('', '<leader>wl', '<C-w>l')
 -- gereral bindings
 utils.map('', '<leader>tcc', ':set cursorcolumn!<CR>')
 utils.map('', '<leader>tcl', ':set cursorline!<CR>')
+utils.map('', '<leader>ff', ':Files<CR>')
+utils.map('', '<leader>bb', ':Buffers<CR>')
+utils.map('', '<leader>ss', ':Lines<CR>')
 
 -- explorer
 -- vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', {noremap = true, silent = true})
 
 -- Comments
 -- vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
