@@ -1,19 +1,2 @@
 let g:colors_name = 'b16-apprentice'
-lua require('b16-theme').setup({
-    \ base00 = '#262626',
-    \ base01 = '#303030',
-    \ base02 = '#333333',
-    \ base03 = '#6C6C6C',
-    \ base04 = '#787878',
-    \ base05 = '#BCBCBC',
-    \ base06 = '#C9C9C9',
-    \ base07 = '#FFFFFF',
-    \ base08 = '#5F8787',
-    \ base09 = '#FF8700',
-    \ base0A = '#5F8787',
-    \ base0B = '#87AF87',
-    \ base0C = '#5F875F',
-    \ base0D = '#FFFFAF',
-    \ base0E = '#87AFD7',
-    \ base0F = '#5F87AF'
-\})
+lua require('b16-theme').setup({ base00 = '#262626', base01 = '#303030', base02 = '#333333', base03 = '#6C6C6C', base04 = '#787878', base05 = '#BCBCBC', base06 = '#C9C9C9', base07 = '#FFFFFF', base08 = '#5F8787', base09 = '#FF8700', base0A = '#5F8787', base0B = '#87AF87', base0C = '#5F875F', base0D = '#FFFFAF', base0E = '#87AFD7', base0F = '#5F87AF' })
