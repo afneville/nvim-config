@@ -22,14 +22,13 @@ get_schemes() {
 
 write_vim () {
     echo "let g:colors_name = 'b16-${2}'"
-    echo "lua require('b16-theme').setup({"
+    printf "lua require('b16-theme').setup({"
     for c in base0{0..9} base0{A..F}
     do
-        printf "    \ ${c} = '#`sed -ne 's/'"${c}"': "\(.*\)".*/\1/p' $1`'"
+        printf " ${c} = '#`sed -ne 's/'"${c}"': "\(.*\)".*/\1/p' $1`'"
         [ ${c} != "base0F" ] && printf ","
-        printf "\n"
     done
-    printf "\})\n"
+    printf " })\n"
 }
 
 process_themes() {
