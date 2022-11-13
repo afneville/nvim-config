@@ -61,3 +61,16 @@ vim.api.nvim_set_keymap('n', '<Leader>c', ':bd<CR>', {noremap = true, silent = t
 -- Comments
 -- vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+
+vim.cmd('map <ScrollWheelUp> <nop>')
+vim.cmd('map <S-ScrollWheelUp> <nop>')
+vim.cmd('map <C-ScrollWheelUp> <nop>')
+vim.cmd('map <ScrollWheelDown> <nop>')
+vim.cmd('map <S-ScrollWheelDown> <nop>')
+vim.cmd('map <C-ScrollWheelDown> <nop>')
+vim.cmd('map <ScrollWheelLeft> <nop>')
+vim.cmd('map <S-ScrollWheelLeft> <nop>')
+vim.cmd('map <C-ScrollWheelLeft> <nop>')
+vim.cmd('map <ScrollWheelRight> <nop>')
+vim.cmd('map <S-ScrollWheelRight> <nop>')
+vim.cmd('map <C-ScrollWheelRight> <nop>')
