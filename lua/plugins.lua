@@ -13,33 +13,57 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = require("config.treesitter")
+        run = ':TSUpdate'
     }
     use {
         'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons' },
-        config = require("config.nvimtree")
     }
     use {
         'junegunn/fzf.vim'
     }
     use {
         "lukas-reineke/indent-blankline.nvim",
-        config = require("config.indentblankline")
     }
     use {
-        'akinsho/bufferline.nvim', 
+        'akinsho/bufferline.nvim',
         requires = 'nvim-tree/nvim-web-devicons',
-        config = require("config.bufferline")
     }
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      config = require("config.lualine")
     }
     use {
       'lewis6991/gitsigns.nvim',
-      config = require("config.gitsigns")
+    }
+    use {
+    	"windwp/nvim-autopairs",
+    }
+    use {
+        "L3MON4D3/LuaSnip",
+        config = function()
+            require("luasnip.loaders.from_lua").lazy_load()
+            require("luasnip.loaders.from_vscode").lazy_load {}
+            require("luasnip.loaders.from_snipmate").lazy_load()
+        end,
+    }
+    use {
+        "rafamadriz/friendly-snippets"
+    }
+    use { 'neovim/nvim-lspconfig' }
+    use { 
+        "williamboman/mason.nvim",
+        requires = { "williamboman/mason-lspconfig.nvim" }
+    }
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+             "neovim/nvim-lspconfig",
+             "hrsh7th/cmp-nvim-lsp-signature-help",
+             "hrsh7th/cmp-nvim-lsp",
+             "hrsh7th/cmp-buffer",
+             "hrsh7th/cmp-path",
+             "hrsh7th/cmp-cmdline",
+        }
     }
 end)
