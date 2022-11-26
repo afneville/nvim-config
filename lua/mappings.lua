@@ -4,13 +4,6 @@ local utils = require('utils')
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
-vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
-vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
-vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
-vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.cmd("nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>")
-vim.cmd('inoremap <silent> <C-k> <cmd>lua vim.lsp.buf.hover()<CR>')
-
 -- resize with arrows
 vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +2<CR>', {silent = true})
@@ -78,3 +71,9 @@ vim.cmd('map <C-ScrollWheelRight> <nop>')
 -- vim.cmd('nnoremap : ;')
 -- vim.cmd('vnoremap ; :')
 -- vim.cmd('vnoremap : ;')
+-- vim.cmd('imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'')
+-- vim.cmd('inoremap <silent> <S-Tab> <cmd>lua require\'luasnip\'.jump(-1)<Cr>')
+-- vim.cmd('snoremap <silent> <Tab> <cmd>lua require(\'luasnip\').jump(1)<Cr>')
+-- vim.cmd('snoremap <silent> <S-Tab> <cmd>lua require(\'luasnip\').jump(-1)<Cr>')
+-- vim.cmd('imap <silent><expr> <C-E> luasnip#choice_active() ? \'<Plug>luasnip-next-choice\' : \'<C-E>\'')
+-- vim.cmd('smap <silent><expr> <C-E> luasnip#choice_active() ? \'<Plug>luasnip-next-choice\' : \'<C-E>\'')

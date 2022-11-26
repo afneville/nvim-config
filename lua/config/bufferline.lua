@@ -11,8 +11,8 @@ require('bufferline').setup{
             style = 'none'
         },
         buffer_close_icon = '',
-        -- modified_icon = '●',
-        modified_icon = '',
+        modified_icon = '●',
+        -- modified_icon = '',
         close_icon = '',
         left_trunc_marker = '',
         right_trunc_marker = '',
@@ -31,11 +31,12 @@ require('bufferline').setup{
         max_prefix_length = 15,
         truncate_names = true,
         tab_size = 18,
-        diagnostics = false,
+        diagnostics = "nvim_lsp",
         diagnostics_update_in_insert = false,
         -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            return "("..count..")"
+            local icon = level:match("error") and " " or " "
+            return icon .. "("..count..")"
         end,
         -- NOTE: this will be called a lot so don't do any heavy processing here
         custom_filter = function(buf_number, buf_numbers)
