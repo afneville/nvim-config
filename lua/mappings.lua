@@ -21,6 +21,8 @@ vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+utils.map('', '<leader>J', ':bnext<CR>')
+utils.map('', '<leader>K', ':bprevious<CR>')
 
 -- emacs style C-j/k scrolling
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')

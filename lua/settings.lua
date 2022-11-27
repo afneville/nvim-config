@@ -43,3 +43,5 @@ vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
 -- vim.cmd("let g:fzf_prefer_tmux = 1")
 vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 -- vim.cmd("set statusline=\\ %F%m%r%h\\ %w\\ \\ CWD:\\ %r%{getcwd()}%h\\ %=\\ \\ Line:\\ %l\\ \\ Column:\\ %c\\ ")
+--
+vim.cmd('autocmd InsertEnter * norm zz')
