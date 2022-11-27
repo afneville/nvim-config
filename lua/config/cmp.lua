@@ -1,4 +1,5 @@
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 local luasnip = require("luasnip")
 
 local has_words_before = function()
@@ -102,13 +103,24 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
+        -- { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'path' },
-        -- { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
-    }, {
-      { name = 'buffer' },
-    })
+        { name = 'buffer' },
+    }),
+    formatting = {
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[Latex]",
+        })
+      }),
+    },
 })
 
 -- cmp.setup.cmdline({ '/', '?' }, {

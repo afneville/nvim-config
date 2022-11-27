@@ -220,9 +220,9 @@ function M.setup(colors, config)
     hi.SpellRare  = { guifg = nil, guibg = nil, gui = 'undercurl', guisp = M.colors.base0E }
 
     hi.DiagnosticError                = { guifg = M.colors.base08, guibg = nil, gui = 'none', guisp = nil }
-    hi.DiagnosticWarn                 = { guifg = M.colors.base0E, guibg = nil, gui = 'none', guisp = nil }
-    hi.DiagnosticInfo                 = { guifg = M.colors.base05, guibg = nil, gui = 'none', guisp = nil }
-    hi.DiagnosticHint                 = { guifg = M.colors.base0C, guibg = nil, gui = 'none', guisp = nil }
+    hi.DiagnosticWarn                 = { guifg = M.colors.base0A, guibg = nil, gui = 'none', guisp = nil }
+    hi.DiagnosticInfo                 = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
+    hi.DiagnosticHint                 = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
     hi.DiagnosticUnderlineError       = { guifg = nil, guibg = nil, gui = 'undercurl', guisp = M.colors.base08 }
     hi.DiagnosticUnderlineWarning     = { guifg = nil, guibg = nil, gui = 'undercurl', guisp = M.colors.base0E }
     hi.DiagnosticUnderlineWarn        = { guifg = nil, guibg = nil, gui = 'undercurl', guisp = M.colors.base0E }
@@ -232,10 +232,14 @@ function M.setup(colors, config)
     hi.LspReferenceText                   = { guifg = nil, guibg = nil, gui = 'underline', guisp = M.colors.base04 }
     hi.LspReferenceRead                   = { guifg = nil, guibg = nil, gui = 'underline', guisp = M.colors.base04 }
     hi.LspReferenceWrite                  = { guifg = nil, guibg = nil, gui = 'underline', guisp = M.colors.base04 }
-    hi.LspDiagnosticsDefaultError         = 'DiagnosticError'
-    hi.LspDiagnosticsDefaultWarning       = 'DiagnosticWarn'
-    hi.LspDiagnosticsDefaultInformation   = 'DiagnosticInfo'
-    hi.LspDiagnosticsDefaultHint          = 'DiagnosticHint'
+    -- hi.LspDiagnosticsDefaultError         = 'DiagnosticError'
+    -- hi.LspDiagnosticsDefaultWarning       = 'DiagnosticWarn'
+    -- hi.LspDiagnosticsDefaultInformation   = 'DiagnosticInfo'
+    -- hi.LspDiagnosticsDefaultHint          = 'DiagnosticHint'
+    hi.LspDiagnosticsDefaultError         = { guifg = M.colors.base08, guibg = nil, gui = 'none', guisp = nil }
+    hi.LspDiagnosticsDefaultWarning       = { guifg = M.colors.base0A, guibg = nil, gui = 'none', guisp = nil }
+    hi.LspDiagnosticsDefaultInformation   = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
+    hi.LspDiagnosticsDefaultHint          = { guifg = M.colors.base0D, guibg = nil, gui = 'none', guisp = nil }
     hi.LspDiagnosticsUnderlineError       = 'DiagnosticUnderlineError'
     hi.LspDiagnosticsUnderlineWarning     = 'DiagnosticUnderlineWarning'
     hi.LspDiagnosticsUnderlineInformation = 'DiagnosticUnderlineInformation'
@@ -417,7 +421,7 @@ function M.setup(colors, config)
     hi.NvimInternalError = { guifg = M.colors.base00, guibg = M.colors.base08, gui = 'none', guisp = nil }
 
     hi.NormalFloat  = { guifg = M.colors.base05, guibg = M.colors.base03, gui = nil, guisp = nil }
-    hi.FloatBorder  = { guifg = M.colors.base05, guibg = M.colors.base00, gui = nil, guisp = nil }
+    hi.FloatBorder  = { guifg = M.colors.base05, guibg = M.colors.base03, gui = nil, guisp = nil }
     hi.NormalNC     = { guifg = M.colors.base05, guibg = M.colors.base00, gui = nil, guisp = nil }
     hi.TermCursor   = { guifg = M.colors.base00, guibg = M.colors.base05, gui = 'none', guisp = nil }
     hi.TermCursorNC = { guifg = M.colors.base00, guibg = M.colors.base05, gui = nil, guisp = nil }
