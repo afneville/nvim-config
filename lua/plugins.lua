@@ -67,4 +67,7 @@ return require('packer').startup(function(use)
              "hrsh7th/cmp-cmdline",
         }
     }
+    use {
+        "onsails/lspkind.nvim"
+    }
 end)
