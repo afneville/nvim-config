@@ -31,7 +31,7 @@ require('bufferline').setup{
         max_prefix_length = 15,
         truncate_names = true,
         tab_size = 18,
-        diagnostics = "nvim_lsp",
+        diagnostics = false,
         diagnostics_update_in_insert = false,
         -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
         diagnostics_indicator = function(count, level, diagnostics_dict, context)

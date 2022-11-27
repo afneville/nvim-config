@@ -50,8 +50,9 @@ return require('packer').startup(function(use)
     use {
         "rafamadriz/friendly-snippets"
     }
-    use { 'neovim/nvim-lspconfig' }
-    use { 
+    use {'neovim/nvim-lspconfig' }
+    use {"ray-x/lsp_signature.nvim", config = require("lsp_signature").setup() }
+    use {
         "williamboman/mason.nvim",
         requires = { "williamboman/mason-lspconfig.nvim" }
     }
