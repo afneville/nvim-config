@@ -145,6 +145,8 @@ function M.setup(colors, config)
     hi.CursorLineNr = { guifg = M.colors.base04, guibg = M.colors.base01, gui = nil, guisp = nil }
     hi.QuickFixLine = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.PMenu        = { guifg = nil, guibg = M.colors.base02, gui = 'none', guisp = nil }
+    hi.PMenuSbar    = { guifg = nil, guibg = M.colors.base02, gui = 'none', guisp = nil }
+    hi.PMenuThumb   = { guifg = nil, guibg = M.colors.base03, gui = 'none', guisp = nil }
     hi.PMenuSel     = { guifg = nil, guibg = M.colors.base03, gui = nil, guisp = nil }
     -- hi.TabLine      = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
     -- hi.TabLineFill  = { guifg = M.colors.base03, guibg = M.colors.base01, gui = 'none', guisp = nil }
@@ -420,8 +422,8 @@ function M.setup(colors, config)
 
     hi.NvimInternalError = { guifg = M.colors.base00, guibg = M.colors.base08, gui = 'none', guisp = nil }
 
-    hi.NormalFloat  = { guifg = M.colors.base05, guibg = M.colors.base03, gui = nil, guisp = nil }
-    hi.FloatBorder  = { guifg = M.colors.base05, guibg = M.colors.base03, gui = nil, guisp = nil }
+    hi.NormalFloat  = { guifg = nil, guibg = M.colors.base02, gui = nil, guisp = nil }
+    hi.FloatBorder  = { guifg = M.colors.base05, guibg = M.colors.base02, gui = nil, guisp = nil }
     hi.NormalNC     = { guifg = M.colors.base05, guibg = M.colors.base00, gui = nil, guisp = nil }
     hi.TermCursor   = { guifg = M.colors.base00, guibg = M.colors.base05, gui = 'none', guisp = nil }
     hi.TermCursorNC = { guifg = M.colors.base00, guibg = M.colors.base05, gui = nil, guisp = nil }
@@ -485,7 +487,7 @@ function M.setup(colors, config)
     end
 
     if M.config.cmp then
-        hi.CmpDocumentationBorder   = { guifg = M.colors.base02, guibg = M.colors.base01, gui = nil, guisp = nil }
+        hi.CmpDocumentationBorder   = { guifg = nil,             guibg = M.colors.base02, gui = nil, guisp = nil }
         hi.CmpDocumentation         = { guifg = M.colors.base05, guibg = M.colors.base02, gui = nil, guisp = nil }
         hi.CmpItemAbbr              = { guifg = M.colors.base05, guibg = M.colors.base02, gui = nil, guisp = nil }
         hi.CmpItemAbbrDeprecated    = { guifg = M.colors.base03, guibg = M.colors.base02, gui = 'strikethrough', guisp = nil }
