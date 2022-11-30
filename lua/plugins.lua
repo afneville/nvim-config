@@ -70,4 +70,5 @@ return require('packer').startup(function(use)
     use {
         "onsails/lspkind.nvim"
     }
+    use {'kevinhwang91/nvim-bqf' }
 end)
