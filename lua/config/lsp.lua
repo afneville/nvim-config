@@ -1,16 +1,7 @@
 vim.diagnostic.config({ virtual_text = false, float = { border = "single" } })
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "single" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "single" })
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "single" })
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "single" })
 
-vim.api.nvim_exec(
-    [[
-        augroup lsp_document_highlight
-          autocmd! * <buffer>
-          autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-          autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-        augroup END
-    ]],
-    false)
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -54,7 +45,7 @@ end
 -- Create a custom namespace. This will aggregate signs from all other
 -- namespaces and only show the one with the highest severity on a
 -- given line
-local ns = vim.api.nvim_create_namespace("my_namespace")
+local ns = vim.api.nvim_create_namespace("signs")
 
 -- Get a reference to the original signs handler
 local orig_signs_handler = vim.diagnostic.handlers.signs
@@ -147,6 +138,15 @@ vim.lsp.protocol.CompletionItemKind = {
     "   (TypeParameter)"
 }
 
+--   vim.api.nvim_exec(
+--   [[
+--       augroup lsp_document_highlight
+--         autocmd! * <buffer>
+--         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+--         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+--       augroup END
+--   ]],
+--   false)
 
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_flags = {
@@ -155,11 +155,12 @@ local lsp_flags = {
 }
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'sumneko_lua', 'pyright' }
+local servers = { 'clangd', 'sumneko_lua', 'pyright', 'jdtls', 'texlab'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

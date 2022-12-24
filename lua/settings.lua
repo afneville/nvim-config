@@ -19,8 +19,8 @@ vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 -- vim.o.timeoutlen = O.timeoutlen
 -- vim.o.clipboard = "unnamedplus"
 vim.o.sidescrolloff = 8
@@ -38,10 +38,10 @@ vim.cmd('set iskeyword+=-')
 vim.cmd('set iskeyword-=_')
 vim.cmd('set shortmess+=c')
 vim.cmd('set inccommand=split')
-vim.cmd('colorscheme b16-onedark')
+vim.cmd('colorscheme b16-codedark')
 vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
 -- vim.cmd("let g:fzf_prefer_tmux = 1")
 vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 -- vim.cmd("set statusline=\\ %F%m%r%h\\ %w\\ \\ CWD:\\ %r%{getcwd()}%h\\ %=\\ \\ Line:\\ %l\\ \\ Column:\\ %c\\ ")
 --
-vim.cmd('autocmd InsertEnter * norm zz')
+-- vim.cmd('autocmd InsertEnter * norm zz')
