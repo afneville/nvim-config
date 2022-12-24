@@ -1,7 +1,7 @@
 -- require('lualine').setup {
 --   options = {
 --     icons_enabled = true,
---     theme = 'gruvbox-material',
+--     -- theme = 'default',
 --     -- component_separators = { left = '', right = ''},
 --     -- section_separators = { left = '', right = ''},
 --     component_separators = { left = '', right = ''},
@@ -45,18 +45,32 @@ local lualine = require('lualine')
 local tree_extension = { sections = { lualine_a = {}, lualine_b = {}, lualine_c = {}, lualine_x = {}, lualine_y = {},
     lualine_z = {} }, filetypes = { 'NvimTree' } }
 
+-- local colors = {
+--     bg       = '#1D2026',
+--     fg       = '#ABB2BF',
+--     inactive = '#353B45',
+--     red      = '#E06C75',
+--     green    = '#98C379',
+--     blue     = '#61AFEF',
+--     yellow   = '#E5C07B',
+--     orange   = '#D19A66',
+--     magenta  = '#C678DD',
+--     cyan     = '#56B6C2',
+--     purple   = '#C678DD',
+-- }
+
 local colors = {
-    bg       = '#1D2026',
-    fg       = '#ABB2BF',
-    inactive = '#353B45',
-    red      = '#E06C75',
-    green    = '#98C379',
-    blue     = '#61AFEF',
-    yellow   = '#E5C07B',
-    orange   = '#D19A66',
-    magenta  = '#C678DD',
-    cyan     = '#56B6C2',
-    purple   = '#C678DD',
+    bg       = '#373737',
+    fg       = '#d4d4d4',
+    inactive = '#373737',
+    red      = '#D16969',
+    green    = '#579C4C',
+    yellow   = '#D9DAA2',
+    blue     = '#339CDB',
+    orange   = '#DB8E73',
+    magenta  = '#C586c0',
+    cyan     = '#85DDFF',
+    purple   = '#C586c0',
 }
 
 local conditions = {
