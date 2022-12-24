@@ -1,0 +1,4 @@
+
+#+TITLE: Neovim Configuration
+
+My configuration for the Neovim text editor (version >= 0.8). Uses Treesitter and LSP to provide completion, diagnostics, highlighting and code actions. Uses 16 colours to configure the editor highlight groups, including all plugin highlights, in one place. Consult the =lua/plugins= file for a complete list of plugins in use. 
