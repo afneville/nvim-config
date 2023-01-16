@@ -318,7 +318,6 @@ function M.setup(colors, config)
     hi.BufferLineModifiedSelected  = { guifg = M.colors.base08, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.BufferLineModifiedVisible   = { guifg = M.colors.base08, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.BufferLineOffsetSeparator   = { guifg = M.colors.base03, guibg = M.colors.base00, gui = 'none', guisp = nil }
-
     hi.BufferLineError                     = { guifg = M.colors.base08, guibg = M.colors.base01, gui = 'italic', guisp = nil }
     hi.BufferLineErrorVisisble             = { guifg = M.colors.base08, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.BufferLineErrorSelected             = { guifg = M.colors.base08, guibg = M.colors.base02, gui = 'none', guisp = nil }
@@ -331,8 +330,6 @@ function M.setup(colors, config)
     hi.BufferLineWarningDiagnostic         = { guifg = M.colors.base0A, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.BufferLineWarningDiagnosticVisisble = { guifg = M.colors.base0A, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.BufferLineWarningDiagnosticSelected = { guifg = M.colors.base0A, guibg = M.colors.base02, gui = 'none', guisp = nil }
-
-
 
     hi.NvimTreeNormal = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.NvimTreeEndOfBuffer = { guifg = M.colors.base01, guibg = M.colors.base01, gui = 'none', guisp = nil }

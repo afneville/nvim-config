@@ -1,7 +1,5 @@
 local cmp = require 'cmp'
--- local lspkind = require('lspkind')
 local luasnip = require("luasnip")
-local lspkind = require("lspkind")
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -10,9 +8,7 @@ end
 
 cmp.setup({
     enabled = function()
-        -- disable completion in comments
         local context = require 'cmp.config.context'
-        -- keep command mode completion enabled when cursor is in a comment
         if vim.api.nvim_get_mode().mode == 'c' then
             return true
         else
@@ -20,7 +16,7 @@ cmp.setup({
                 and not context.in_syntax_group("Comment")
         end
     end,
-    snippet = { -- REQUIRED - you must specify a snippet engine
+    snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
@@ -37,34 +33,10 @@ cmp.setup({
         ghost_text = true
     },
     mapping = cmp.mapping.preset.insert({
-        -- ['<C-Space>'] = cmp.mapping.confirm {
-        --       behavior = cmp.ConfirmBehavior.Insert,
-        --       select = true,
-        -- },
-        -- 
-        -- ['<Tab>'] = function(fallback)
-        --   if not cmp.select_next_item() then
-        --     if vim.bo.buftype ~= 'prompt' and has_words_before() then
-        --       cmp.complete()
-        --     else
-        --       fallback()
-        --     end
-        --   end
-        -- end,
-        -- 
-        -- ['<S-Tab>'] = function(fallback)
-        --   if not cmp.select_prev_item() then
-        --     if vim.bo.buftype ~= 'prompt' and has_words_before() then
-        --       cmp.complete()
-        --     else
-        --       fallback()
-        --     end
-        --   end
-        -- end,
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
+            elseif luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
@@ -89,22 +61,12 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        -- { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'luasnip' },
-        -- { name = 'buffer' },
+        { name = 'buffer' },
     }),
-    formatting = {
-        format = lspkind.cmp_format({
-            mode = "symbol_text",
-            menu = ({
-                nvim_lsp = "[LSP]",
-                luasnip = "[SNIP]",
-                path = "[FILE]",
-            })
-        }),
-    },
 })
 
 -- cmp.setup.cmdline({ '/', '?' }, {

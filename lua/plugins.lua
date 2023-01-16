@@ -14,35 +14,36 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'junegunn/fzf.vim' }
     use { "lukas-reineke/indent-blankline.nvim", }
-    use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons', }
+    use { 
+        'akinsho/bufferline.nvim',
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
     use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+       'nvim-lualine/lualine.nvim',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            opt = true
+        },
     }
     use { 'lewis6991/gitsigns.nvim', }
     use { "windwp/nvim-autopairs", }
     use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
     use { "rafamadriz/friendly-snippets" }
-    use {'neovim/nvim-lspconfig' }
-    use {'ray-x/lsp_signature.nvim'}
     use {
         "williamboman/mason.nvim",
         requires = { "williamboman/mason-lspconfig.nvim" }
     }
+    use { "neovim/nvim-lspconfig" }
+    use { 'kevinhwang91/nvim-bqf' }
     use {
         "hrsh7th/nvim-cmp",
         requires = {
-             "neovim/nvim-lspconfig",
-             "hrsh7th/cmp-nvim-lsp-signature-help",
-             "hrsh7th/cmp-nvim-lsp",
-             "hrsh7th/cmp-buffer",
-             "hrsh7th/cmp-path",
-             "hrsh7th/cmp-cmdline",
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'saadparwaiz1/cmp_luasnip'
         }
     }
-    use { 'saadparwaiz1/cmp_luasnip' }
-    use {
-        "onsails/lspkind.nvim"
-    }
-    use {'kevinhwang91/nvim-bqf' }
 end)
