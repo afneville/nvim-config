@@ -18,9 +18,9 @@ vim.cmd("imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next
 vim.cmd("smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'")
 
 local has_words_before = function()
-  unpack = unpack or table.unpack
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 cmp.setup({
     enabled = function()
@@ -49,20 +49,20 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'luasnip', option = {use_show_condition = false}},
+        { name = 'luasnip', option = { use_show_condition = false } },
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
     }),
     formatting = {
         format = lspkind.cmp_format({
-                mode = "symbol_text",
-                menu = ({
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[SNIP]",
-                    path = "[FILE]",
-                })
+            mode = "symbol_text",
+            menu = ({
+                nvim_lsp = "[LSP]",
+                luasnip = "[SNIP]",
+                path = "[FILE]",
             })
+        })
     }
 })
 
@@ -72,7 +72,7 @@ cmp.setup({
 --     { name = 'buffer' }
 --   }
 -- })
--- 
+--
 -- cmp.setup.cmdline(':', {
 --   mapping = cmp.mapping.preset.cmdline(),
 --   sources = cmp.config.sources({

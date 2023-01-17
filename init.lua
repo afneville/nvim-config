@@ -4,4 +4,4 @@ require("plugins")
 require("config")
 
 -- this has to be here for now
-vim.cmd('hi clear Error')
+vim.cmd("hi clear Error")
