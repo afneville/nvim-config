@@ -1,4 +1,18 @@
 
 #+TITLE: Neovim Configuration
 
-My configuration for the Neovim text editor (version >= 0.8). Uses Treesitter and LSP to provide completion, diagnostics, highlighting and code actions. Uses 16 colours to configure the editor highlight groups, including all plugin highlights, in one place. Consult the =lua/plugins= file for a complete list of plugins in use. 
+My configuration for the Neovim text editor (version =0.8+=).
+
+[[./screenshot.png]]
+
+Neovim is a lightweight, highly configurable terminal-based text editor with a built in LSP client allowing it to interface to an external language server to provide completion, diagnostics and other code actions like an IDE. This combination of features makes it a good editor for programming in many different languages and environments.
+
+I have tried to minimise the number of plugins, keeping only the most essential and widely used. In some cases I have copied lua directly from other configurations/plugins into mine, indicated where appropriate. This will not entirely prevent breaking changes and this configuration will need updating semi-regularly. See =lua/plugins.lua= for a list of installed plugins.
+
+In place of a colour scheme plugin, I am using the set of /base16/ schemes from [[https://github.com/tinted-theming/base16-schemes][this]] repository. The only theme included in this repository is my custom theme in the sytle of vs****'s default. To install a larger set of themes:
+
+#+begin_src sh
+cd utils
+./theme_generator.sh
+cp colors/* ../colors
+#+end_src
