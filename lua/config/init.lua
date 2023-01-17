@@ -1,4 +1,5 @@
 require("config.autopairs")
+require("config.comment")
 require("config.bufferline")
 require("config.gitsigns")
 require("config.indentblankline")

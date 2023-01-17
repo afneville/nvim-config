@@ -53,4 +53,5 @@ return require("packer").startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
+    use { 'numToStr/Comment.nvim' }
 end)

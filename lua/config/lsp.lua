@@ -32,7 +32,7 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+    -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
@@ -80,10 +80,19 @@ lspconfig["pyright"].setup({
     capabilities = capabilities,
     flags = lsp_flags,
 })
+lspconfig["bashls"].setup({
+    on_attach = lsp_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+})
 
 local sources = {
+    null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.shfmt.with({
+        extra_args = { "-i", "4", "-ci"}
+    }),
     null_ls.builtins.formatting.clang_format.with({
         extra_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" }
     }),
