@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'junegunn/fzf.vim' }
     use { "lukas-reineke/indent-blankline.nvim", }
-    use { 
+    use {
         'akinsho/bufferline.nvim',
         requires = 'nvim-tree/nvim-web-devicons'
     }
@@ -27,14 +27,15 @@ return require('packer').startup(function(use)
     }
     use { 'lewis6991/gitsigns.nvim', }
     use { "windwp/nvim-autopairs", }
-    use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
-    use { "rafamadriz/friendly-snippets" }
     use {
         "williamboman/mason.nvim",
         requires = { "williamboman/mason-lspconfig.nvim" }
     }
     use { "neovim/nvim-lspconfig" }
     use { 'kevinhwang91/nvim-bqf' }
+    use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
+    use { "rafamadriz/friendly-snippets" }
+    use { 'onsails/lspkind.nvim' }
     use {
         "hrsh7th/nvim-cmp",
         requires = {
@@ -46,4 +47,20 @@ return require('packer').startup(function(use)
             'saadparwaiz1/cmp_luasnip'
         }
     }
+    -- use {
+    --   'VonHeikemen/lsp-zero.nvim',
+    --   requires = {
+    --     {'neovim/nvim-lspconfig'},             -- Required
+    --     {'williamboman/mason.nvim'},           -- Optional
+    --     {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    --     {'hrsh7th/nvim-cmp'},         -- Required
+    --     {'hrsh7th/cmp-nvim-lsp'},     -- Required
+    --     {'hrsh7th/cmp-buffer'},       -- Optional
+    --     {'hrsh7th/cmp-path'},         -- Optional
+    --     {'saadparwaiz1/cmp_luasnip'}, -- Optional
+    --     {'hrsh7th/cmp-nvim-lua'},     -- Optional
+    --     {'L3MON4D3/LuaSnip'},             -- Required
+    --     {'rafamadriz/friendly-snippets'}, -- Optional
+    --   }
+    -- }
 end)

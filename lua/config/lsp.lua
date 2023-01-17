@@ -61,22 +61,22 @@ lspconfig['clangd'].setup {
     capabilities = capabilities,
     flags = lsp_flags
 }
-lspconfig['pyright'].setup {
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags
-}
-lspconfig['sumneko_lua'].setup {
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = {
-                    'vim'
-                }
-            }
-        }
-    }
-}
+-- lspconfig['pyright'].setup {
+--     on_attach = lsp_attach,
+--     capabilities = capabilities,
+--     flags = lsp_flags
+-- }
+-- lspconfig['sumneko_lua'].setup {
+--     on_attach = lsp_attach,
+--     capabilities = capabilities,
+--     flags = lsp_flags,
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = {
+--                     'vim'
+--                 }
+--             }
+--         }
+--     }
+-- }
