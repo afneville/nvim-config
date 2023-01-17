@@ -5,14 +5,14 @@ require'nvim-treesitter.configs'.setup {
     },
     incremental_selection = {
         enable = true,
-        keymaps = {
-          init_selection = "<c-j>", -- set to `false` to disable one of the mappings
-          node_incremental = "<c-j>",
-          -- scope_incremental = "grc",
-          node_decremental = "<c-k>",
-        },
+        -- keymaps = {
+        --   init_selection = "<c-j>", -- set to `false` to disable one of the mappings
+        --   node_incremental = "<c-j>",
+        --   -- scope_incremental = "grc",
+        --   node_decremental = "<c-k>",
+        -- },
     },
-    indent = {
-      enable = true
-    }
+    -- indent = {
+    --   enable = true
+    -- }
 }
