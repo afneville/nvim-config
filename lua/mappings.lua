@@ -14,6 +14,7 @@ vim.api.nvim_set_keymap("n", "<S-TAB>", ":bprevious<CR>", { noremap = true, sile
 vim.api.nvim_set_keymap("n", "<C-q>", ":cclose<CR>", { silent = true })
 utils.map("", "<leader>J", ":bnext<CR>")
 utils.map("", "<leader>K", ":bprevious<CR>")
+utils.map("", "<leader>bf", ":FormatLock<CR>")
 vim.cmd('inoremap <expr> <c-j> ("\\<C-n>")')
 vim.cmd('inoremap <expr> <c-k> ("\\<C-p>")')
 vim.cmd("autocmd FileType qf map <C-k> k")
