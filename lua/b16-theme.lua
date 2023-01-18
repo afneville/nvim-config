@@ -331,8 +331,11 @@ function M.setup(colors, config)
     hi.BufferLineWarningDiagnosticVisisble = { guifg = M.colors.base0A, guibg = M.colors.base02, gui = 'none', guisp = nil }
     hi.BufferLineWarningDiagnosticSelected = { guifg = M.colors.base0A, guibg = M.colors.base02, gui = 'none', guisp = nil }
 
+    -- hi.mkdLt = { guifg = M.colors.base08, guibg = M.colors.base08, gui = 'none', guisp = nil }
+    -- hi.mkdGt = { guifg = nil, guibg = nil, gui = 'none', guisp = nil }
     hi.NvimTreeNormal = { guifg = nil, guibg = M.colors.base01, gui = 'none', guisp = nil }
     hi.NvimTreeEndOfBuffer = { guifg = M.colors.base01, guibg = M.colors.base01, gui = 'none', guisp = nil }
+
 
     if vim.fn.has('nvim-0.8.0') then
         hi['@comment'] = 'TSComment'
