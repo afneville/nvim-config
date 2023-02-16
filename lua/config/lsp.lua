@@ -113,6 +113,31 @@ for _, lsp in ipairs(servers) do
     })
 end
 
+lspconfig["jdtls"].setup({
+    on_attach = lsp_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+    -- root_dir = {
+    --     -- Single-module projects
+    --     {
+    --         ".git/",
+    --         "build.xml", -- Ant
+    --         "pom.xml", -- Maven
+    --         "settings.gradle", -- Gradle
+    --         "settings.gradle.kts", -- Gradle
+    --     },
+    --     -- Multi-module projects
+    --     { "build.gradle", "build.gradle.kts" },
+    -- } or vim.fn.getcwd(),
+    root_dir = function(fname)
+        return require("lspconfig").util.root_pattern(
+            "pom.xml",
+            "gradle.build",
+            ".git"
+        )(fname) or vim.fn.getcwd()
+    end,
+})
+
 --[[ local null_ls = require("null-ls")
 local sources = {
     null_ls.builtins.formatting.shfmt.with({

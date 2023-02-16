@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
-SCHEME_REPO_NAME="base16-schemes"
-SCHEME_REPO_HTTPS="https://github.com/tinted-theming/base16-schemes.git"
+SCHEME_REPO_NAME="b16-themes"
+SCHEME_REPO_HTTPS="https://github.com/alexanderneville/${SCHEME_REPO_NAME}.git"
 WORKING_DIR="$(dirname $(realpath $0))"
 LOCAL_REPO="${WORKING_DIR}/${SCHEME_REPO_NAME}"
-TMP_DIR="${WORKING_DIR}/schemes"
-OUT_DIR="${WORKING_DIR}/colors"
+OUT_DIR="${WORKING_DIR}/colors" # American English!
 
 get_remote_schemes() {
-    echo "$LOCAL_REPO"
     if [ ! -d "$LOCAL_REPO" ]; then
         git clone "$SCHEME_REPO_HTTPS" &
     else
@@ -18,6 +16,7 @@ get_remote_schemes() {
     wait
     echo "Done."
 }
+
 write_vim() {
     echo "let g:colors_name = 'b16-${2}'"
     printf "lua require('b16-theme').setup({"
@@ -30,7 +29,7 @@ write_vim() {
 
 process_themes() {
     echo "Writing themes ..."
-    for f in $LOCAL_REPO/*.yaml; do
+    for f in $LOCAL_REPO/themes/*.yaml; do
         fname=$(echo $(basename $f) | cut -f 1 -d ".")
         colours=()
         for c in base0{0..9} base0{A..F}; do
@@ -46,5 +45,6 @@ main() {
     get_remote_schemes
     mkdir -p $OUT_DIR
     process_themes
+    # rm -rf $LOCAL_REPO
 }
 main

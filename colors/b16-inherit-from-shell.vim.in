@@ -1,0 +1,2 @@
+let g:colors_name = 'b16-inherit-from-shell'
+lua require('b16-theme').setup({ base00 = '#%col0%', base01 = '#%col1%', base02 = '#%col2%', base03 = '#%col3%', base04 = '#%col4%', base05 = '#%col5%', base06 = '#%col6%', base07 = '#%col7%', base08 = '#%col8%', base09 = '#%col9%', base0A = '#%col10%', base0B = '#%col11%', base0C = '#%col12%', base0D = '#%col13%', base0E = '#%col14%', base0F = '#%col15%' })
