@@ -1,3 +1,4 @@
+--general
 require("config.autopairs")
 require("config.colorizer_config")
 require("config.comment")
@@ -9,6 +10,7 @@ require("config.treesitter")
 require("config.bqf")
 require("config.formatter_config")
 
+-- lsp stuff
 require("config.mason")
 require("config.lsp")
 require("config.completion")

@@ -24,6 +24,7 @@ vim.keymap.set("n", "<leader>tcl", ":set cursorline!<CR>")
 vim.keymap.set("n", "<leader>ff", ":Files<CR>")
 vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
 vim.keymap.set("n", "<leader>ss", ":Lines<CR>")
+vim.keymap.set("n", "<leader>tt", ":Colors<CR>")
 vim.keymap.set("n", "<Leader>c", ":bd<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

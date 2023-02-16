@@ -1,49 +1,15 @@
--- require('lualine').setup {
---   options = {
---     icons_enabled = true,
---     -- theme = 'default',
---     -- component_separators = { left = '', right = ''},
---     -- section_separators = { left = '', right = ''},
---     component_separators = { left = '', right = ''},
---     section_separators = { left = '', right = ''},
---     disabled_filetypes = {
---         'NvimTree'
---     },
---     ignore_focus = {},
---     always_divide_middle = true,
---     globalstatus = false,
---     refresh = {
---       statusline = 1000,
---       tabline = 1000,
---       winbar = 1000,
---     }
---   },
---   sections = {
---     lualine_a = {'mode'},
---     lualine_b = {'branch', 'diff', 'diagnostics'},
---     lualine_c = {'filename'},
---     lualine_x = {},
---     lualine_y = {'progress'},
---     lualine_z = {'location'}
---   },
---   inactive_sections = {
---     lualine_a = {},
---     lualine_b = {},
---     lualine_c = {'filename'},
---     lualine_x = {},
---     lualine_y = {'progress'},
---     lualine_z = {'location'}
---   },
---   tabline = {},
---   winbar = {},
---   inactive_winbar = {},
---   extensions = {}
--- }
-
-local lualine = require('lualine')
-
-local tree_extension = { sections = { lualine_a = {}, lualine_b = {}, lualine_c = {}, lualine_x = {}, lualine_y = {},
-    lualine_z = {} }, filetypes = { 'NvimTree' } }
+local lualine = require("lualine")
+local tree_extension = {
+    sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+    },
+    filetypes = { "NvimTree" },
+}
 
 -- local colors = {
 --     bg       = '#1D2026',
@@ -59,30 +25,44 @@ local tree_extension = { sections = { lualine_a = {}, lualine_b = {}, lualine_c 
 --     purple   = '#C678DD',
 -- }
 
+-- local colors = {
+--     bg       = '#373737',
+--     fg       = '#d4d4d4',
+--     inactive = '#373737',
+--     red      = '#D16969',
+--     green    = '#579C4C',
+--     yellow   = '#D9DAA2',
+--     blue     = '#339CDB',
+--     orange   = '#DB8E73',
+--     magenta  = '#C586c0',
+--     cyan     = '#85DDFF',
+--     purple   = '#C586c0',
+-- }
+
 local colors = {
-    bg       = '#373737',
-    fg       = '#d4d4d4',
-    inactive = '#373737',
-    red      = '#D16969',
-    green    = '#579C4C',
-    yellow   = '#D9DAA2',
-    blue     = '#339CDB',
-    orange   = '#DB8E73',
-    magenta  = '#C586c0',
-    cyan     = '#85DDFF',
-    purple   = '#C586c0',
+    bg = Colors.base02,
+    fg = Colors.base05,
+    inactive = Colors.base01,
+    red = Colors.base08,
+    green = Colors.base0B,
+    yellow = Colors.base0A,
+    blue = Colors.base0D,
+    orange = Colors.base09,
+    magenta = Colors.base0E,
+    cyan = Colors.base0C,
+    purple = Colors.base0E,
 }
 
 local conditions = {
     buffer_not_empty = function()
-        return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+        return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
     end,
     hide_in_width = function()
         return vim.fn.winwidth(0) > 80
     end,
     check_git_workspace = function()
-        local filepath = vim.fn.expand('%:p:h')
-        local gitdir = vim.fn.finddir('.git', filepath .. ';')
+        local filepath = vim.fn.expand("%:p:h")
+        local gitdir = vim.fn.finddir(".git", filepath .. ";")
         return gitdir and #gitdir > 0 and #gitdir < #filepath
     end,
 }
@@ -93,11 +73,11 @@ local config = {
             normal = { c = { fg = colors.fg, bg = colors.bg } },
             inactive = { c = { fg = colors.fg, bg = colors.bg } },
         },
-        section_separators = { '', '' },
-        component_separators = { '', '' }
+        section_separators = { "", "" },
+        component_separators = { "", "" },
     },
     extensions = {
-        tree_extension
+        tree_extension,
     },
     sections = {
         lualine_a = {},
@@ -105,7 +85,7 @@ local config = {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
     },
     inactive_sections = {
         lualine_a = {},
@@ -113,8 +93,8 @@ local config = {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
-    }
+        lualine_z = {},
+    },
 }
 
 local function ins_left(component)
@@ -129,7 +109,7 @@ end
 
 ins_left({
     function()
-        return '▊'
+        return "▊"
     end,
     color = { fg = colors.blue }, -- Sets highlighting of component
     padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -143,13 +123,13 @@ ins_left({
             n = colors.green,
             i = colors.yellow,
             v = colors.orange,
-            [''] = colors.orange,
+            [""] = colors.orange,
             V = colors.orange,
             c = colors.yellow,
             no = colors.red,
             s = colors.orange,
             S = colors.orange,
-            [''] = colors.orange,
+            [""] = colors.orange,
             ic = colors.yellow,
             R = colors.violet,
             Rv = colors.violet,
@@ -157,14 +137,19 @@ ins_left({
             ce = colors.red,
             r = colors.cyan,
             rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
+            ["r?"] = colors.cyan,
+            ["!"] = colors.red,
             t = colors.red,
         }
-        vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-        return ''
+        vim.api.nvim_command(
+            "hi! LualineMode guifg="
+                .. mode_color[vim.fn.mode()]
+                .. " guibg="
+                .. colors.bg
+        )
+        return ""
     end,
-    color = 'LualineMode',
+    color = "LualineMode",
     padding = { right = 1 },
 })
 
@@ -175,14 +160,13 @@ ins_left({
 -- })
 
 ins_left({
-    'filename',
+    "filename",
     cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta },
 })
 
-ins_left({ 'progress' })
-ins_left({ 'location' })
-
+ins_left({ "progress" })
+ins_left({ "location" })
 
 -- -- Insert mid section. You can make any number of sections in neovim :)
 -- -- for lualine it's any number greater then 2
@@ -195,8 +179,8 @@ ins_left({ 'location' })
 ins_left({
     -- Lsp server name .
     function()
-        local msg = '...'
-        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+        local msg = "..."
+        local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
         local clients = vim.lsp.get_active_clients()
         if next(clients) == nil then
             return msg
@@ -209,14 +193,14 @@ ins_left({
         end
         return msg
     end,
-    icon = ' LSP:',
-    color = { fg = colors.fg, gui = 'bold' },
+    icon = " LSP:",
+    color = { fg = colors.fg, gui = "bold" },
 })
 
 ins_left({
-    'diagnostics',
-    sources = { 'nvim_diagnostic' },
-    symbols = { error = ' ', warn = ' ', hint = ' ', info = ' ' },
+    "diagnostics",
+    sources = { "nvim_diagnostic" },
+    symbols = { error = " ", warn = " ", hint = " ", info = " " },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
@@ -240,8 +224,8 @@ ins_left({
 -- })
 
 ins_right({
-    'diff',
-    symbols = { added = ' ', modified = ' ', removed = ' ' },
+    "diff",
+    symbols = { added = " ", modified = " ", removed = " " },
     diff_color = {
         added = { fg = colors.green },
         modified = { fg = colors.orange },
@@ -251,14 +235,14 @@ ins_right({
 })
 
 ins_right({
-    'branch',
-    icon = '',
-    color = { fg = colors.magenta, gui = 'bold' },
+    "branch",
+    icon = "",
+    color = { fg = colors.magenta, gui = "bold" },
 })
 
 ins_right({
     function()
-        return '▊'
+        return "▊"
     end,
     color = { fg = colors.blue },
     padding = { left = 1 },
