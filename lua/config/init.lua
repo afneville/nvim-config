@@ -1,16 +1,21 @@
---general
-require("config.autopairs")
-require("config.colorizer_config")
-require("config.comment")
-require("config.bufferline")
-require("config.gitsigns")
-require("config.indentblankline")
-require("config.lualine")
-require("config.treesitter")
-require("config.bqf")
-require("config.formatter_config")
+-- UI components
+-- require("config.bufferline")
+-- require("config.lualine")
 
--- lsp stuff
-require("config.mason")
-require("config.lsp")
-require("config.completion")
+-- programming stuff
+-- require("config.bqf")
+-- require("config.mason")
+-- require("config.lsp")
+-- require("config.completion")
+-- require("config.autopairs")
+
+-- general plugins
+-- thes plugins do not intefere with each other
+require("config.catppuccin_theme")
+require("config.treesitter")
+require("config.telescope")
+require("config.indentblankline")
+require("config.gitsigns")
+require("config.formatter_config")
+require("colorizer").setup()
+require("Comment").setup()

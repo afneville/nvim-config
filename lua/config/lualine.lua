@@ -39,19 +39,33 @@ local tree_extension = {
 --     purple   = '#C586c0',
 -- }
 
-local colors = {
-    bg = Colors.base02,
-    fg = Colors.base05,
-    inactive = Colors.base01,
-    red = Colors.base08,
-    green = Colors.base0B,
-    yellow = Colors.base0A,
-    blue = Colors.base0D,
-    orange = Colors.base09,
-    magenta = Colors.base0E,
-    cyan = Colors.base0C,
-    purple = Colors.base0E,
-}
+-- local colors = {
+--     bg       = '#373737',
+--     fg       = '#d4d4d4',
+--     inactive = '#373737',
+--     red      = '#D16969',
+--     green    = '#579C4C',
+--     yellow   = '#D9DAA2',
+--     blue     = '#339CDB',
+--     orange   = '#DB8E73',
+--     magenta  = '#C586c0',
+--     cyan     = '#85DDFF',
+--     purple   = '#C586c0',
+-- }
+--
+-- local colors = {
+--     bg = Colors.base02,
+--     fg = Colors.base05,
+--     inactive = Colors.base01,
+--     red = Colors.base08,
+--     green = Colors.base0B,
+--     yellow = Colors.base0A,
+--     blue = Colors.base0D,
+--     orange = Colors.base09,
+--     magenta = Colors.base0E,
+--     cyan = Colors.base0C,
+--     purple = Colors.base0E,
+-- }
 
 local conditions = {
     buffer_not_empty = function()
@@ -249,3 +263,51 @@ ins_right({
 })
 
 lualine.setup(config)
+
+
+
+
+
+-- require('lualine').setup {
+--   options = {
+--     icons_enabled = true,
+--     theme = 'catppuccin',
+--     -- component_separators = { left = '', right = ''},
+--     -- component_separators = { left = '', right = ''},
+--     component_separators = { left = '', right = ''},
+--     -- section_separators = { left = '', right = ''},
+--     section_separators = { left = '', right = ''},
+--     disabled_filetypes = {
+--       statusline = {},
+--       winbar = {},
+--     },
+--     ignore_focus = {},
+--     always_divide_middle = true,
+--     globalstatus = false,
+--     refresh = {
+--       statusline = 1000,
+--       tabline = 1000,
+--       winbar = 1000,
+--     }
+--   },
+--   sections = {
+--     lualine_a = {'mode'},
+--     lualine_b = {'branch', 'diff', 'diagnostics'},
+--     lualine_c = {'filename'},
+--     lualine_x = {'filetype'},
+--     lualine_y = {'progress'},
+--     lualine_z = {'location'}
+--   },
+--   inactive_sections = {
+--     lualine_a = {},
+--     lualine_b = {},
+--     lualine_c = {'filename'},
+--     lualine_x = {'location'},
+--     lualine_y = {},
+--     lualine_z = {}
+--   },
+--   tabline = {},
+--   winbar = {},
+--   inactive_winbar = {},
+--   extensions = {}
+-- }

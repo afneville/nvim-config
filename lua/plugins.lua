@@ -13,14 +13,27 @@ vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
     use({ "wbthomason/packer.nvim" })
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use("nvim-treesitter/nvim-treesitter-context")
-    use({ "junegunn/fzf.vim" })
-    use({ "lukas-reineke/indent-blankline.nvim" })
-    use({ "nvim-tree/nvim-web-devicons" })
+
+    -- ui
     use({ "akinsho/bufferline.nvim" })
     use({ "nvim-lualine/lualine.nvim" })
+
+    -- general plugins
+    use({
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.1",
+        requires = { { "nvim-lua/plenary.nvim" } },
+    })
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({ "lukas-reineke/indent-blankline.nvim" })
+    use({ "nvim-tree/nvim-web-devicons" })
     use({ "lewis6991/gitsigns.nvim" })
+    use({ "numToStr/Comment.nvim" })
+    use({ "norcalli/nvim-colorizer.lua" })
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "mhartington/formatter.nvim" })
+
+    -- lsp / completion
     use({ "windwp/nvim-autopairs" })
     use({ "williamboman/mason.nvim" })
     use({ "williamboman/mason-lspconfig.nvim" })
@@ -28,8 +41,6 @@ return require("packer").startup(function(use)
     use({ "kevinhwang91/nvim-bqf" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
     use({ "rafamadriz/friendly-snippets" })
-    use({ "onsails/lspkind.nvim" })
-    use({ "windwp/nvim-ts-autotag" })
     use({
         "hrsh7th/nvim-cmp",
         requires = {
@@ -47,9 +58,5 @@ return require("packer").startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
-    use({ "numToStr/Comment.nvim" })
-    use({ "norcalli/nvim-colorizer.lua" })
-    use({ "catppuccin/nvim", as = "catppuccin" })
     use({ "glepnir/lspsaga.nvim" })
-    use({ "mhartington/formatter.nvim" })
 end)
