@@ -9,13 +9,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute("packadd packer.nvim")
 end
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
-vim.cmd([[packadd packer.nvim]])
+vim.cmd("packadd packer.nvim")
 
 return require("packer").startup(function(use)
     use({ "wbthomason/packer.nvim" })
 
     -- ui
-    use({ "akinsho/bufferline.nvim" })
+    -- use({ "akinsho/bufferline.nvim" })
+    use({ "romgrk/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" })
     use({ "nvim-lualine/lualine.nvim" })
 
     -- general plugins

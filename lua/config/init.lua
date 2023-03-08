@@ -1,6 +1,6 @@
 -- UI components
 -- require("config.bufferline")
--- require("config.lualine")
+require("config.lualine")
 
 -- programming stuff
 -- require("config.bqf")
@@ -17,5 +17,6 @@ require("config.telescope")
 require("config.indentblankline")
 require("config.gitsigns")
 require("config.formatter_config")
+require("config.barbar")
 require("colorizer").setup()
 require("Comment").setup()

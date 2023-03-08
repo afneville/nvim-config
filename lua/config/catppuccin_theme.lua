@@ -29,14 +29,42 @@ require("catppuccin").setup({
         operators = {},
     },
     color_overrides = {},
-    custom_highlights = {},
+    highlight_overrides = {
+        all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
+            return {
+                TabLineFill = { bg = colors.surface0, fg = colors.overlay0 },
+                TabLineSel = { bg = colors.surface0 },
+                BufferVisible = { bg = colors.surface1 },
+                BufferInactive = { bg = colors.surface1 },
+                BufferCurrent = { bg = colors.surface1 },
+                BufferCurrentIndex = { bg = colors.surface1 },
+                BufferCurrentMod = { bg = colors.surface1 },
+                BufferCurrentSign = { bg = colors.surface1, fg = colors.overlay0 },
+                BufferCurrentTarget = { bg = colors.surface1 },
+                BufferVisible = { bg = colors.surface1 },
+                BufferVisibleIndex = { bg = colors.surface1 },
+                BufferVisibleMod = { bg = colors.surface1 },
+                BufferVisibleSign = { bg = colors.surface1, fg = colors.overlay0 },
+                BufferVisibleTarget = { bg = colors.surface1 },
+                BufferInactive = { bg = colors.surface0, style = { "italic" } },
+                BufferInactiveIndex = { bg = colors.surface0 },
+                BufferInactiveMod = { bg = colors.surface0 },
+                BufferInactiveSign = { bg = colors.surface0, fg = colors.overlay0 },
+                BufferInactiveTarget = { bg = colors.surface0 },
+            }
+        end, -- Same for each flavour
+        latte = function(latte) end,
+        frappe = function(frappe) end,
+        macchiato = function(macchiato) end,
+        mocha = function(mocha) end,
+    },
+    -- custom_highlights = {},
     integrations = {
         cmp = true,
         gitsigns = true,
         nvimtree = false,
-        telescope = false,
-        notify = false,
-        mini = false,
+        telescope = true,
+        barbar = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
