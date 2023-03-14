@@ -27,18 +27,29 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.cmd("set t_md=")
 vim.cmd("filetype plugin on")
-vim.cmd("set mouse=nicr")
+vim.cmd("set mouse=")
 vim.cmd("set ts=4")
 vim.cmd("set sw=4")
 vim.cmd("set expandtab")
 vim.cmd("autocmd Filetype javascript setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype html setlocal ts=2 sw=2 expandtab")
+
 vim.cmd("autocmd Filetype css setlocal ts=2 sw=2 expandtab")
 vim.cmd("set whichwrap=<,>,[,]")
 vim.cmd("set iskeyword+=-")
 -- vim.cmd("set iskeyword-=_")
 vim.cmd("set shortmess+=c")
 vim.cmd("set inccommand=split")
--- vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
--- vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
+vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
+vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 vim.cmd("autocmd InsertEnter * norm zz")
+vim.cmd("autocmd! FileType fzf setlocal nonumber norelativenumber")
+vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
+
+Options = {
+    error = " ",
+    warn = " ",
+    info = " ",
+    -- hint = "󰍉 ",
+    hint = "󰌶 ",
+}

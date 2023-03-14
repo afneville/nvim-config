@@ -1,22 +1,22 @@
 -- UI components
 -- require("config.bufferline")
 require("config.lualine")
+require("config.barbar")
 
 -- programming stuff
--- require("config.bqf")
--- require("config.mason")
--- require("config.lsp")
--- require("config.completion")
--- require("config.autopairs")
+require("config.bqf")
+require("config.trouble_config")
+require("config.mason")
+require("config.lsp")
+require("config.cmp")
+require("config.autopairs")
 
 -- general plugins
 -- thes plugins do not intefere with each other
 require("config.catppuccin_theme")
 require("config.treesitter")
-require("config.telescope")
 require("config.indentblankline")
 require("config.gitsigns")
-require("config.formatter_config")
-require("config.barbar")
-require("colorizer").setup()
+-- require("config.formatter_config")
+-- require("colorizer").setup()
 require("Comment").setup()

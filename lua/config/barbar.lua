@@ -27,10 +27,10 @@ require("bufferline").setup({
         { enabled = false }, -- HINT
 
         -- OR `vim.diagnostic.severity`
-        [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+        [vim.diagnostic.severity.ERROR] = { enabled = false, icon = "ﬀ" },
         [vim.diagnostic.severity.WARN] = { enabled = false },
         [vim.diagnostic.severity.INFO] = { enabled = false },
-        [vim.diagnostic.severity.HINT] = { enabled = true },
+        [vim.diagnostic.severity.HINT] = { enabled = false },
     },
 
     -- Excludes buffers from the tabline

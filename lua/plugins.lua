@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
         tag = "0.1.1",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
+    use({ "junegunn/fzf.vim" })
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "nvim-tree/nvim-web-devicons" })
@@ -40,6 +41,7 @@ return require("packer").startup(function(use)
     use({ "williamboman/mason-lspconfig.nvim" })
     use({ "neovim/nvim-lspconfig" })
     use({ "kevinhwang91/nvim-bqf" })
+    use({ "folke/trouble.nvim" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
     use({ "rafamadriz/friendly-snippets" })
     use({
@@ -51,6 +53,7 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
+            "onsails/lspkind.nvim"
         },
     })
     use({

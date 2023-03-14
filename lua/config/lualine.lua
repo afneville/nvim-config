@@ -1,5 +1,6 @@
 local theme_palette = require("catppuccin.palettes").get_palette("mocha")
 local custom_theme = require("lualine.themes.catppuccin")
+custom_theme.normal.a.bg = theme_palette["lavender"]
 custom_theme.normal.c.bg = theme_palette["surface0"]
 custom_theme.inactive.c.bg = theme_palette["surface0"]
 custom_theme.inactive.b.bg = theme_palette["surface1"]
@@ -45,10 +46,10 @@ require("lualine").setup({
             {
                 "diagnostics",
                 symbols = {
-                    error = " ",
-                    warn = " ",
-                    info = " ",
-                    hint = "󰍉 ",
+                    error = Options.error,
+                    warn = Options.warn,
+                    info = Options.info,
+                    hint = Options.hint,
                 },
                 always_visible = true,
             },

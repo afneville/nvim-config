@@ -9,6 +9,7 @@ vim.cmd('inoremap <expr> <c-j> ("\\<C-n>")')
 vim.cmd('inoremap <expr> <c-k> ("\\<C-p>")')
 vim.cmd("autocmd FileType qf map <C-k> k")
 vim.cmd("autocmd FileType qf map <C-j> j")
+vim.cmd("autocmd FileType qf map q :q<CR>")
 
 -- disable scrolling
 vim.cmd("map <ScrollWheelUp> <nop>")
@@ -31,10 +32,11 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 
 -- navigation
-vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
-vim.keymap.set("n", "<Leader>c", ":bd<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", { silent = true })
+vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", { silent = true })
+vim.keymap.set("n", "<leader>c", ":BufferClose<CR>")
+vim.keymap.set("n", "<leader>t", ":BufferPick<CR>")
+vim.keymap.set("n", "<leader>C", ":BufferCloseAllButCurrent<CR>")
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
 vim.keymap.set("n", "<leader>wj", "<C-w>j")
 vim.keymap.set("n", "<leader>wk", "<C-w>k")
@@ -45,8 +47,8 @@ vim.keymap.set("n", "<leader>ij", "o<esc>0Dk")
 vim.keymap.set("n", "<leader>ik", "O<esc>0Dj")
 
 -- toggle cursore line and column
-vim.keymap.set("n", "<leader>tcc", ":set cursorcolumn!<CR>")
-vim.keymap.set("n", "<leader>tcl", ":set cursorline!<CR>")
+-- vim.keymap.set("n", "<leader>tcc", ":set cursorcolumn!<CR>")
+-- vim.keymap.set("n", "<leader>tcl", ":set cursorline!<CR>")
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
@@ -73,6 +75,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- extension keymaps
-vim.keymap.set("n", "<leader>bf", ":FormatLock<CR>")
-vim.keymap.set("n", "<leader>ff", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({}))<cr>")
-vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
+-- vim.keymap.set("n", "<leader>bf", ":FormatLock<CR>")
+-- vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+-- vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>ff", ":Files<CR>")
+vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
+vim.keymap.set("n", "<leader>d", ":TroubleToggle<CR>")

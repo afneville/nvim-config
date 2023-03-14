@@ -5,6 +5,10 @@ formatters.prettier = function()
     return {
         exe = "prettier",
         args = {
+            "--bracket-same-line",
+            "--no-bracket-spacing",
+            "--html-whitespace-sensitivity",
+            "ignore",
             "--stdin-filepath",
             util.escape_path(util.get_current_buffer_file_path()),
         },

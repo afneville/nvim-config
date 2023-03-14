@@ -6,5 +6,4 @@ require('bqf').setup({
         open = '',
         openc = '<CR>'
     }
-
 })
