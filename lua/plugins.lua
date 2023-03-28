@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
-            "onsails/lspkind.nvim"
+            "onsails/lspkind.nvim",
         },
     })
     use({

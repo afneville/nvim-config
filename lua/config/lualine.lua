@@ -1,4 +1,5 @@
 local theme_palette = require("catppuccin.palettes").get_palette("mocha")
+-- local theme_palette = require("catppuccin.palettes").get_palette("latte")
 local custom_theme = require("lualine.themes.catppuccin")
 custom_theme.normal.a.bg = theme_palette["lavender"]
 custom_theme.normal.c.bg = theme_palette["surface0"]

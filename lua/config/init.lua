@@ -13,10 +13,9 @@ require("config.autopairs")
 
 -- general plugins
 -- thes plugins do not intefere with each other
+require("luasnip.loaders.from_vscode").lazy_load()
 require("config.catppuccin_theme")
 require("config.treesitter")
 require("config.indentblankline")
 require("config.gitsigns")
--- require("config.formatter_config")
--- require("colorizer").setup()
 require("Comment").setup()
