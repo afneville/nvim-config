@@ -45,6 +45,7 @@ vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 vim.cmd("autocmd InsertEnter * norm zz")
 vim.cmd("autocmd! FileType fzf setlocal nonumber norelativenumber")
 vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
+vim.cmd("let g:netrw_banner = 0")
 
 Options = {
     error = " ",

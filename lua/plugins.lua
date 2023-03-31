@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
         tag = "0.1.1",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
+    use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "lukas-reineke/indent-blankline.nvim" })
@@ -33,6 +34,9 @@ return require("packer").startup(function(use)
     use({ "numToStr/Comment.nvim" })
     use({ "norcalli/nvim-colorizer.lua" })
     use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "ellisonleao/gruvbox.nvim" })
+    use("navarasu/onedark.nvim")
+    use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
     use({ "mhartington/formatter.nvim" })
 
     -- lsp / completion

@@ -14,8 +14,3 @@ cd utils
 ./install_themes.sh
 cp colors/* ../colors
 #+end_src
-
-* Plugins
-
-- nvim-lspconfig
-- nvim-cmp

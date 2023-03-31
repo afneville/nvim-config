@@ -1,5 +1,4 @@
 local theme_palette = require("catppuccin.palettes").get_palette("mocha")
--- local theme_palette = require("catppuccin.palettes").get_palette("latte")
 local custom_theme = require("lualine.themes.catppuccin")
 custom_theme.normal.a.bg = theme_palette["lavender"]
 custom_theme.normal.c.bg = theme_palette["surface0"]
@@ -97,7 +96,8 @@ require("lualine").setup({
     },
     inactive_sections = {
         lualine_a = {},
-        lualine_b = {
+        lualine_b = {},
+        lualine_c = {
             {
                 "filename",
                 path = 1,
@@ -109,9 +109,8 @@ require("lualine").setup({
                 },
             },
         },
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = { "filetype", "progress", "location" },
+        lualine_x = { "filetype", "progress", "location" },
+        lualine_y = {},
         lualine_z = {},
     },
     tabline = {},
