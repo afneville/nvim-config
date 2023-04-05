@@ -20,3 +20,6 @@ require("config.gitsigns")
 require("Comment").setup()
 require("config.colorizer_config")
 require("config.telescope")
+
+-- themes
+require("config.catppuccin_theme")

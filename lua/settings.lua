@@ -51,6 +51,5 @@ Options = {
     error = " ",
     warn = " ",
     info = " ",
-    -- hint = "󰍉 ",
     hint = "󰌶 ",
 }

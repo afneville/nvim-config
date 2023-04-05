@@ -84,6 +84,8 @@ vim.keymap.set("n", "<leader>d", ":TroubleToggle<CR>")
 vim.keymap.set("n", "<leader>e", ":Ex<CR>")
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
+vim.keymap.set("n", "<leader>lm", ":Mason<CR>")
 
 vim.cmd("inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>")
 vim.cmd("inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>")
