@@ -61,4 +61,5 @@ require("mason-tool-installer").setup({
         "lua-language-server",
         "stylua",
     },
+    run_on_start = false,
 })
