@@ -1,25 +1,32 @@
+local function safeRequire(module)
+	local success, req = pcall(require, module)
+	if success then return req end
+    print("Module " .. module .. " contains error")
+end
+
+
 -- UI components
 -- require("config.bufferline")
-require("config.lualine")
-require("config.barbar")
+safeRequire("config.lualine")
+safeRequire("config.barbar")
 
 -- programming stuff
-require("config.bqf")
-require("config.trouble_config")
-require("config.mason")
-require("config.lsp")
-require("config.cmp")
-require("config.autopairs")
+safeRequire("config.bqf")
+safeRequire("config.trouble_config")
+safeRequire("config.mason")
+safeRequire("config.lsp")
+safeRequire("config.cmp")
+safeRequire("config.autopairs")
 
 -- general plugins
 -- thes plugins do not intefere with each other
-require("luasnip.loaders.from_vscode").lazy_load()
-require("config.treesitter")
-require("config.indentblankline")
-require("config.gitsigns")
-require("Comment").setup()
-require("config.colorizer_config")
-require("config.telescope")
+safeRequire("luasnip.loaders.from_vscode").lazy_load()
+safeRequire("config.treesitter")
+safeRequire("config.indentblankline")
+safeRequire("config.gitsigns")
+safeRequire("Comment").setup()
+safeRequire("config.colorizer_config")
+safeRequire("config.telescope")
 
 -- themes
-require("config.catppuccin_theme")
+safeRequire("config.catppuccin_theme")
