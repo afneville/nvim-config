@@ -50,6 +50,7 @@ require("mason-tool-installer").setup({
         "typescript-language-server",
         "css-lsp",
         "eslint_d",
+        "prettier",
         "pyright",
         "shellcheck",
         "bash-language-server",

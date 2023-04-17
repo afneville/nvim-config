@@ -49,6 +49,7 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    -- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
@@ -66,8 +67,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lspconfig = require("lspconfig")
-require('lspconfig.ui.windows').default_options = {
-  border = "single"
+require("lspconfig.ui.windows").default_options = {
+    border = "single",
 }
 local lsp_flags = {
     debounce_text_changes = 150,
@@ -110,13 +111,27 @@ lspconfig["lua_ls"].setup({
     },
 })
 
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
+
 -- null ls
 local null_ls = require("null-ls")
 local sources = {
     null_ls.builtins.diagnostics.eslint.with({
         extra_args = {
-            "--no-eslintrc"
-        }
+            "--no-eslintrc",
+        },
     }),
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.prettier.with({
@@ -153,3 +168,31 @@ local sources = {
     }),
 }
 null_ls.setup({ sources = sources })
+
+--[[ require("lspsaga").setup({
+    preview = {
+        lines_above = 0,
+        lines_below = 10,
+    },
+    scroll_preview = {
+        scroll_down = "<C-f>",
+        scroll_up = "<C-b>",
+    },
+    request_timeout = 2000,
+    ui = {
+        title = false,
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+    },
+    hover = {
+        max_width = 0.5,
+        open_link = "gx",
+        open_browser = "!firefox",
+    },
+    rename = {
+        quit = "<C-c>",
+        exec = "<CR>",
+        mark = "x",
+        confirm = "<CR>",
+        in_select = true,
+    },
+}) ]]

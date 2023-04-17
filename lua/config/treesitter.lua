@@ -1,5 +1,7 @@
 require("nvim-treesitter.configs").setup({
     -- ensure_installed = "all",
+    -- ensure_installed = { "lua", "bash" },
+
     ensure_installed = {
         "bash",
         "c",
@@ -35,7 +37,8 @@ require("nvim-treesitter.configs").setup({
         "vim",
         "vimdoc",
     },
-    sync_install = true,
+
+    sync_install = false,
 
     highlight = {
         enable = true,

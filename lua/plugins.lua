@@ -27,7 +27,21 @@ return require("packer").startup(function(use)
     use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })
     use({ "WhoIsSethDaniel/mason-tool-installer.nvim" })
-    use({ "nvim-treesitter/nvim-treesitter" })
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            local ts_update =
+                require("nvim-treesitter.install").update({ with_sync = true })
+            ts_update()
+        end,
+    })
+    use({
+        "glepnir/lspsaga.nvim",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "nvim-tree/nvim-web-devicons" })
     use({ "lewis6991/gitsigns.nvim" })
@@ -69,7 +83,7 @@ return require("packer").startup(function(use)
     use({ "glepnir/lspsaga.nvim" })
     if Options.bootstrap then
         print("start packer bootstrap")
-        require('packer').sync()
+        require("packer").sync()
         print("finish packer bootstrap")
     end
 end)

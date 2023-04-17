@@ -4,7 +4,6 @@ local function safeRequire(module)
     print("Module " .. module .. " contains error")
 end
 
-
 -- UI components
 -- require("config.bufferline")
 safeRequire("config.lualine")

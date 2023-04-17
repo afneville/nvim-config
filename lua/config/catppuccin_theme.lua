@@ -72,6 +72,10 @@ require("catppuccin").setup({
         telescope = true,
         barbar = true,
         lsp_trouble = true,
+        lsp_saga = true,
+        markdown = true,
+        mason = true,
+        treesitter = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
