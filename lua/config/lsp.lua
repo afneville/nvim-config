@@ -35,16 +35,19 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
 
 local lsp_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.api.nvim_exec(
-        [[
+    if client.server_capabilities.documentHighlightProvider then
+        vim.api.nvim_exec(
+            [[
       augroup lsp_document_highlight
       autocmd! * <buffer>
       autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
       autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
       ]],
-        false
-    )
+            false
+        )
+    end
+
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
@@ -55,7 +58,8 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, bufopts)
-    vim.keymap.set("n", "<space>lf", vim.lsp.buf.format, bufopts)
+    -- move out of on attach
+    -- vim.keymap.set("n", "<space>lf", vim.lsp.buf.format, bufopts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<space>lq", vim.diagnostic.setqflist, bufopts)
@@ -114,15 +118,28 @@ lspconfig["lua_ls"].setup({
 lspconfig.emmet_ls.setup({
     -- on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    filetypes = {
+        "css",
+        "eruby",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "less",
+        "sass",
+        "scss",
+        "svelte",
+        "pug",
+        "typescriptreact",
+        "vue",
+    },
     init_options = {
-      html = {
-        options = {
-          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-          ["bem.enabled"] = true,
+        html = {
+            options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ["bem.enabled"] = true,
+            },
         },
-      },
-    }
+    },
 })
 
 -- null ls
@@ -134,10 +151,15 @@ local sources = {
         },
     }),
     null_ls.builtins.diagnostics.shellcheck,
+    null_ls.builtins.formatting.sql_formatter,
     null_ls.builtins.formatting.prettier.with({
         extra_args = {
             "--bracket-same-line",
             "--no-bracket-spacing",
+            "--prose-wrap",
+            "always",
+            "--print-width",
+            "72",
             "--html-whitespace-sensitivity",
             "ignore",
         },

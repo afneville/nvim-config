@@ -35,13 +35,8 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
-    use({
-        "glepnir/lspsaga.nvim",
-        requires = {
-            { "nvim-tree/nvim-web-devicons" },
-            { "nvim-treesitter/nvim-treesitter" },
-        },
-    })
+
+    use({ "tpope/vim-surround" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "nvim-tree/nvim-web-devicons" })
     use({ "lewis6991/gitsigns.nvim" })
@@ -54,6 +49,14 @@ return require("packer").startup(function(use)
     use({ "mhartington/formatter.nvim" })
 
     -- lsp / completion
+    use("mfussenegger/nvim-jdtls")
+    use({
+        "glepnir/lspsaga.nvim",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    })
     use({ "windwp/nvim-autopairs" })
     use({ "williamboman/mason.nvim" })
     use({ "williamboman/mason-lspconfig.nvim" })
