@@ -7,7 +7,7 @@ end
 -- UI components
 -- require("config.bufferline")
 safeRequire("config.lualine")
-safeRequire("config.barbar")
+-- safeRequire("config.barbar")
 
 -- programming stuff
 safeRequire("config.bqf")
