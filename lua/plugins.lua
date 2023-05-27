@@ -14,10 +14,10 @@ return require("packer").startup(function(use)
     use({ "wbthomason/packer.nvim" })
 
     -- ui
-    -- use({ "akinsho/bufferline.nvim" })
+    use({ "akinsho/bufferline.nvim" })
     -- use({ "romgrk/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" })
     use({ "nvim-lualine/lualine.nvim" })
-
+    use("rebelot/kanagawa.nvim")
     -- general plugins
     use({
         "nvim-telescope/telescope.nvim",
@@ -35,7 +35,8 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
-
+    use ({"nvim-treesitter/nvim-treesitter-context"})
+    use({ "nvim-tree/nvim-tree.lua" })
     use({ "tpope/vim-surround" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "nvim-tree/nvim-web-devicons" })
@@ -83,7 +84,6 @@ return require("packer").startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
-    use({ "glepnir/lspsaga.nvim" })
     if Options.bootstrap then
         print("start packer bootstrap")
         require("packer").sync()

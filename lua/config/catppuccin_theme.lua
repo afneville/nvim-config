@@ -40,15 +40,24 @@ require("catppuccin").setup({
                 BufferCurrent = { bg = colors.surface1 },
                 BufferCurrentIndex = { bg = colors.surface1 },
                 BufferCurrentMod = { bg = colors.surface1 },
-                BufferCurrentSign = { bg = colors.surface1, fg = colors.overlay0 },
+                BufferCurrentSign = {
+                    bg = colors.surface1,
+                    fg = colors.overlay0,
+                },
                 BufferCurrentTarget = { bg = colors.surface1 },
                 BufferVisibleIndex = { bg = colors.surface1 },
                 BufferVisibleMod = { bg = colors.surface1 },
-                BufferVisibleSign = { bg = colors.surface1, fg = colors.overlay0 },
+                BufferVisibleSign = {
+                    bg = colors.surface1,
+                    fg = colors.overlay0,
+                },
                 BufferVisibleTarget = { bg = colors.surface1 },
                 BufferInactiveIndex = { bg = colors.surface0 },
                 BufferInactiveMod = { bg = colors.surface0 },
-                BufferInactiveSign = { bg = colors.surface0, fg = colors.overlay0 },
+                BufferInactiveSign = {
+                    bg = colors.surface0,
+                    fg = colors.overlay0,
+                },
                 BufferInactiveTarget = { bg = colors.surface0 },
                 NormalFloat = { bg = colors.base },
                 Pmenu = { bg = colors.base },
@@ -80,4 +89,4 @@ require("catppuccin").setup({
     },
 })
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")

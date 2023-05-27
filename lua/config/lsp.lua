@@ -56,6 +56,7 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
+    -- vim.keymap.set("n", "<space>lr", "<cmd>Lspsaga rename<CR>")
     vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, bufopts)
     -- move out of on attach
@@ -190,31 +191,48 @@ local sources = {
     }),
 }
 null_ls.setup({ sources = sources })
-
---[[ require("lspsaga").setup({
-    preview = {
-        lines_above = 0,
-        lines_below = 10,
-    },
-    scroll_preview = {
-        scroll_down = "<C-f>",
-        scroll_up = "<C-b>",
-    },
-    request_timeout = 2000,
-    ui = {
-        title = false,
-        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
-    },
-    hover = {
-        max_width = 0.5,
-        open_link = "gx",
-        open_browser = "!firefox",
-    },
-    rename = {
-        quit = "<C-c>",
-        exec = "<CR>",
-        mark = "x",
-        confirm = "<CR>",
-        in_select = true,
-    },
-}) ]]
+--
+-- require("lspsaga").setup({
+--     preview = {
+--         lines_above = 0,
+--         lines_below = 10,
+--     },
+--     scroll_preview = {
+--         scroll_down = "<C-f>",
+--         scroll_up = "<C-b>",
+--     },
+--     request_timeout = 2000,
+--     ui = {
+--         title = false,
+--         border = "single",
+--     },
+--     symbol_in_winbar = {
+--         enable = false,
+--         separator = " ",
+--         ignore_patterns = {},
+--         hide_keyword = true,
+--         show_file = true,
+--         folder_level = 2,
+--         respect_root = false,
+--         color_mode = true,
+--     },
+--     lightbulb = {
+--         enable = false,
+--         enable_in_insert = true,
+--         sign = true,
+--         sign_priority = 40,
+--         virtual_text = true,
+--     },
+--     hover = {
+--         max_width = 0.5,
+--         open_link = "gx",
+--         open_browser = "!firefox",
+--     },
+--     rename = {
+--         quit = "<C-c>",
+--         exec = "<CR>",
+--         mark = "x",
+--         confirm = "<CR>",
+--         in_select = true,
+--     },
+-- })

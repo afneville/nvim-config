@@ -5,7 +5,7 @@ vim.opt.pumheight = 10
 vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.showtabline = 0
+vim.opt.showtabline = 2
 vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -49,34 +49,32 @@ vim.cmd(
     "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
 )
 vim.cmd("autocmd! FileType markdown set tw=72")
-vim.cmd("")
-vim.cmd([[
-let g:netrw_banner = 0
-let g:netrw_localcopydircmd = 'cp -r'
-let g:netrw_keepdir = 0
-hi! link netrwMarkFile Search
 
-function! NetrwMapping()
-endfunction
+-- vim.cmd([[
+-- let g:netrw_banner = 0
+-- let g:netrw_localcopydircmd = 'cp -r'
+-- let g:netrw_keepdir = 0
+-- hi! link netrwMarkFile Search
+-- function! NetrwMapping()
+-- endfunction
+-- augroup netrw_mapping
+--   autocmd!
+--   autocmd filetype netrw call NetrwMapping()
+-- augroup END
+-- function! NetrwMapping()
+--   nmap <buffer> H u
+--   nmap <buffer> h -^
+--   nmap <buffer> l <CR>
+--   nmap <buffer> . gh
+--   nmap <buffer> P <C-w>z
+--   nmap <buffer> L <CR>:Lexplore<CR>
+--   nmap <buffer> <Leader>dd :Lexplore<CR>
+--   nmap <buffer> fc %:w<CR>:buffer #<CR>
+-- endfunction
+-- ]])
 
-augroup netrw_mapping
-  autocmd!
-  autocmd filetype netrw call NetrwMapping()
-augroup END
-
-function! NetrwMapping()
-  nmap <buffer> H u
-  nmap <buffer> h -^
-  nmap <buffer> l <CR>
-
-  nmap <buffer> . gh
-  nmap <buffer> P <C-w>z
-
-  nmap <buffer> L <CR>:Lexplore<CR>
-  nmap <buffer> <Leader>dd :Lexplore<CR>
-  nmap <buffer> fc %:w<CR>:buffer #<CR>
-endfunction
-]])
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 Options = {
     error = " ",

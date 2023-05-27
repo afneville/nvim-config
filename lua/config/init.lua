@@ -4,8 +4,12 @@ local function safeRequire(module)
     print("Module " .. module .. " contains error")
 end
 
+-- themes
+-- safeRequire("config.catppuccin_theme")
+safeRequire("config.kanagawa_theme")
+
 -- UI components
--- require("config.bufferline")
+require("config.bufferline")
 safeRequire("config.lualine")
 -- safeRequire("config.barbar")
 
@@ -26,6 +30,4 @@ safeRequire("config.gitsigns")
 safeRequire("Comment").setup()
 safeRequire("config.colorizer_config")
 safeRequire("config.telescope")
-
--- themes
-safeRequire("config.catppuccin_theme")
+safeRequire("config.nvimtree_config")

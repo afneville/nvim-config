@@ -1,25 +1,17 @@
-local theme_palette = require("catppuccin.palettes").get_palette("mocha")
-local custom_theme = require("lualine.themes.catppuccin")
-custom_theme.normal.a.bg = theme_palette["lavender"]
-custom_theme.normal.c.bg = theme_palette["surface0"]
-custom_theme.inactive.c.bg = theme_palette["surface0"]
-custom_theme.inactive.b.bg = theme_palette["surface1"]
-custom_theme.normal.c.fg = theme_palette["mauve"]
-custom_theme.normal.b.fg = theme_palette["text"]
-custom_theme.insert.b.fg = theme_palette["text"]
-custom_theme.visual.b.fg = theme_palette["text"]
-custom_theme.replace.b.fg = theme_palette["text"]
-custom_theme.command.b.fg = theme_palette["text"]
-custom_theme.inactive.b.fg = theme_palette["text"]
-
 require("lualine").setup({
     options = {
         icons_enabled = true,
-        theme = custom_theme,
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        theme = "auto",
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
+        -- component_separators = { left = "", right = "" },
+        -- component_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
         disabled_filetypes = {
-            statusline = {},
+            statusline = {
+                "NvimTree"
+            },
             winbar = {},
         },
         ignore_focus = {},
@@ -32,8 +24,20 @@ require("lualine").setup({
         },
     },
     sections = {
-        lualine_a = { "mode" },
-        lualine_b = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+            "mode",
+            {
+                "filename",
+                path = 1,
+                symbols = {
+                    modified = " ", -- Text to show when the file is modified.
+                    readonly = " ", -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = " ", -- Text to show for unnamed buffers.
+                    newfile = " ",
+                },
+            },
             "branch",
             {
                 "diff",
@@ -54,20 +58,7 @@ require("lualine").setup({
                 always_visible = true,
             },
         },
-        lualine_c = {
-            {
-                "filename",
-                path = 1,
-                symbols = {
-                    modified = " ", -- Text to show when the file is modified.
-                    readonly = " ", -- Text to show when the file is non-modifiable or readonly.
-                    unnamed = " ", -- Text to show for unnamed buffers.
-                    newfile = " ",
-                },
-            },
-        },
-        lualine_x = {},
-        lualine_y = {
+        lualine_x = {
             {
                 function()
                     local msg = " "
@@ -91,8 +82,11 @@ require("lualine").setup({
                 color = { gui = "bold" },
             },
             "filetype",
+            "progress",
+            "location",
         },
-        lualine_z = { "progress", "location" },
+        lualine_y = {},
+        lualine_z = {},
     },
     inactive_sections = {
         lualine_a = {},
