@@ -6,7 +6,7 @@ vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.showtabline = 2
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -81,4 +81,7 @@ Options = {
     warn = " ",
     info = " ",
     hint = "󰌶 ",
+    added = " ",
+    modified = " ",
+    removed = " ",
 }

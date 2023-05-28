@@ -27,7 +27,6 @@ require("lualine").setup({
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
-            "mode",
             {
                 "filename",
                 path = 1,
@@ -42,9 +41,9 @@ require("lualine").setup({
             {
                 "diff",
                 symbols = {
-                    added = " ",
-                    modified = " ",
-                    removed = " ",
+                    added = Options.added,
+                    modified = Options.modified,
+                    removed = Options.removed,
                 },
             },
             {

@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 
     -- ui
     use({ "akinsho/bufferline.nvim" })
-    -- use({ "romgrk/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" })
+    use({ "romgrk/barbar.nvim", requires = "nvim-tree/nvim-web-devicons" })
     use({ "nvim-lualine/lualine.nvim" })
     use("rebelot/kanagawa.nvim")
     -- general plugins

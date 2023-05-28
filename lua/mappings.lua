@@ -34,16 +34,21 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 -- navigation
 -- vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
 -- vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
-vim.keymap.set("n", "<leader>c", ":bd<CR>")
-vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", { silent = true })
-vim.keymap.set("n", "<leader>t", ":BufferLinePick<CR>")
-vim.keymap.set(
-    "n",
-    "<leader>C",
-    ":BufferLineCloseLeft<CR>:BufferLineCloseRight<CR>",
-    { silent = true }
-)
+-- vim.keymap.set("n", "<leader>c", ":bd<CR>")
+vim.keymap.set("n", "<leader>c", ":BufferClose<CR>")
+vim.keymap.set("n", "<leader>C", ":BufferCloseAllButCurrentOrPinned<CR>")
+vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", { silent = true })
+vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", { silent = true })
+vim.keymap.set("n", "<leader>t", ":BufferPick<CR>")
+-- vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>", { silent = true })
+-- vim.keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>t", ":BufferLinePick<CR>")
+-- vim.keymap.set(
+--     "n",
+--     "<leader>C",
+--     ":BufferLineCloseLeft<CR>:BufferLineCloseRight<CR>",
+--     { silent = true }
+-- )
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
 vim.keymap.set("n", "<leader>wj", "<C-w>j")
 vim.keymap.set("n", "<leader>wk", "<C-w>k")
