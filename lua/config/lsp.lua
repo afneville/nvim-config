@@ -186,7 +186,7 @@ local sources = {
             "--call-parentheses",
             "Always",
             "--column-width",
-            "80",
+            "72",
         },
     }),
 }

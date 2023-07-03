@@ -6,12 +6,13 @@ end
 
 -- themes
 -- safeRequire("config.catppuccin_theme")
-require("config.kanagawa_theme")
+-- require("config.kanagawa_theme")
+require("config.gruvbox_theme")
 
 -- UI components
 -- require("config.bufferline")
-safeRequire("config.lualine")
-safeRequire("config.barbar")
+-- safeRequire("config.lualine")
+-- safeRequire("config.barbar")
 
 -- programming stuff
 safeRequire("config.bqf")

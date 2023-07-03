@@ -5,12 +5,12 @@ vim.opt.pumheight = 10
 vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 -- vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
-vim.opt.cursorcolumn = false
+vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
 vim.opt.conceallevel = 0
 vim.opt.guicursor = ""
@@ -25,6 +25,13 @@ vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.list = true
+vim.opt.listchars:append("space:󰧟")
+-- vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append("eol:󰌑")
+-- vim.opt.listchars:append "eol:󱞥"
+
+vim.cmd("set colorcolumn=72")
 vim.cmd("set t_md=")
 vim.cmd("filetype plugin on")
 vim.cmd("set mouse=")
@@ -33,8 +40,8 @@ vim.cmd("set sw=4")
 vim.cmd("set expandtab")
 vim.cmd("autocmd Filetype javascript setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype html setlocal ts=2 sw=2 expandtab")
-
 vim.cmd("autocmd Filetype css setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype scss setlocal ts=2 sw=2 expandtab")
 vim.cmd("set whichwrap=<,>,[,]")
 vim.cmd("set iskeyword+=-")
 -- vim.cmd("set iskeyword-=_")
@@ -48,7 +55,6 @@ vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
 vim.cmd(
     "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
 )
-vim.cmd("autocmd! FileType markdown set tw=72")
 
 -- vim.cmd([[
 -- let g:netrw_banner = 0

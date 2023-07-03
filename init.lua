@@ -9,3 +9,5 @@ end
 
 vim.cmd("hi markdownError guifg=None guibg=None")
 vim.cmd("hi clear Error")
+vim.cmd("autocmd! FileType markdown setlocal tw=72")
+vim.cmd("autocmd! FileType markdown setlocal spell")
