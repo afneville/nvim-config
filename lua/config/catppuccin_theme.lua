@@ -13,8 +13,8 @@ require("catppuccin").setup({
         shade = "dark",
         percentage = 0.15,
     },
-    no_italic = true, -- Force no italic
-    no_bold = true, -- Force no bold
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -62,6 +62,11 @@ require("catppuccin").setup({
                 NormalFloat = { bg = colors.base },
                 Pmenu = { bg = colors.base },
                 TroubleNormal = { bg = colors.base },
+                CursorColumn = { bg = colors.surface0 },
+                StatusLine = { bg = colors.surface0 },
+                StatusLineNC = { bg = colors.surface0 },
+                TreesitterContextSeparator = { fg = colors.surface1 }
+                -- StatusLineNC
             }
         end, -- Same for each flavour
         -- latte = function(latte) end,

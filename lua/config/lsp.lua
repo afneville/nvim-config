@@ -79,7 +79,7 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local servers = { "tsserver", "clangd", "pyright", "bashls", "html", "cssls" }
+local servers = { "tsserver", "pyright", "bashls", "html", "cssls" }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = lsp_attach,
@@ -141,6 +141,12 @@ lspconfig.emmet_ls.setup({
             },
         },
     },
+})
+
+capabilities["offsetEncoding"] = "utf-8"
+lspconfig["clangd"].setup({
+    on_attach = lsp_attach,
+    capabilities = capabilities;
 })
 
 -- null ls

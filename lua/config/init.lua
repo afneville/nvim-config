@@ -5,9 +5,9 @@ local function safeRequire(module)
 end
 
 -- themes
--- safeRequire("config.catppuccin_theme")
+safeRequire("config.catppuccin_theme")
 -- require("config.kanagawa_theme")
-require("config.gruvbox_theme")
+-- require("config.gruvbox_theme")
 
 -- UI components
 -- require("config.bufferline")
