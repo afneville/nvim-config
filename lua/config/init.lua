@@ -5,9 +5,9 @@ local function safeRequire(module)
 end
 
 -- themes
-safeRequire("config.catppuccin_theme")
+-- safeRequire("config.catppuccin_theme")
 -- require("config.kanagawa_theme")
--- require("config.gruvbox_theme")
+require("config.gruvbox_theme")
 
 -- UI components
 -- require("config.bufferline")
@@ -30,5 +30,5 @@ safeRequire("config.indentblankline")
 safeRequire("config.gitsigns")
 safeRequire("Comment").setup()
 safeRequire("config.colorizer_config")
-safeRequire("config.telescope")
-safeRequire("config.nvimtree_config")
+-- safeRequire("config.telescope")
+-- safeRequire("config.nvimtree_config")

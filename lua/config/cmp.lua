@@ -27,14 +27,14 @@ cmp.setup({
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    window = {
-        completion = {
-            border = "single",
-        },
-        documentation = {
-            border = "single",
-        },
-    },
+    -- window = {
+    --     completion = {
+    --         border = "single",
+    --     },
+    --     documentation = {
+    --         border = "single",
+    --     },
+    -- },
     -- experimental = {
     --     ghost_text = true
     -- },
@@ -75,7 +75,7 @@ cmp.setup({
     }),
     formatting = {
         format = lspkind.cmp_format({
-            mode = "symbol_text",
+            mode = "text",
             menu = ({
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",

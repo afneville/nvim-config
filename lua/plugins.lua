@@ -13,6 +13,7 @@ return require("packer").startup(function(use)
         tag = "0.1.1",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
+    use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })
     use({ "WhoIsSethDaniel/mason-tool-installer.nvim" })
@@ -27,18 +28,11 @@ return require("packer").startup(function(use)
         end,
     })
     use({ "nvim-treesitter/nvim-treesitter-context" })
-    use({ "nvim-tree/nvim-tree.lua" })
     use({ "tpope/vim-surround" })
-    use({ "lukas-reineke/indent-blankline.nvim" })
-    use({ "nvim-tree/nvim-web-devicons" })
     use({ "lewis6991/gitsigns.nvim" })
     use({ "numToStr/Comment.nvim" })
     use({ "norcalli/nvim-colorizer.lua" })
     use({ "catppuccin/nvim", as = "catppuccin" })
-    use({ "ellisonleao/gruvbox.nvim" })
-    use({ "navarasu/onedark.nvim" })
-    use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
-    use({ "mhartington/formatter.nvim" })
 
     -- lsp / completion
     use("mfussenegger/nvim-jdtls")

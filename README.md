@@ -11,7 +11,7 @@ different languages and environments.
 
 I have tried to minimise the number of installed plugins, keeping only
 the most essential and widely used. In some cases I have copied snippets
-of lua directly from other configurations/plugins into mine, this is
+of Lua directly from other configurations/plugins into mine, this is
 indicated wherever it occurs. This strategy will not entirely prevent
 breaking changes and this configuration will need updating
 semi-regularly. See `lua/plugins.lua`{.verbatim} for a list of installed

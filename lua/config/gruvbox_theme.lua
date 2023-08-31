@@ -19,7 +19,7 @@ require("gruvbox").setup({
     overrides = {
         StatusLine = { bg = "#3c3836", fg = "" },
         StatusLineNC = { bg = "#3c3836", fg = "" },
-        IndentBlanklineContextChar = { fg = "#d79921" }
+        -- IndentBlanklineContextChar = { fg = "#d79921" }
     },
     dim_inactive = false,
     transparent_mode = false,

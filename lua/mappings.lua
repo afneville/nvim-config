@@ -35,20 +35,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
 vim.keymap.set("n", "<leader>c", ":bd<CR>")
--- vim.keymap.set("n", "<leader>c", ":BufferClose<CR>")
--- vim.keymap.set("n", "<leader>C", ":BufferCloseAllButCurrentOrPinned<CR>")
--- vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", { silent = true })
--- vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", { silent = true })
--- vim.keymap.set("n", "<leader>t", ":BufferPick<CR>")
--- vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>", { silent = true })
--- vim.keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", { silent = true })
--- vim.keymap.set("n", "<leader>t", ":BufferLinePick<CR>")
--- vim.keymap.set(
---     "n",
---     "<leader>C",
---     ":BufferLineCloseLeft<CR>:BufferLineCloseRight<CR>",
---     { silent = true }
--- )
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
 vim.keymap.set("n", "<leader>wj", "<C-w>j")
 vim.keymap.set("n", "<leader>wk", "<C-w>k")
@@ -57,10 +43,6 @@ vim.keymap.set("n", "<leader>wl", "<C-w>l")
 -- insert blank lines above and below
 vim.keymap.set("n", "<leader>ij", "o<esc>0Dk")
 vim.keymap.set("n", "<leader>ik", "O<esc>0Dj")
-
--- toggle cursore line and column
--- vim.keymap.set("n", "<leader>tcc", ":set cursorcolumn!<CR>")
--- vim.keymap.set("n", "<leader>tcl", ":set cursorline!<CR>")
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
@@ -86,19 +68,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- extension keymaps
--- vim.keymap.set("n", "<leader>bf", ":FormatLock<CR>")
--- vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
--- vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
--- vim.keymap.set("n", "<leader>ff", ":Files<CR>")
--- vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
+-- trouble
 vim.keymap.set("n", "<leader>d", ":TroubleToggle<CR>")
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
-vim.keymap.set("n", "<leader>lm", ":Mason<CR>")
-
+--luasnip
 vim.cmd("inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>")
 vim.cmd("inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>")
 vim.cmd(
@@ -107,6 +79,11 @@ vim.cmd(
 vim.cmd(
     "smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
-
--- for null ls
+-- lsp
 vim.keymap.set("n", "<space>lf", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
+vim.keymap.set("n", "<leader>lm", ":Mason<CR>")
+
+vim.keymap.set("n", "<leader>ff", ":Files<CR>")
+vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
+vim.keymap.set("n", "<leader>ss", ":BLines<CR>")
