@@ -17,9 +17,9 @@ require("mason").setup({
         height = 0.9,
 
         icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
+            package_installed = "I",
+            package_pending = "P",
+            package_uninstalled = "X",
         },
 
         keymaps = {

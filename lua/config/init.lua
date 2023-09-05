@@ -6,8 +6,11 @@ end
 
 -- themes
 -- safeRequire("config.catppuccin_theme")
--- require("config.kanagawa_theme")
-require("config.gruvbox_theme")
+-- safeRequire("config.kanagawa_theme")
+safeRequire("config.gruvbox_theme")
+-- safeRequire("config.github_theme_config")
+-- safeRequire("config.nord_config")
+-- safeRequire("config.nordic_theme")
 
 -- UI components
 -- require("config.bufferline")
@@ -24,7 +27,7 @@ safeRequire("config.autopairs")
 
 -- general plugins
 -- thes plugins do not intefere with each other
-safeRequire("luasnip.loaders.from_vscode").lazy_load()
+safeRequire("config.luasnip_config")
 safeRequire("config.treesitter")
 safeRequire("config.indentblankline")
 safeRequire("config.gitsigns")

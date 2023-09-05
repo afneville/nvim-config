@@ -27,17 +27,17 @@ cmp.setup({
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    -- window = {
-    --     completion = {
-    --         border = "single",
-    --     },
-    --     documentation = {
-    --         border = "single",
-    --     },
-    -- },
-    -- experimental = {
-    --     ghost_text = true
-    -- },
+    window = {
+        completion = {
+            border = "single",
+        },
+        documentation = {
+            border = "single",
+        },
+    },
+    experimental = {
+        ghost_text = true
+    },
     mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -77,11 +77,11 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = "text",
             menu = ({
-                buffer = "[Buffer]",
+                buffer = "[BUF]",
                 nvim_lsp = "[LSP]",
-                luasnip = "[LuaSnip]",
-                nvim_lua = "[Lua]",
-                latex_symbols = "[Latex]",
+                luasnip = "[SNIP]",
+                nvim_lua = "[LUA]",
+                latex_symbols = "[TEX]",
             })
         }),
     },

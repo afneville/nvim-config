@@ -6,6 +6,10 @@ return require("packer").startup(function(use)
     use({ "nvim-lualine/lualine.nvim" })
     use("rebelot/kanagawa.nvim")
     use({ "ellisonleao/gruvbox.nvim" })
+    use({ "projekt0n/github-nvim-theme" })
+    use({ "shaunsingh/nord.nvim" })
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "AlexvZyl/nordic.nvim" })
 
     -- general plugins
     use({
@@ -32,7 +36,10 @@ return require("packer").startup(function(use)
     use({ "lewis6991/gitsigns.nvim" })
     use({ "numToStr/Comment.nvim" })
     use({ "norcalli/nvim-colorizer.lua" })
-    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({
+        "lukas-reineke/headlines.nvim",
+        after = "nvim-treesitter",
+    })
 
     -- lsp / completion
     use("mfussenegger/nvim-jdtls")
@@ -51,6 +58,11 @@ return require("packer").startup(function(use)
     use({ "folke/trouble.nvim" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
     use({ "rafamadriz/friendly-snippets" })
+    use({
+        "iurimateus/luasnip-latex-snippets.nvim",
+        requires = { "L3MON4D3/LuaSnip" },
+    })
+    use({ "lervag/vimtex" })
     use({
         "hrsh7th/nvim-cmp",
         requires = {

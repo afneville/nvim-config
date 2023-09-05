@@ -24,9 +24,10 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "single",
-})
+vim.lsp.handlers["textDocument/hover"] =
+    vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "single",
+    })
 
 vim.lsp.handlers["textDocument/signatureHelp"] =
     vim.lsp.with(vim.lsp.handlers.signature_help, {
@@ -69,8 +70,10 @@ local lsp_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities =
+    require("cmp_nvim_lsp").default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport =
+    true
 local lspconfig = require("lspconfig")
 require("lspconfig.ui.windows").default_options = {
     border = "single",
@@ -79,7 +82,8 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local servers = { "tsserver", "pyright", "bashls", "html", "cssls" }
+local servers =
+    { "tsserver", "pyright", "bashls", "html", "cssls", "texlab", "jsonls" }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = lsp_attach,
@@ -146,7 +150,7 @@ lspconfig.emmet_ls.setup({
 capabilities["offsetEncoding"] = "utf-8"
 lspconfig["clangd"].setup({
     on_attach = lsp_attach,
-    capabilities = capabilities;
+    capabilities = capabilities,
 })
 
 -- null ls
@@ -157,6 +161,8 @@ local sources = {
             "--no-eslintrc",
         },
     }),
+    null_ls.builtins.formatting.jq,
+    null_ls.builtins.formatting.latexindent,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.sql_formatter,
     null_ls.builtins.formatting.prettier.with({
