@@ -162,7 +162,14 @@ local sources = {
         },
     }),
     null_ls.builtins.formatting.jq,
-    null_ls.builtins.formatting.latexindent,
+    null_ls.builtins.formatting.latexindent.with({
+        args = {
+            "-l",
+            "/home/alex/.config/nvim/utils/indentconfig.yaml",
+            "-m",
+            "-"
+        }
+    }),
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.sql_formatter,
     null_ls.builtins.formatting.prettier.with({

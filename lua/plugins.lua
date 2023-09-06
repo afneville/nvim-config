@@ -57,11 +57,6 @@ return require("packer").startup(function(use)
     use({ "kevinhwang91/nvim-bqf" })
     use({ "folke/trouble.nvim" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
-    use({ "rafamadriz/friendly-snippets" })
-    use({
-        "iurimateus/luasnip-latex-snippets.nvim",
-        requires = { "L3MON4D3/LuaSnip" },
-    })
     use({ "lervag/vimtex" })
     use({
         "hrsh7th/nvim-cmp",

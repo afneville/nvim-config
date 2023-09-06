@@ -26,7 +26,7 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.list = true
--- vim.opt.listchars:append("space:󰧟")
+vim.opt.listchars:append("space:󰧟")
 -- vim.opt.listchars:append "eol:↴"
 -- vim.opt.listchars:append("eol:󰌑")
 -- vim.opt.listchars:append "eol:󱞥"
@@ -45,6 +45,7 @@ vim.cmd("autocmd Filetype html setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype css setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype scss setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype json setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype tex setlocal ts=2 sw=2 expandtab")
 vim.cmd("set whichwrap=<,>,[,]")
 vim.cmd("set iskeyword+=-")
 -- vim.cmd("set iskeyword-=_")
