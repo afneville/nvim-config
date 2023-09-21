@@ -16,6 +16,18 @@
       },
       {
         "language": [
+          "python"
+        ],
+        "path": "./python.json"
+      },
+      {
+        "language": [
+          "html"
+        ],
+        "path": "./html.json"
+      },
+      {
+        "language": [
           "markdown"
         ],
         "path": "./markdown.json"
@@ -30,6 +42,10 @@
       {
         "language": "tex",
         "path": "./latex.json"
+      },
+      {
+        "language": "c",
+        "path": "./c.json"
       }
     ]
   }

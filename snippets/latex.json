@@ -1,21 +1,11 @@
 {
   "inline-maths": {
     "prefix": "imm",
-    "body": "\\(${1}\\)${0}",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "\\(${1}\\)${0}"
   },
   "display-maths": {
     "prefix": "dmm",
-    "body": "\\[${1}\\]${0}",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "\\[${1}\\]${0}"
   },
   "minimal template": {
     "prefix": "minimal",
@@ -25,6 +15,17 @@
       "\\pagestyle{empty}",
       "${0}",
       "\\end{document}"
+    ]
+  },
+  "preamble": {
+    "prefix": "template",
+    "body": [
+      "\\documentclass{article}",
+      "\\usepackage{graphicx}",
+      "\\usepackage{amsmath, amsthm, amssymb, amsfonts}",
+      "\\title{${1}}",
+      "\\author{${2}}",
+      "\\date{\\today}",
     ]
   },
   "template": {
@@ -68,5 +69,45 @@
       "autotrigger": true,
       "wordTrig": false
     }
+  },
+  "subscript": {
+    "prefix": "_",
+    "body": "_{${1}}",
+    "description": "subscript"
+  },
+  "superscript": {
+    "prefix": "^",
+    "body": "^{${1}}",
+    "description": "superscript"
+  },
+  "wrapEnv": {
+    "prefix": "env",
+    "body": "\n\\begin{$1}\n${0}\n\\end{$1}",
+    "description": "Create an Environment"
+  },
+  "part": {
+    "prefix": "SPA",
+    "body": "\\part{${1:${TM_SELECTED_TEXT}}}",
+    "description": "part"
+  },
+  "chapter": {
+    "prefix": "SCH",
+    "body": "\\chapter{${1:${TM_SELECTED_TEXT}}}",
+    "description": "chapter"
+  },
+  "section": {
+    "prefix": "SSE",
+    "body": "\\section{${1:${TM_SELECTED_TEXT}}}",
+    "description": "section"
+  },
+  "subsection": {
+    "prefix": "SSS",
+    "body": "\\subsection{${1:${TM_SELECTED_TEXT}}}",
+    "description": "subsection"
+  },
+  "subsubsection": {
+    "prefix": "SS2",
+    "body": "\\subsubsection{${1:${TM_SELECTED_TEXT}}}",
+    "description": "subsubsection"
   }
 }
