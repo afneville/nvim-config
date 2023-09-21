@@ -1,28 +1,24 @@
 # Neovim Configuration
 
-Neovim is a lightweight, highly extensible **TUI** modal text editor.
-The latest versions include a lua API and LSP client, written in lua,
+Neovim is a lightweight, highly extensible TUI modal text editor. Recent
+versions include a Lua API and native LSP client, again written in Lua,
 facilitating the use of an external language server to provide
-completion, diagnostics and other code actions like an IDE. This
-combination of features makes it a good editor for programming in many
-different languages and environments.
+completion, diagnostics and other code actions, much like an IDE. This
+combination of features makes it a (very) good editor for working with
+many different languages and environments.
 
 ![](./screenshot.png)
 
-I have tried to minimise the number of installed plugins, keeping only
-the most essential and widely used. In some cases I have copied snippets
-of Lua directly from other configurations/plugins into mine, this is
-indicated wherever it occurs. This strategy will not entirely prevent
-breaking changes and this configuration will need updating
-semi-regularly. See `lua/plugins.lua`{.verbatim} for a list of installed
-plugins.
+I have tried to minimise the number of in use plugins, keeping only the
+most essential and widely used. I have, in places, copied snippets of
+Lua from other configurations/plugins into my own. This strategy will
+not prevent breaking changes entirely and my configuration will need
+updating somewhat regularly.
 
-In place of a colour scheme plugin, I am using a set of _base16_ schemes
-from
+In addition to a colour scheme plugin, I have included a Lua script to set the
+theme to one of the _base16_ schemes from
 [my theme repository](https://github.com/alexanderneville/b16-themes).
-The only theme included in this repository by default is my custom theme
-in the style of vs\*\*\*\*\'s default. To install a larger set of
-themes:
+To install these themes:
 
 ```{.bash org-language="sh"}
 cd utils
