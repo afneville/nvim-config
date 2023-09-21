@@ -24,6 +24,7 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
 vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(vim.lsp.handlers.hover, {
         border = "single",
@@ -39,12 +40,12 @@ local lsp_attach = function(client, bufnr)
     if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_exec(
             [[
-      augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-      ]],
+            augroup lsp_document_highlight
+            autocmd! * <buffer>
+            autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+            autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+            augroup END
+            ]],
             false
         )
     end
@@ -53,15 +54,11 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-    -- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
-    -- vim.keymap.set("n", "<space>lr", "<cmd>Lspsaga rename<CR>")
     vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, bufopts)
-    -- move out of on attach
-    -- vim.keymap.set("n", "<space>lf", vim.lsp.buf.format, bufopts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<space>lq", vim.diagnostic.setqflist, bufopts)
@@ -82,8 +79,16 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local servers =
-    { "tsserver", "pyright", "bashls", "html", "cssls", "texlab", "jsonls" }
+local servers = {
+    "tsserver",
+    "pyright",
+    "bashls",
+    "html",
+    "cssls",
+    "texlab",
+    "jsonls",
+}
+
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
         on_attach = lsp_attach,
@@ -167,8 +172,8 @@ local sources = {
             "-l",
             "/home/alex/.config/nvim/utils/indentconfig.yaml",
             "-m",
-            "-"
-        }
+            "-",
+        },
     }),
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.sql_formatter,
@@ -210,48 +215,3 @@ local sources = {
     }),
 }
 null_ls.setup({ sources = sources })
---
--- require("lspsaga").setup({
---     preview = {
---         lines_above = 0,
---         lines_below = 10,
---     },
---     scroll_preview = {
---         scroll_down = "<C-f>",
---         scroll_up = "<C-b>",
---     },
---     request_timeout = 2000,
---     ui = {
---         title = false,
---         border = "single",
---     },
---     symbol_in_winbar = {
---         enable = false,
---         separator = " ",
---         ignore_patterns = {},
---         hide_keyword = true,
---         show_file = true,
---         folder_level = 2,
---         respect_root = false,
---         color_mode = true,
---     },
---     lightbulb = {
---         enable = false,
---         enable_in_insert = true,
---         sign = true,
---         sign_priority = 40,
---         virtual_text = true,
---     },
---     hover = {
---         max_width = 0.5,
---         open_link = "gx",
---         open_browser = "!firefox",
---     },
---     rename = {
---         quit = "<C-c>",
---         exec = "<CR>",
---         mark = "x",
---         confirm = "<CR>",
---         in_select = true,
---     },
--- })

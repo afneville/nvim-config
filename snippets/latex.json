@@ -1,0 +1,72 @@
+{
+  "inline-maths": {
+    "prefix": "imm",
+    "body": "\\(${1}\\)${0}",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "display-maths": {
+    "prefix": "dmm",
+    "body": "\\[${1}\\]${0}",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "minimal template": {
+    "prefix": "minimal",
+    "body": [
+      "\\documentclass{article}",
+      "\\begin{document}",
+      "\\pagestyle{empty}",
+      "${0}",
+      "\\end{document}"
+    ]
+  },
+  "template": {
+    "prefix": "template",
+    "body": [
+      "\\documentclass{article}",
+      "\\usepackage{graphicx}",
+      "\\usepackage{amsmath, amsthm, amssymb, amsfonts}",
+      "\\title{${1}}",
+      "\\author{${2}}",
+      "\\date{\\today}",
+      "\\begin{document}",
+      "\\maketitle",
+      "${0}",
+      "\\end{document}"
+    ]
+  },
+  "bold": {
+    "prefix": "tbf",
+    "body": "\\textbf{${1}}",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "italic": {
+    "prefix": "tit",
+    "body": "\\textit{${1}}",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "underline": {
+    "prefix": "tul",
+    "body": "\\underline{${1}}",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  }
+}

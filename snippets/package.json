@@ -4,15 +4,32 @@
     "snippets": [
       {
         "language": [
-          "markdown"
+          "all"
         ],
-        "path": "./markdown.json"
+        "path": "./licenses.json"
       },
       {
         "language": [
           "all"
         ],
         "path": "./all.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "tex"
+        ],
+        "path": "./maths.json"
+      },
+      {
+        "language": "tex",
+        "path": "./latex.json"
       }
     ]
   }

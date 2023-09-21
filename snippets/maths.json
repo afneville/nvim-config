@@ -1,0 +1,382 @@
+{
+  "alpha": {
+    "prefix": "m@a",
+    "body": "\\alpha",
+    "description": "alpha",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "beta": {
+    "prefix": "m@b",
+    "body": "\\beta",
+    "description": "beta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "chi": {
+    "prefix": "m@c",
+    "body": "\\chi",
+    "description": "chi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "delta": {
+    "prefix": "m@d",
+    "body": "\\delta",
+    "description": "delta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "epsilon": {
+    "prefix": "m@e",
+    "body": "\\epsilon",
+    "description": "epsilon",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "varepsilon": {
+    "prefix": "m@ve",
+    "body": "\\varepsilon",
+    "description": "varepsilon",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "phi": {
+    "prefix": "m@f",
+    "body": "\\phi",
+    "description": "phi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "varphi": {
+    "prefix": "m@vf",
+    "body": "\\varphi",
+    "description": "varphi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "gamma": {
+    "prefix": "m@g",
+    "body": "\\gamma",
+    "description": "gamma",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "eta": {
+    "prefix": "m@h",
+    "body": "\\eta",
+    "description": "eta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "iota": {
+    "prefix": "m@i",
+    "body": "\\iota",
+    "description": "iota",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "kappa": {
+    "prefix": "m@k",
+    "body": "\\kappa",
+    "description": "kappa",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "lambda": {
+    "prefix": "m@l",
+    "body": "\\lambda",
+    "description": "lambda",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "mu": {
+    "prefix": "m@m",
+    "body": "\\mu",
+    "description": "mu",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "nu": {
+    "prefix": "m@n",
+    "body": "\\nu",
+    "description": "nu",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "pi": {
+    "prefix": "m@p",
+    "body": "\\pi",
+    "description": "pi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "theta": {
+    "prefix": "m@q",
+    "body": "\\theta",
+    "description": "theta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "vartheta": {
+    "prefix": "m@vq",
+    "body": "\\vartheta",
+    "description": "vartheta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "rho": {
+    "prefix": "m@r",
+    "body": "\\rho",
+    "description": "rho",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "sigma": {
+    "prefix": "m@s",
+    "body": "\\sigma",
+    "description": "sigma",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "varsigma": {
+    "prefix": "m@vs",
+    "body": "\\varsigma",
+    "description": "varsigma",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "tau": {
+    "prefix": "m@t",
+    "body": "\\tau",
+    "description": "tau",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "upsilon": {
+    "prefix": "m@u",
+    "body": "\\upsilon",
+    "description": "upsilon",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "omega": {
+    "prefix": "m@o",
+    "body": "\\omega",
+    "description": "omega",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "wedge": {
+    "prefix": "m@&",
+    "body": "\\wedge",
+    "description": "wedge",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "xi": {
+    "prefix": "m@x",
+    "body": "\\xi",
+    "description": "xi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "psi": {
+    "prefix": "m@y",
+    "body": "\\psi",
+    "description": "psi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "zeta": {
+    "prefix": "m@z",
+    "body": "\\zeta",
+    "description": "zeta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Delta": {
+    "prefix": "m@D",
+    "body": "\\Delta",
+    "description": "Delta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Phi": {
+    "prefix": "m@F",
+    "body": "\\Phi",
+    "description": "Phi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Gamma": {
+    "prefix": "m@G",
+    "body": "\\Gamma",
+    "description": "Gamma",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Theta": {
+    "prefix": "m@Q",
+    "body": "\\Theta",
+    "description": "Theta",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Lambda": {
+    "prefix": "m@L",
+    "body": "\\Lambda",
+    "description": "Lambda",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Xi": {
+    "prefix": "m@X",
+    "body": "\\Xi",
+    "description": "Xi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Psi": {
+    "prefix": "m@Y",
+    "body": "\\Psi",
+    "description": "Psi",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Sigma": {
+    "prefix": "m@S",
+    "body": "\\Sigma",
+    "description": "Sigma",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Upsilon": {
+    "prefix": "m@U",
+    "body": "\\Upsilon",
+    "description": "Upsilon",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  },
+  "Omega": {
+    "prefix": "m@W",
+    "body": "\\Omega",
+    "description": "Omega",
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true,
+      "wordTrig": false
+    }
+  }
+}

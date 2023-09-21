@@ -28,10 +28,13 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.listchars:append("space:󰧟")
 -- vim.opt.listchars:append "eol:↴"
--- vim.opt.listchars:append("eol:󰌑")
--- vim.opt.listchars:append "eol:󱞥"
 
+-- Extension Options
 vim.cmd("let g:vimtex_view_method = 'zathura_simple'")
+vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
+vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
+
+-- Filetypes
 vim.cmd("set colorcolumn=72")
 vim.cmd("set t_md=")
 vim.cmd("filetype plugin on")
@@ -51,14 +54,22 @@ vim.cmd("set iskeyword+=-")
 -- vim.cmd("set iskeyword-=_")
 vim.cmd("set shortmess+=c")
 vim.cmd("set inccommand=split")
-vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
-vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 vim.cmd("autocmd InsertEnter * norm zz")
 vim.cmd("autocmd! FileType fzf setlocal nonumber norelativenumber")
 vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
 vim.cmd(
     "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
 )
+
+
+vim.cmd("autocmd! FileType markdown set spell")
+vim.cmd([[
+augroup text_width | au!
+    au Filetype text,markdown setlocal textwidth=72
+    au FileType markdown setlocal spell
+augroup END
+]])
+vim.cmd("autocmd Filetype markdown setlocal ts=2 sw=2 expandtab")
 
 vim.cmd([[
 let g:netrw_banner = 0

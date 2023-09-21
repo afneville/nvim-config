@@ -20,6 +20,7 @@ require("gruvbox").setup({
         StatusLine = { bg = "#3c3836", fg = "" },
         StatusLineNC = { bg = "#3c3836", fg = "" },
         -- IndentBlanklineContextChar = { fg = "#d79921" }
+        Todo = { bg="", fg="#fabd2f" }
     },
     dim_inactive = false,
     transparent_mode = false,
