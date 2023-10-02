@@ -21,21 +21,11 @@
   },
   "bold": {
     "prefix": "tbf",
-    "body": "**${1}**",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "**${1}**"
   },
   "italic": {
     "prefix": "tit",
-    "body": "_${1}_",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "_${1}_"
   },
   "task": {
     "prefix": "task",

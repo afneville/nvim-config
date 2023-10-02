@@ -25,7 +25,7 @@
       "\\usepackage{amsmath, amsthm, amssymb, amsfonts}",
       "\\title{${1}}",
       "\\author{${2}}",
-      "\\date{\\today}",
+      "\\date{\\today}"
     ]
   },
   "template": {
@@ -45,30 +45,15 @@
   },
   "bold": {
     "prefix": "tbf",
-    "body": "\\textbf{${1}}",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "\\textbf{${1}}"
   },
   "italic": {
     "prefix": "tit",
-    "body": "\\textit{${1}}",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "\\textit{${1}}"
   },
   "underline": {
     "prefix": "tul",
-    "body": "\\underline{${1}}",
-    "luasnip": {
-      "priority": 2000,
-      "autotrigger": true,
-      "wordTrig": false
-    }
+    "body": "\\underline{${1}}"
   },
   "subscript": {
     "prefix": "_",
