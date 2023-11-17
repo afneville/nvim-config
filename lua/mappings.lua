@@ -87,3 +87,8 @@ vim.keymap.set("n", "<leader>lm", ":Mason<CR>")
 vim.keymap.set("n", "<leader>ff", ":Files<CR>")
 vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
 vim.keymap.set("n", "<leader>ss", ":BLines<CR>")
+
+
+-- quit 
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>Q", ":qa!<CR>")

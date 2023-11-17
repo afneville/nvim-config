@@ -5,6 +5,7 @@ require("nvim-treesitter.configs").setup({
         enable = true,
         additional_vim_regex_highlighting = false,
         -- disable = { "latex" }
+        disable = { "haskell" }
     },
     incremental_selection = {
         enable = true,
@@ -19,6 +20,13 @@ require("nvim-treesitter.configs").setup({
         disable = { "python" },
     },
 })
+
+vim.cmd([[
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
+]])
+
 require("treesitter-context").setup({
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.

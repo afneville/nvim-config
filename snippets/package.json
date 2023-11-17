@@ -40,6 +40,10 @@
         "path": "./maths.json"
       },
       {
+        "language": "sh",
+        "path": "./shell.json"
+      },
+      {
         "language": "tex",
         "path": "./latex.json"
       },

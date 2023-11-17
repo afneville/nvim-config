@@ -8,7 +8,7 @@
     "body": "\\[${1}\\]${0}"
   },
   "minimal template": {
-    "prefix": "minimal",
+    "prefix": "mwe",
     "body": [
       "\\documentclass{article}",
       "\\begin{document}",
@@ -18,7 +18,7 @@
     ]
   },
   "preamble": {
-    "prefix": "template",
+    "prefix": "preamble",
     "body": [
       "\\documentclass{article}",
       "\\usepackage{graphicx}",
