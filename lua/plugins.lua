@@ -4,7 +4,7 @@ return require("packer").startup(function(use)
     -- ui
     use({ "akinsho/bufferline.nvim" })
     use({ "nvim-lualine/lualine.nvim" })
-    use("rebelot/kanagawa.nvim")
+    use({ "rebelot/kanagawa.nvim" })
     use({ "ellisonleao/gruvbox.nvim" })
     use({ "projekt0n/github-nvim-theme" })
     use({ "shaunsingh/nord.nvim" })
@@ -14,9 +14,10 @@ return require("packer").startup(function(use)
     -- general plugins
     use({
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.1",
+        branch = "0.1.x",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })

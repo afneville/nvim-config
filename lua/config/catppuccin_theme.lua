@@ -29,43 +29,23 @@ require("catppuccin").setup({
         types = {},
         operators = {},
     },
-    color_overrides = {},
+    color_overrides = {
+        -- mocha = {
+        --     base =   "#070018",
+        --     mantle = "#070018",
+        --     crust =  "#070018",
+        -- },
+    },
     highlight_overrides = {
         all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
             return {
-                TabLineFill = { bg = colors.surface0, fg = colors.overlay0 },
-                TabLineSel = { bg = colors.surface0 },
-                BufferVisible = { bg = colors.surface1 },
-                BufferInactive = { bg = colors.surface0, style = { "italic" } },
-                BufferCurrent = { bg = colors.surface1 },
-                BufferCurrentIndex = { bg = colors.surface1 },
-                BufferCurrentMod = { bg = colors.surface1 },
-                BufferCurrentSign = {
-                    bg = colors.surface1,
-                    fg = colors.overlay0,
-                },
-                BufferCurrentTarget = { bg = colors.surface1 },
-                BufferVisibleIndex = { bg = colors.surface1 },
-                BufferVisibleMod = { bg = colors.surface1 },
-                BufferVisibleSign = {
-                    bg = colors.surface1,
-                    fg = colors.overlay0,
-                },
-                BufferVisibleTarget = { bg = colors.surface1 },
-                BufferInactiveIndex = { bg = colors.surface0 },
-                BufferInactiveMod = { bg = colors.surface0 },
-                BufferInactiveSign = {
-                    bg = colors.surface0,
-                    fg = colors.overlay0,
-                },
-                BufferInactiveTarget = { bg = colors.surface0 },
                 NormalFloat = { bg = colors.base },
                 Pmenu = { bg = colors.base },
                 TroubleNormal = { bg = colors.base },
                 CursorColumn = { bg = colors.surface0 },
                 StatusLine = { bg = colors.surface0 },
                 StatusLineNC = { bg = colors.surface0 },
-                TreesitterContextSeparator = { fg = colors.surface1 }
+                TreesitterContextSeparator = { fg = colors.surface1 },
                 -- StatusLineNC
             }
         end, -- Same for each flavour
@@ -90,7 +70,6 @@ require("catppuccin").setup({
         markdown = true,
         mason = true,
         treesitter = true,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
 

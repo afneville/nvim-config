@@ -17,6 +17,7 @@ require("gruvbox").setup({
     contrast = "hard",
     palette_overrides = {},
     overrides = {
+        ["@text.literal.block.markdown"] = { italic = false },
         StatusLine = { bg = "#3c3836", fg = "" },
         StatusLineNC = { bg = "#3c3836", fg = "" },
         -- IndentBlanklineContextChar = { fg = "#d79921" }

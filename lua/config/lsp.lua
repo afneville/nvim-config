@@ -7,7 +7,7 @@ vim.diagnostic.config({
     float = {
         focusable = true,
         style = "minimal",
-        border = "none",
+        border = "single",
         source = "always",
         header = "",
         prefix = "",
@@ -25,15 +25,15 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- vim.lsp.handlers["textDocument/hover"] =
---     vim.lsp.with(vim.lsp.handlers.hover, {
---         border = "single",
---     })
---
--- vim.lsp.handlers["textDocument/signatureHelp"] =
---     vim.lsp.with(vim.lsp.handlers.signature_help, {
---         border = "single",
---     })
+vim.lsp.handlers["textDocument/hover"] =
+    vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "single",
+    })
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = "single",
+    })
 
 local lsp_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -72,9 +72,9 @@ capabilities =
 capabilities.textDocument.completion.completionItem.snippetSupport =
     true
 local lspconfig = require("lspconfig")
--- require("lspconfig.ui.windows").default_options = {
---     border = "single",
--- }
+require("lspconfig.ui.windows").default_options = {
+    border = "single",
+}
 local lsp_flags = {
     debounce_text_changes = 150,
 }
@@ -161,11 +161,11 @@ lspconfig["clangd"].setup({
 -- null ls
 local null_ls = require("null-ls")
 local sources = {
-    null_ls.builtins.diagnostics.eslint.with({
-        extra_args = {
-            "--no-eslintrc",
-        },
-    }),
+    -- null_ls.builtins.diagnostics.eslint.with({
+    --     extra_args = {
+    --         "--no-eslintrc",
+    --     },
+    -- }),
     null_ls.builtins.formatting.jq,
     null_ls.builtins.formatting.latexindent.with({
         args = {

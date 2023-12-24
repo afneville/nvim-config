@@ -6,7 +6,6 @@ vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.showtabline = 0
--- vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -28,6 +27,7 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.listchars:append("space:󰧟")
 -- vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append "eol:"
 
 -- Extension Options
 vim.cmd("let g:vimtex_view_method = 'zathura_simple'")
@@ -60,7 +60,6 @@ vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
 vim.cmd(
     "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
 )
-
 
 vim.cmd("autocmd! FileType markdown set spell")
 vim.cmd([[
@@ -98,20 +97,20 @@ endfunction
 -- vim.g.loaded_netrwPlugin = 1
 
 Options = {
-    error = "E",
-    warn = "W",
-    info = "I",
-    hint = "H",
-    added = "+",
-    modified = "~",
-    removed = "-",
-    -- error = " ",
-    -- warn = " ",
-    -- info = " ",
-    -- hint = "󰌶 ",
-    -- added = " ",
-    -- modified = " ",
-    -- removed = " ",
+    -- error = "E",
+    -- warn = "W",
+    -- info = "I", 
+    -- hint = "H",
+    -- added = "+",
+    -- modified = "~",
+    -- removed = "-",
+    error = " ",
+    warn = " ",
+    info = " ",
+    hint = "󰌶 ",
+    added = " ",
+    modified = " ",
+    removed = " ",
 }
 
 vim.cmd([[

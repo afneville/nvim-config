@@ -84,11 +84,6 @@ vim.keymap.set("n", "<space>lf", ":lua vim.lsp.buf.format({ timeout_ms = 5000 })
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
 vim.keymap.set("n", "<leader>lm", ":Mason<CR>")
 
-vim.keymap.set("n", "<leader>ff", ":Files<CR>")
-vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
-vim.keymap.set("n", "<leader>ss", ":BLines<CR>")
-
-
--- quit 
-vim.keymap.set("n", "<leader>w", ":w<CR>")
-vim.keymap.set("n", "<leader>Q", ":qa!<CR>")
+-- vim.keymap.set("n", "<leader>ff", ":Files<CR>")
+-- vim.keymap.set("n", "<leader>bb", ":Buffers<CR>")
+-- vim.keymap.set("n", "<leader>ss", ":BLines<CR>")
