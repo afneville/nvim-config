@@ -1,5 +1,11 @@
 local actions = require("telescope.actions")
 
+local titles = {
+    prompt_title = false,
+    results_title = false,
+    preview_title = false,
+}
+
 require("telescope").setup({
     defaults = {
         prompt_title = "",
@@ -15,7 +21,7 @@ require("telescope").setup({
         },
         -- preview = true,
         preview = {
-            hide_on_startup = true,
+            hide_on_startup = false,
         },
         mappings = {
             i = {
@@ -40,7 +46,7 @@ require("telescope").setup({
         layout_config = {
             vertical = {
                 preview_cutoff = 0,
-                preview_height = 0.25,
+                preview_height = 0.5,
                 width = { padding = 0 },
                 height = { padding = 0 },
             },
@@ -52,11 +58,8 @@ require("telescope").setup({
         },
     },
     pickers = {
-        find_files = {
-            prompt_title = false,
-            results_title = false,
-            preview_title = false,
-        }
+        find_files = titles,
+        buffers = titles
     },
     extensions = {
         fzf = {

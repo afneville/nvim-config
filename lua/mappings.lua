@@ -63,4 +63,3 @@ vim.cmd(
 -- lsp
 vim.keymap.set("n", "<space>lf", ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>")
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
-vim.keymap.set("n", "<leader>lm", ":Mason<CR>")

@@ -1,27 +1,24 @@
 return require("packer").startup(function(use)
     use({ "wbthomason/packer.nvim" })
 
-    -- ui
-    use({ "akinsho/bufferline.nvim" })
-    use({ "nvim-lualine/lualine.nvim" })
     use({ "rebelot/kanagawa.nvim" })
     use({ "ellisonleao/gruvbox.nvim" })
-    use({ "projekt0n/github-nvim-theme" })
-    use({ "shaunsingh/nord.nvim" })
     use({ "catppuccin/nvim", as = "catppuccin" })
-    use({ "AlexvZyl/nordic.nvim" })
 
-    -- general plugins
     use({
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
-        requires = { { "nvim-lua/plenary.nvim" } },
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                run = "make",
+            },
+        },
     })
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })
-    use({ "WhoIsSethDaniel/mason-tool-installer.nvim" })
     use({
         "nvim-treesitter/nvim-treesitter",
         run = function()
@@ -37,28 +34,13 @@ return require("packer").startup(function(use)
     use({ "lewis6991/gitsigns.nvim" })
     use({ "numToStr/Comment.nvim" })
     use({ "norcalli/nvim-colorizer.lua" })
-    use({
-        "lukas-reineke/headlines.nvim",
-        after = "nvim-treesitter",
-    })
-
-    -- lsp / completion
-    use("mfussenegger/nvim-jdtls")
-    use({
-        "glepnir/lspsaga.nvim",
-        requires = {
-            { "nvim-tree/nvim-web-devicons" },
-            { "nvim-treesitter/nvim-treesitter" },
-        },
-    })
+    use({ "mfussenegger/nvim-jdtls" })
     use({ "windwp/nvim-autopairs" })
-    use({ "williamboman/mason.nvim" })
-    use({ "williamboman/mason-lspconfig.nvim" })
     use({ "neovim/nvim-lspconfig" })
+    use({"nvimtools/none-ls.nvim"})
     use({ "kevinhwang91/nvim-bqf" })
     use({ "folke/trouble.nvim" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
-    -- use({ "lervag/vimtex" })
     use({
         "hrsh7th/nvim-cmp",
         requires = {
@@ -69,12 +51,6 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
             "onsails/lspkind.nvim",
-        },
-    })
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = {
-            "nvim-lua/plenary.nvim",
         },
     })
     if Options.bootstrap then

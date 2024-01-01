@@ -2,7 +2,7 @@ vim.diagnostic.config({
     virtual_text = false,
     signs = true,
     update_in_insert = false,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
         focusable = true,
@@ -89,83 +89,106 @@ local servers = {
     "jsonls",
 }
 
+
+function lsp_binary_exists(server_config)
+    local valid_config = server_config.document_config and
+        server_config.document_config.default_config and
+        type(server_config.document_config.default_config.cmd) == "table" and
+        #server_config.document_config.default_config.cmd >= 1
+
+    if not valid_config then
+        return false
+    end
+
+    local binary = server_config.document_config.default_config.cmd[1]
+
+    return vim.fn.executable(binary) == 1
+end
+
 for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup({
+    if lsp_binary_exists(lspconfig[lsp]) then
+        lspconfig[lsp].setup({
+            on_attach = lsp_attach,
+            capabilities = capabilities,
+            flags = lsp_flags,
+        })
+    end
+end
+
+if lsp_binary_exists(lspconfig["jdtls"]) then
+    lspconfig["jdtls"].setup({
         on_attach = lsp_attach,
         capabilities = capabilities,
         flags = lsp_flags,
+        root_dir = function(fname)
+            return require("lspconfig").util.root_pattern(
+                "pom.xml",
+                "gradle.build",
+                ".git"
+            )(fname) or vim.fn.getcwd()
+        end,
     })
 end
 
-lspconfig["jdtls"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    root_dir = function(fname)
-        return require("lspconfig").util.root_pattern(
-            "pom.xml",
-            "gradle.build",
-            ".git"
-        )(fname) or vim.fn.getcwd()
-    end,
-})
-
-lspconfig["lua_ls"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = {
-                    "vim",
+if lsp_binary_exists(lspconfig["lua_ls"]) then
+    lspconfig["lua_ls"].setup({
+        on_attach = lsp_attach,
+        capabilities = capabilities,
+        flags = lsp_flags,
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = {
+                        "vim",
+                    },
                 },
             },
         },
-    },
-})
+    })
+end
 
-lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = {
-        "css",
-        "eruby",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "less",
-        "sass",
-        "scss",
-        "svelte",
-        "pug",
-        "typescriptreact",
-        "vue",
-    },
-    init_options = {
-        html = {
-            options = {
-                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-                ["bem.enabled"] = true,
+if lsp_binary_exists(lspconfig["emmet_ls"]) then
+    lspconfig["emmet_ls"].setup({
+        capabilities = capabilities,
+        filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
+            "sass",
+            "scss",
+            "svelte",
+            "pug",
+            "typescriptreact",
+            "vue",
+        },
+        init_options = {
+            html = {
+                options = {
+                    ["bem.enabled"] = true, -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                },
             },
         },
-    },
-})
+    })
+end
 
 capabilities["offsetEncoding"] = "utf-8"
-lspconfig["clangd"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-})
+if lsp_binary_exists(lspconfig["clangd"]) then
+    lspconfig["clangd"].setup({
+        on_attach = lsp_attach,
+        capabilities = capabilities,
+    })
+end
 
--- null ls
 local null_ls = require("null-ls")
 local sources = {
-    -- null_ls.builtins.diagnostics.eslint.with({
-    --     extra_args = {
-    --         "--no-eslintrc",
-    --     },
-    -- }),
+    null_ls.builtins.diagnostics.eslint.with({
+        extra_args = {
+            "--no-eslintrc",
+        },
+    }),
     null_ls.builtins.formatting.jq,
     null_ls.builtins.formatting.latexindent.with({
         args = {
