@@ -49,7 +49,6 @@ local lsp_attach = function(client, bufnr)
             false
         )
     end
-
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
@@ -89,19 +88,15 @@ local servers = {
     "jsonls",
 }
 
-
-function lsp_binary_exists(server_config)
-    local valid_config = server_config.document_config and
-        server_config.document_config.default_config and
-        type(server_config.document_config.default_config.cmd) == "table" and
-        #server_config.document_config.default_config.cmd >= 1
-
+local function lsp_binary_exists(server_config)
+    local valid_config = server_config.document_config
+        and server_config.document_config.default_config
+        and type(server_config.document_config.default_config.cmd) == "table"
+        and #server_config.document_config.default_config.cmd >= 1
     if not valid_config then
         return false
     end
-
     local binary = server_config.document_config.default_config.cmd[1]
-
     return vim.fn.executable(binary) == 1
 end
 
@@ -237,4 +232,5 @@ local sources = {
         },
     }),
 }
+
 null_ls.setup({ sources = sources })

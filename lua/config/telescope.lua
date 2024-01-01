@@ -27,8 +27,8 @@ require("telescope").setup({
             i = {
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
-                ["<C-Bslash>"] = require('telescope.actions.layout').toggle_preview,
-                ["<C-_>"] = require('telescope.actions.layout').cycle_layout_next,
+                ["<C-Bslash>"] = require("telescope.actions.layout").toggle_preview,
+                ["<C-_>"] = require("telescope.actions.layout").cycle_layout_next,
                 ["<ESC>"] = actions.close,
             },
         },
@@ -59,7 +59,8 @@ require("telescope").setup({
     },
     pickers = {
         find_files = titles,
-        buffers = titles
+        buffers = titles,
+        live_grep = titles,
     },
     extensions = {
         fzf = {
@@ -71,14 +72,5 @@ require("telescope").setup({
         },
     },
 })
-
--- telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
-vim.keymap.set(
-    "n",
-    "<leader>ss",
-    ":Telescope current_buffer_fuzzy_find<CR>"
-)
 
 require("telescope").load_extension("fzf")

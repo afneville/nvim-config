@@ -1,5 +1,10 @@
 -- leader key
-vim.keymap.set("n", "<Space>", "<NOP>", { noremap = true, silent = true })
+vim.keymap.set(
+    "n",
+    "<Space>",
+    "<NOP>",
+    { noremap = true, silent = true }
+)
 vim.keymap.set("n", "K", "<NOP>", { noremap = true, silent = true })
 vim.keymap.set("n", "<CR>", "<NOP>", { noremap = true, silent = true })
 vim.g.mapleader = " "
@@ -28,13 +33,22 @@ vim.cmd("map <C-ScrollWheelRight> <nop>")
 -- modify frames
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { silent = true })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
+vim.keymap.set(
+    "n",
+    "<C-Left>",
+    ":vertical resize -2<CR>",
+    { silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<C-Right>",
+    ":vertical resize +2<CR>",
+    { silent = true }
+)
 
 -- navigation
 vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
-vim.keymap.set("n", "<leader>c", ":bd<CR>")
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
@@ -48,11 +62,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- trouble
-vim.keymap.set("n", "<leader>t", ":TroubleToggle<CR>")
---luasnip
-vim.cmd("inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>")
-vim.cmd("inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>")
+vim.cmd(
+    "inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>"
+)
+vim.cmd(
+    "inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>"
+)
 vim.cmd(
     "imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
@@ -60,6 +75,15 @@ vim.cmd(
 vim.cmd(
     "smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
--- lsp
-vim.keymap.set("n", "<space>lf", ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>")
+
+vim.keymap.set("n", "<leader>c", ":bd<CR>")
+vim.keymap.set("n", "<leader>t", ":TroubleToggle<CR>")
+vim.keymap.set(
+    "n",
+    "<space>lf",
+    ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>"
+)
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>ss", ":Telescope live_grep<CR>")
