@@ -16,20 +16,6 @@ vim.cmd("autocmd FileType qf map <C-k> k")
 vim.cmd("autocmd FileType qf map <C-j> j")
 vim.cmd("autocmd FileType qf map q :q<CR>")
 
--- disable scrolling
-vim.cmd("map <ScrollWheelUp> <nop>")
-vim.cmd("map <S-ScrollWheelUp> <nop>")
-vim.cmd("map <C-ScrollWheelUp> <nop>")
-vim.cmd("map <ScrollWheelDown> <nop>")
-vim.cmd("map <S-ScrollWheelDown> <nop>")
-vim.cmd("map <C-ScrollWheelDown> <nop>")
-vim.cmd("map <ScrollWheelLeft> <nop>")
-vim.cmd("map <S-ScrollWheelLeft> <nop>")
-vim.cmd("map <C-ScrollWheelLeft> <nop>")
-vim.cmd("map <ScrollWheelRight> <nop>")
-vim.cmd("map <S-ScrollWheelRight> <nop>")
-vim.cmd("map <C-ScrollWheelRight> <nop>")
-
 -- modify frames
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { silent = true })
@@ -47,8 +33,9 @@ vim.keymap.set(
 )
 
 -- navigation
-vim.keymap.set("n", "<TAB>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { silent = true })
+vim.keymap.set("n", "<TAB>", ":Telescope buffers<CR>", { silent = true })
+vim.keymap.set("n", "<CR>", ":Telescope find_files<CR>", { silent = true })
+vim.keymap.set("n", "<S-TAB>", ":bnext<CR>", { silent = true })
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
@@ -76,14 +63,17 @@ vim.cmd(
     "smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
 
-vim.keymap.set("n", "<leader>c", ":bd<CR>")
-vim.keymap.set("n", "<leader>t", ":TroubleToggle<CR>")
+vim.keymap.set("n", "<leader>lt", ":TroubleToggle<CR>")
 vim.keymap.set(
     "n",
     "<space>lf",
     ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>"
 )
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<leader>bb", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<leader>ss", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
+
+vim.keymap.set("n", "<leader>x", ":bd<CR>")
+vim.keymap.set("n", "<leader>o", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>t", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>s", ":Telescope current_buffer_fuzzy_find<CR>")
