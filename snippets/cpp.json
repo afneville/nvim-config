@@ -1,0 +1,53 @@
+{
+    "main() template": {
+        "prefix": "main",
+        "body": [
+            "int main(int argc, char *argv[])",
+            "{",
+            "\t$0",
+            "\treturn EXIT_SUCCESS;",
+            "}"
+        ],
+        "description": "Standard main() snippet"
+    },
+    "main(void) template": {
+        "prefix": "mainn",
+        "body": ["int main(void)", "{", "\t$0", "\treturn EXIT_SUCCESS;", "}"],
+        "description": "No-args main() snippet"
+    },
+    "#include <...>": {
+        "prefix": "#inc",
+        "body": ["#include <$0>"],
+        "description": "#include <...> snippet"
+    },
+    "#include \"...\"": {
+        "prefix": "#incl",
+        "body": ["#include \"$0\""],
+        "description": "#include \"...\" snippet"
+    },
+    "#define macro": {
+        "prefix": "#def",
+        "body": ["#define ${1:MACRO}"],
+        "description": "Textual macro snippet"
+    },
+    "#define macro()": {
+        "prefix": "#deff",
+        "body": ["#define ${1:MACRO}($2) ($3)"],
+        "description": "Function-like macro snippet"
+    },
+    "#if": {
+        "prefix": "#if",
+        "body": ["#if ${1:0}", "$0", "#endif /* if $1 */"],
+        "description": "#if snippet"
+    },
+    "#ifdef": {
+        "prefix": "#ifdef",
+        "body": ["#ifdef ${1:MACRO}", "$0", "#endif /* ifdef $1 */"],
+        "description": "#ifdef snippet"
+    },
+    "#ifndef": {
+        "prefix": "#ifndef",
+        "body": ["#ifndef ${1:MACRO}", "$0", "#endif /* ifndef $1 */"],
+        "description": "#ifndef snippet"
+    }
+}

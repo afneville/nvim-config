@@ -12,7 +12,7 @@
     "body": [
       "---",
       "title: ${1}",
-      "author: ${2}",
+      "author: Alexander Neville",
       "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
       "---",
       "",
