@@ -1,7 +1,7 @@
 require("ibl").setup({
     indent = {
         char = "│",
-        highlight = "IndentBlankLineChar",
+        -- highlight = "IndentBlankLineChar",
     },
     scope = {
         enabled = false,

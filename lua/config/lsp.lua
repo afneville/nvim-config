@@ -179,11 +179,11 @@ end
 
 local null_ls = require("null-ls")
 local sources = {
-    null_ls.builtins.diagnostics.eslint.with({
-        extra_args = {
-            "--no-eslintrc",
-        },
-    }),
+    -- null_ls.builtins.diagnostics.eslint.with({
+    --     extra_args = {
+    --         "--no-eslintrc",
+    --     },
+    -- }),
     null_ls.builtins.formatting.jq,
     null_ls.builtins.formatting.latexindent.with({
         args = {
@@ -193,7 +193,7 @@ local sources = {
             "-",
         },
     }),
-    null_ls.builtins.diagnostics.shellcheck,
+    -- null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.sql_formatter,
     null_ls.builtins.formatting.prettier.with({
         extra_args = {
@@ -213,7 +213,7 @@ local sources = {
     null_ls.builtins.formatting.clang_format.with({
         extra_args = {
             "--style",
-            "{BasedOnStyle: llvm, IndentWidth: 4}",
+            "{BasedOnStyle: llvm, IndentWidth: 4, AccessModifierOffset: -4}",
         },
     }),
     null_ls.builtins.formatting.black,

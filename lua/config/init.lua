@@ -6,7 +6,7 @@ local function safeRequire(module)
     print("Module " .. module .. " contains error")
 end
 
-safeRequire("config.kanagawa_theme")
+safeRequire("config.catppuccin_theme")
 safeRequire("config.bqf")
 safeRequire("config.trouble_config")
 safeRequire("config.lsp")

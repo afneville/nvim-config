@@ -32,7 +32,7 @@ require("gitsigns").setup({
         },
         untracked = {
             hl = "GitSignsAdd",
-            text = "?",
+            text = "┆",
             numhl = "GitSignsAddNr",
             linehl = "GitSignsAddLn",
         },

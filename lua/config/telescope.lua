@@ -21,7 +21,7 @@ require("telescope").setup({
         },
         -- preview = true,
         preview = {
-            hide_on_startup = false,
+            hide_on_startup = false
         },
         mappings = {
             i = {
@@ -46,7 +46,7 @@ require("telescope").setup({
         layout_config = {
             vertical = {
                 preview_cutoff = 0,
-                preview_height = 0.5,
+                preview_height = 0.7,
                 width = { padding = 0 },
                 height = { padding = 0 },
             },
@@ -61,6 +61,7 @@ require("telescope").setup({
         find_files = titles,
         buffers = titles,
         live_grep = titles,
+        current_buffer_fuzzy_find = titles,
     },
     extensions = {
         fzf = {
