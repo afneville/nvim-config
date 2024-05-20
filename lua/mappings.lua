@@ -33,9 +33,7 @@ vim.keymap.set(
 )
 
 -- navigation
-vim.keymap.set("n", "<TAB>", ":Telescope buffers<CR>", { silent = true })
 vim.keymap.set("n", "<CR>", ":Telescope find_files<CR>", { silent = true })
-vim.keymap.set("n", "<S-TAB>", ":bnext<CR>", { silent = true })
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })

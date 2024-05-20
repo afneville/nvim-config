@@ -16,6 +16,12 @@ return require("packer").startup(function(use)
             },
         },
     })
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use({ "preservim/vim-markdown" })
+    -- use({ "vim-pandoc/vim-pandoc-syntax" })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "junegunn/fzf" })
     use({ "junegunn/fzf.vim" })
@@ -29,6 +35,8 @@ return require("packer").startup(function(use)
             ts_update()
         end,
     })
+    use({ "windwp/nvim-ts-autotag" })
+    -- use({ "udalov/kotlin-vim" })
     use({ "nvim-treesitter/nvim-treesitter-context" })
     use({ "tpope/vim-surround" })
     use({ "lewis6991/gitsigns.nvim" })
@@ -37,7 +45,7 @@ return require("packer").startup(function(use)
     use({ "mfussenegger/nvim-jdtls" })
     use({ "windwp/nvim-autopairs" })
     use({ "neovim/nvim-lspconfig" })
-    use({"nvimtools/none-ls.nvim"})
+    use({ "nvimtools/none-ls.nvim" })
     use({ "kevinhwang91/nvim-bqf" })
     use({ "folke/trouble.nvim" })
     use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })

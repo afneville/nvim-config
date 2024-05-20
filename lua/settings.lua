@@ -5,14 +5,14 @@ vim.opt.pumheight = 10
 vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.showtabline = 0
+-- vim.opt.showtabline = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
 vim.opt.conceallevel = 0
--- vim.opt.guicursor = ""
+vim.opt.guicursor = "i:hor20"
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.updatetime = 300
@@ -35,6 +35,8 @@ vim.cmd("let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']")
 vim.cmd("let g:fzf_layout = { 'down': '~30%' }")
 
 -- Filetypes
+vim.cmd("let g:vim_markdown_math = 1")
+vim.cmd("let g:vim_markdown_frontmatter = 1")
 vim.cmd("set colorcolumn=72")
 vim.cmd("set t_md=")
 vim.cmd("filetype plugin on")
@@ -43,12 +45,14 @@ vim.cmd("set mouse=")
 vim.cmd("set ts=4")
 vim.cmd("set sw=4")
 vim.cmd("set expandtab")
+vim.cmd("autocmd Filetype man setlocal nocursorcolumn")
 vim.cmd("autocmd Filetype javascript setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype html setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype css setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype scss setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype json setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype tex setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype typescriptreact setlocal ts=2 sw=2 expandtab")
 vim.cmd("set whichwrap=<,>,[,]")
 vim.cmd("set iskeyword+=-")
 -- vim.cmd("set iskeyword-=_")
@@ -113,40 +117,40 @@ Options = {
     removed = " ",
 }
 
-vim.cmd([[
-set laststatus=2
-set statusline=
-set statusline+=%{b:gitbranch}
-set statusline+=%f
-set statusline+=\ 
-set statusline+=%m
-set statusline+=%=
-set statusline+=%l
-set statusline+=:
-set statusline+=%c
-set statusline+=\ 
-set statusline+=/
-set statusline+=\ 
-set statusline+=%L
-set statusline+=\ 
-set statusline+=%y
-
-function! StatuslineGitBranch()
-  let b:gitbranch=""
-  if &modifiable
-    try
-      let l:dir=expand('%:p:h')
-      let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
-      if !v:shell_error
-        let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
-      endif
-    catch
-    endtry
-  endif
-endfunction
-
-augroup GetGitBranch
-  autocmd!
-  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
-augroup END
-]])
+-- vim.cmd([[
+-- set laststatus=2
+-- set statusline=
+-- set statusline+=%{b:gitbranch}
+-- set statusline+=%f
+-- set statusline+=\ 
+-- set statusline+=%m
+-- set statusline+=%=
+-- set statusline+=%l
+-- set statusline+=:
+-- set statusline+=%c
+-- set statusline+=\ 
+-- set statusline+=/
+-- set statusline+=\ 
+-- set statusline+=%L
+-- set statusline+=\ 
+-- set statusline+=%y
+--
+-- function! StatuslineGitBranch()
+--   let b:gitbranch=""
+--   if &modifiable
+--     try
+--       let l:dir=expand('%:p:h')
+--       let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
+--       if !v:shell_error
+--         let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+--       endif
+--     catch
+--     endtry
+--   endif
+-- endfunction
+--
+-- augroup GetGitBranch
+--   autocmd!
+--   autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+-- augroup END
+-- ]])

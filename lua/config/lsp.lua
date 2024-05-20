@@ -14,6 +14,9 @@ vim.diagnostic.config({
     },
 })
 
+-- vim.lsp.set_log_level('debug')
+vim.lsp.set_log_level('off')
+
 local signs = {
     Error = Options.error,
     Warn = Options.warn,
@@ -80,6 +83,7 @@ local lsp_flags = {
 
 local servers = {
     "tsserver",
+    "tailwindcss",
     "pyright",
     "bashls",
     "html",
@@ -87,6 +91,11 @@ local servers = {
     "texlab",
     "jsonls",
 }
+
+
+
+
+
 
 local function lsp_binary_exists(server_config)
     local valid_config = server_config.document_config
@@ -108,6 +117,26 @@ for _, lsp in ipairs(servers) do
             flags = lsp_flags,
         })
     end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+if lsp_binary_exists(lspconfig["kotlin_language_server"]) then
+    lspconfig["kotlin_language_server"].setup({
+        cmd = { "/home/alex/vcon/forks/kotlin-language-server/server/build/install/server/bin/kotlin-language-server" },
+        on_attach = lsp_attach,
+        flags = lsp_flags,
+    })
 end
 
 if lsp_binary_exists(lspconfig["jdtls"]) then
@@ -179,22 +208,18 @@ end
 
 local null_ls = require("null-ls")
 local sources = {
-    -- null_ls.builtins.diagnostics.eslint.with({
-    --     extra_args = {
-    --         "--no-eslintrc",
+    -- null_ls.builtins.formatting.latexindent.with({
+    --     args = {
+    --         "-l",
+    --         "/home/alex/.config/nvim/utils/indentconfig.yaml",
+    --         "-m",
+    --         "-",
     --     },
     -- }),
-    null_ls.builtins.formatting.jq,
-    null_ls.builtins.formatting.latexindent.with({
-        args = {
-            "-l",
-            "/home/alex/.config/nvim/utils/indentconfig.yaml",
-            "-m",
-            "-",
-        },
-    }),
-    -- null_ls.builtins.diagnostics.shellcheck,
+    -- null_ls.builtins.formatting.jq,
+    -- -- null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.sql_formatter,
+    null_ls.builtins.formatting.ktlint,
     null_ls.builtins.formatting.prettier.with({
         extra_args = {
             "--bracket-same-line",

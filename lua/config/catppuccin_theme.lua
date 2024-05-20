@@ -46,6 +46,14 @@ require("catppuccin").setup({
                 StatusLine = { bg = colors.surface0 },
                 StatusLineNC = { bg = colors.surface0 },
                 TreesitterContextSeparator = { fg = colors.surface1 },
+                TelescopeBorder = { fg = colors.surface0 },
+                WinSeparator = { fg = colors.surface0 },
+                markdownLinkText = { style = {} },
+                TreesitterContextLineNumber = { bg = colors.base },
+                TreesitterContextBottom = { style = {} },
+                TreesitterContextLineNumberBottom = { style = {} },
+                lualine_c_normal = { bg = colors.base },
+                -- VertSplit = { fg = colors.surface1 }
                 -- StatusLineNC
             }
         end, -- Same for each flavour
@@ -74,3 +82,7 @@ require("catppuccin").setup({
 })
 
 vim.cmd.colorscheme("catppuccin")
+
+vim.cmd("hi clear markdownError")
+vim.cmd("hi clear Error")
+-- vim.cmd("syn clear mkdLink")

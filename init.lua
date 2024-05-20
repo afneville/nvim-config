@@ -7,5 +7,5 @@ if (packer_bootstrap == false) then
     require("config")
 end
 
-vim.cmd("hi markdownError guifg=None guibg=None")
+vim.cmd("hi clear markdownError")
 vim.cmd("hi clear Error")
