@@ -7,7 +7,6 @@ local function safeRequire(module)
 end
 
 safeRequire("config.catppuccin_theme")
-safeRequire("config.navic")
 safeRequire("config.lualine")
 safeRequire("config.bqf")
 safeRequire("config.trouble_config")

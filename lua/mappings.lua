@@ -1,9 +1,9 @@
 -- leader key
 vim.keymap.set(
-    "n",
-    "<Space>",
-    "<NOP>",
-    { noremap = true, silent = true }
+  "n",
+  "<Space>",
+  "<NOP>",
+  { noremap = true, silent = true }
 )
 vim.keymap.set("n", "K", "<NOP>", { noremap = true, silent = true })
 vim.keymap.set("n", "<CR>", "<NOP>", { noremap = true, silent = true })
@@ -20,20 +20,20 @@ vim.cmd("autocmd FileType qf map q :q<CR>")
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { silent = true })
 vim.keymap.set(
-    "n",
-    "<C-Left>",
-    ":vertical resize -2<CR>",
-    { silent = true }
+  "n",
+  "<C-Left>",
+  ":vertical resize -2<CR>",
+  { silent = true }
 )
 vim.keymap.set(
-    "n",
-    "<C-Right>",
-    ":vertical resize +2<CR>",
-    { silent = true }
+  "n",
+  "<C-Right>",
+  ":vertical resize +2<CR>",
+  { silent = true }
 )
 
 -- navigation
-vim.keymap.set("n", "<CR>", ":Telescope find_files<CR>", { silent = true })
+vim.keymap.set("n", "<CR>", "<NOP>", { silent = true })
 
 -- visual mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
@@ -48,30 +48,34 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.cmd(
-    "inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>"
+  "inoremap <silent> <C-c> <cmd>lua require('luasnip').jump(1)<Cr>"
 )
 vim.cmd(
-    "inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>"
+  "inoremap <silent> <C-v> <cmd>lua require('luasnip').jump(-1)<Cr>"
 )
 vim.cmd(
-    "imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
+  "imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
 
 vim.cmd(
-    "smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
+  "smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'"
 )
 
 vim.keymap.set("n", "<leader>lt", ":TroubleToggle<CR>")
 vim.keymap.set(
-    "n",
-    "<space>lf",
-    ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>"
+  "n",
+  "<space>lf",
+  ":lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>"
 )
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
-vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
 
+vim.keymap.set("n", "<leader>f", ":Format<CR>")
 vim.keymap.set("n", "<leader>x", ":bd<CR>")
 vim.keymap.set("n", "<leader>o", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>t", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<leader>s", ":Telescope current_buffer_fuzzy_find<CR>")
+vim.keymap.set(
+  "n",
+  "<leader>s",
+  ":Telescope current_buffer_fuzzy_find<CR>"
+)

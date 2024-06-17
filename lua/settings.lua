@@ -5,7 +5,6 @@ vim.opt.pumheight = 10
 vim.opt.cmdheight = 1
 vim.opt.splitbelow = true
 vim.opt.splitright = true
--- vim.opt.showtabline = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -25,9 +24,7 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.list = true
-vim.opt.listchars:append("space:󰧟")
--- vim.opt.listchars:append "eol:↴"
--- vim.opt.listchars:append "eol:"
+vim.opt.listchars:append("space:·")
 
 -- Extension Options
 vim.cmd("let g:vimtex_view_method = 'zathura_simple'")
@@ -53,16 +50,30 @@ vim.cmd("autocmd Filetype scss setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype json setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype tex setlocal ts=2 sw=2 expandtab")
 vim.cmd("autocmd Filetype typescriptreact setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype typescript setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype lua setlocal ts=2 sw=2 expandtab")
+vim.cmd("autocmd Filetype go setlocal noexpandtab")
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd(
+  [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
+)
+vim.cmd(
+  [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
+)
+vim.cmd(
+  [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
+)
+
 vim.cmd("set whichwrap=<,>,[,]")
 vim.cmd("set iskeyword+=-")
--- vim.cmd("set iskeyword-=_")
 vim.cmd("set shortmess+=c")
 vim.cmd("set inccommand=split")
 vim.cmd("autocmd InsertEnter * norm zz")
 vim.cmd("autocmd! FileType fzf setlocal nonumber norelativenumber")
 vim.cmd("autocmd! FileType qf setlocal nonumber norelativenumber")
 vim.cmd(
-    "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
+  "autocmd! FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }"
 )
 
 vim.cmd("autocmd! FileType markdown set spell")
@@ -97,60 +108,12 @@ function! NetrwMapping()
 endfunction
 ]])
 
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-
 Options = {
-    -- error = "E",
-    -- warn = "W",
-    -- info = "I", 
-    -- hint = "H",
-    -- added = "+",
-    -- modified = "~",
-    -- removed = "-",
-    error = " ",
-    warn = " ",
-    info = " ",
-    hint = " ",
-    added = " ",
-    modified = " ",
-    removed = " ",
+  error = "E",
+  warn = "W",
+  info = "I",
+  hint = "H",
+  added = "+",
+  modified = "~",
+  removed = "-",
 }
-
--- vim.cmd([[
--- set laststatus=2
--- set statusline=
--- set statusline+=%{b:gitbranch}
--- set statusline+=%f
--- set statusline+=\ 
--- set statusline+=%m
--- set statusline+=%=
--- set statusline+=%l
--- set statusline+=:
--- set statusline+=%c
--- set statusline+=\ 
--- set statusline+=/
--- set statusline+=\ 
--- set statusline+=%L
--- set statusline+=\ 
--- set statusline+=%y
---
--- function! StatuslineGitBranch()
---   let b:gitbranch=""
---   if &modifiable
---     try
---       let l:dir=expand('%:p:h')
---       let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
---       if !v:shell_error
---         let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
---       endif
---     catch
---     endtry
---   endif
--- endfunction
---
--- augroup GetGitBranch
---   autocmd!
---   autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
--- augroup END
--- ]])
