@@ -78,7 +78,7 @@ local lsp_flags = {
 }
 
 local servers = {
-  "tsserver",
+  "ts_ls",
   "tailwindcss",
   "pyright",
   "bashls",

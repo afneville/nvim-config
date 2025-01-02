@@ -1,3 +1,5 @@
+local packer_bootstrap = require("utils").ensure_packer()
+
 return require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
 
@@ -62,9 +64,7 @@ return require("packer").startup(function(use)
       "onsails/lspkind.nvim",
     },
   })
-  if Options.bootstrap then
-    print("start packer bootstrap")
+  if packer_bootstrap then
     require("packer").sync()
-    print("finish packer bootstrap")
   end
 end)

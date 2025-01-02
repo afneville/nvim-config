@@ -7,7 +7,8 @@ cmp.setup({
     if vim.api.nvim_get_mode().mode == "c" then
       return true
     else
-      return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+      return not context.in_treesitter_capture("comment")
+        and not context.in_syntax_group("Comment")
     end
   end,
   snippet = {
@@ -17,17 +18,18 @@ cmp.setup({
   },
   window = {
     completion = {
-      winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,Search:None",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
       border = "single",
     },
     documentation = {
-      winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,Search:None",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
       border = "single",
     },
   },
-  -- experimental = {
-  --     ghost_text = true
-  -- },
+  preselect = cmp.PreselectMode.None,
+  completion = {
+    completeopt = "noselect",
+  },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -57,11 +59,11 @@ cmp.setup({
   },
 })
 
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    { name = "cmdline" },
-  }),
-})
+-- cmp.setup.cmdline(":", {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources({
+--     { name = "path" },
+--   }, {
+--     { name = "cmdline" },
+--   }),
+-- })

@@ -40,7 +40,7 @@ require("catppuccin").setup({
     all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
       return {
         NormalFloat = { bg = colors.base },
-        Pmenu = { bg = colors.base },
+        -- Pmenu = { bg = colors.base },
         TroubleNormal = { bg = colors.base },
         CursorColumn = { bg = colors.surface0 },
         StatusLine = { bg = colors.surface0 },
