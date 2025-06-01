@@ -1,5 +1,4 @@
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
+require'nvim-treesitter'.install( {
     "asm",
     "bash",
     "cmake",
@@ -58,34 +57,15 @@ require("nvim-treesitter.configs").setup({
     "vim",
     "yaml",
     "xresources",
-  },
-  sync_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = true,
-    disable = { "haskell" },
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<c-j>", -- set to `false` to disable one of the mappings
-      node_incremental = "<c-j>",
-      node_decremental = "<c-k>",
-    },
-  },
-  indent = {
-    enable = true,
-    disable = { "python" },
-  },
 })
 
 require("nvim-ts-autotag").setup()
 
-vim.cmd([[
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set nofoldenable
-]])
+-- vim.cmd([[
+-- set foldmethod=expr
+-- set foldexpr=nvim_treesitter#foldexpr()
+-- set nofoldenable
+-- ]])
 
 require("treesitter-context").setup({
   enable = true,
@@ -95,7 +75,7 @@ require("treesitter-context").setup({
   multiline_threshold = 20,
   trim_scope = "outer",
   mode = "cursor",
-  separator = "―",
+  separator = "─",
   zindex = 20,
   on_attach = nil,
 })

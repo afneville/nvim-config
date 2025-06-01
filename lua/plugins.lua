@@ -1,70 +1,86 @@
-local packer_bootstrap = require("utils").ensure_packer()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
-  use({ "wbthomason/packer.nvim" })
-
-  use({ "rebelot/kanagawa.nvim" })
-  use({ "ellisonleao/gruvbox.nvim" })
-  use({ "catppuccin/nvim", as = "catppuccin" })
-
-  use({
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make",
+require("lazy").setup({
+  spec = {
+    {
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false,
+      branch = 'main',
+      build = ':TSUpdate'
+    },
+    { "nvim-treesitter/nvim-treesitter-context" },
+    { "windwp/nvim-ts-autotag" },
+    { "windwp/nvim-autopairs" },
+    -- telescope
+    {
+      'nvim-telescope/telescope.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', lazy = false } }
+    },
+    { "rebelot/kanagawa.nvim" },
+    { "ellisonleao/gruvbox.nvim", enabled = false},
+    { "catppuccin/nvim", name = "catppuccin", enabled = false },
+    { "nvim-lualine/lualine.nvim", enabled = false },
+    { "preservim/vim-markdown" },
+    { "lukas-reineke/indent-blankline.nvim" },
+    { "mhartington/formatter.nvim" },
+    { "tpope/vim-surround", enabled = false },
+    { "lewis6991/gitsigns.nvim" },
+    { "numToStr/Comment.nvim" },
+    { "norcalli/nvim-colorizer.lua" },
+    { "neovim/nvim-lspconfig" },
+    { "kevinhwang91/nvim-bqf" },
+    { "folke/trouble.nvim" },
+    {
+      "L3MON4D3/LuaSnip",
+      version = "v2.*",
+      build = "make install_jsregexp"
+    },
+    {
+      "hrsh7th/nvim-cmp",
+      dependencies = {
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
       },
     },
-  })
-  use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true },
-  })
-  use({
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig",
-  })
-  use({ "preservim/vim-markdown" })
-  use({ "lukas-reineke/indent-blankline.nvim" })
-  use({ "junegunn/fzf" })
-  use({ "junegunn/fzf.vim" })
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({
-        with_sync = true,
-      })
-      ts_update()
-    end,
-  })
-  use({ "mhartington/formatter.nvim" })
-  use({ "windwp/nvim-ts-autotag" })
-  use({ "nvim-treesitter/nvim-treesitter-context" })
-  use({ "tpope/vim-surround" })
-  use({ "lewis6991/gitsigns.nvim" })
-  use({ "numToStr/Comment.nvim" })
-  use({ "norcalli/nvim-colorizer.lua" })
-  use({ "mfussenegger/nvim-jdtls" })
-  use({ "windwp/nvim-autopairs" })
-  use({ "neovim/nvim-lspconfig" })
-  use({ "kevinhwang91/nvim-bqf" })
-  use({ "folke/trouble.nvim" })
-  use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
-  use({
-    "hrsh7th/nvim-cmp",
-    requires = {
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "saadparwaiz1/cmp_luasnip",
-      "onsails/lspkind.nvim",
-    },
-  })
-  if packer_bootstrap then
-    require("packer").sync()
+  },
+  install = { missing = false }
+})
+
+local function safeRequire(module)
+  local success, req = pcall(require, module)
+  if success then
+    return req
   end
-end)
+  print("Module " .. module .. " contains error")
+end
+
+safeRequire("config.kanagawa")
+safeRequire("config.bqf")
+safeRequire("config.trouble")
+safeRequire("config.lsp")
+safeRequire("config.formatter")
+safeRequire("config.autopairs")
+safeRequire("config.luasnip")
+safeRequire("config.treesitter")
+safeRequire("config.indentblankline")
+safeRequire("config.gitsigns")
+safeRequire("config.comment")
+safeRequire("config.colorizer")
+safeRequire("config.telescope")

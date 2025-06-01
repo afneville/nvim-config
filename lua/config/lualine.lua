@@ -1,4 +1,3 @@
--- local navic = require("nvim-navic")
 
 local function diff_source()
   local gitsigns = vim.b.gitsigns_status_dict
@@ -30,45 +29,22 @@ lsp_module = {
   icon = "LSP:",
 }
 
-local theme_palette = require("catppuccin.palettes").get_palette("mocha")
-local custom_theme = require("lualine.themes.catppuccin")
-custom_theme.normal.a.bg = theme_palette["mauve"]
-custom_theme.normal.b.bg = theme_palette["surface0"]
-custom_theme.normal.c.bg = theme_palette["surface0"]
-custom_theme.inactive.c.bg = theme_palette["surface0"]
-custom_theme.inactive.b.bg = theme_palette["surface1"]
--- custom_theme.normal.c.fg = theme_palette["mauve"]
-custom_theme.normal.b.fg = theme_palette["text"]
-custom_theme.insert.b.fg = theme_palette["text"]
-custom_theme.visual.b.fg = theme_palette["text"]
-custom_theme.replace.b.fg = theme_palette["text"]
-custom_theme.command.b.fg = theme_palette["text"]
-custom_theme.inactive.b.fg = theme_palette["text"]
+-- local theme_palette = require("catppuccin.palettes").get_palette("mocha")
+-- local custom_theme = require("lualine.themes.catppuccin")
+-- custom_theme.normal.a.bg = theme_palette["mauve"]
+-- custom_theme.normal.b.bg = theme_palette["surface0"]
+-- custom_theme.normal.c.bg = theme_palette["surface0"]
+-- custom_theme.inactive.c.bg = theme_palette["surface0"]
+-- custom_theme.inactive.b.bg = theme_palette["surface1"]
+-- -- custom_theme.normal.c.fg = theme_palette["mauve"]
+-- custom_theme.normal.b.fg = theme_palette["text"]
+-- custom_theme.insert.b.fg = theme_palette["text"]
+-- custom_theme.visual.b.fg = theme_palette["text"]
+-- custom_theme.replace.b.fg = theme_palette["text"]
+-- custom_theme.command.b.fg = theme_palette["text"]
+-- custom_theme.inactive.b.fg = theme_palette["text"]
 
-require("lualine").setup({
-  options = {
-    icons_enabled = true,
-    theme = custom_theme,
-    -- component_separators = { left = "", right = "" },
-    -- section_separators = { left = "", right = "" },
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    disabled_filetypes = {
-      statusline = {
-        "NvimTree",
-      },
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    },
-  },
-  sections = {
+local active_sections_config = {
     lualine_a = { {
       "mode",
     } },
@@ -116,8 +92,9 @@ require("lualine").setup({
     lualine_z = {
       "filetype",
     },
-  },
-  inactive_sections = {
+  }
+
+local inactive_sections_config = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {
@@ -135,8 +112,42 @@ require("lualine").setup({
     lualine_x = { "filetype", "progress", "location" },
     lualine_y = {},
     lualine_z = {},
+  }
+
+require("lualine").setup({
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    -- section_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    disabled_filetypes = {
+      statusline = {
+        "NvimTree",
+      },
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    },
   },
-  tabline = {
+  sections = active_sections_config,
+  inactive_sections = inactive_sections_config,
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {},
+})
+
+
+-- local navic = require("nvim-navic")
+
+local tabline = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {
@@ -189,8 +200,4 @@ require("lualine").setup({
         "mode",
       },
     },
-  },
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {},
-})
+  }
