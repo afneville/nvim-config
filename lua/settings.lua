@@ -23,6 +23,7 @@ vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.showmode=false
 vim.opt.list = true
 vim.opt.listchars:append("space:·")
 
@@ -106,6 +107,26 @@ function! NetrwMapping()
   nmap <buffer> <Leader>dd :Lexplore<CR>
   nmap <buffer> fc %:w<CR>:buffer #<CR>
 endfunction
+]])
+
+-- vim.opt.statusline = '%#StatusLineAccent# %#StatusLine# %f %M %= %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#'
+
+function _G.get_active_statusline_content()
+  return '%#StatusLineAccent# %#StatusLine# %f %M %=  %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#'
+end
+
+function _G.get_inactive_statusline_content()
+  return '%#StatusLineAccentNC# %#StatusLineNC# %f %M %= %y   %l:%c   %p%% %#StatusLineAccentNC# %#StatusLineNC#'
+end
+
+-- vim.wo.statusline = "%!v:lua.get_statusline_content()"
+
+vim.cmd([[
+augroup statusline
+    autocmd!
+    autocmd WinEnter,BufEnter * setlocal statusline=%!v:lua.get_active_statusline_content()
+    autocmd WinLeave,BufLeave * setlocal statusline=%!v:lua.get_inactive_statusline_content()
+augroup end
 ]])
 
 Options = {

@@ -1,4 +1,4 @@
-require("gitsigns").setup({
+local options = {
     signs = {
         add = {
             text = "│",
@@ -48,4 +48,6 @@ require("gitsigns").setup({
         row = 0,
         col = 1,
     },
-})
+}
+
+return options

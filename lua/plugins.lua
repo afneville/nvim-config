@@ -1,3 +1,11 @@
+local function safeRequire(module)
+  local success, req = pcall(require, module)
+  if success then
+    return req
+  end
+  print("Module " .. module .. " contains error")
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -16,34 +24,48 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
+    -- treesitter
     {
       'nvim-treesitter/nvim-treesitter',
       lazy = false,
       branch = 'main',
-      build = ':TSUpdate'
+      build = ':TSUpdate',
+      config = function()
+        safeRequire("config.treesitter")
+      end,
+      dependencies = { "nvim-treesitter/nvim-treesitter-context",
+      "windwp/nvim-ts-autotag" }
     },
-    { "nvim-treesitter/nvim-treesitter-context" },
-    { "windwp/nvim-ts-autotag" },
+    { "nvim-treesitter/nvim-treesitter-context", lazy = false },
+    { "windwp/nvim-ts-autotag", lazy = false },
     { "windwp/nvim-autopairs" },
-    -- telescope
+
+    -- themes
+    { "rebelot/kanagawa.nvim", config = function()
+      safeRequire("config.kanagawa")
+    end},
+
+    { "ellisonleao/gruvbox.nvim", enabled = false},
+    { "catppuccin/nvim", name = "catppuccin", enabled = false },
+
+    --tools
     {
       'nvim-telescope/telescope.nvim',
       dependencies = { 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', lazy = false } }
     },
-    { "rebelot/kanagawa.nvim" },
-    { "ellisonleao/gruvbox.nvim", enabled = false},
-    { "catppuccin/nvim", name = "catppuccin", enabled = false },
     { "nvim-lualine/lualine.nvim", enabled = false },
-    { "preservim/vim-markdown" },
-    { "lukas-reineke/indent-blankline.nvim" },
-    { "mhartington/formatter.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = require "config.indentblankline" },
+    { "norcalli/nvim-colorizer.lua", opts = { "!*" } },
+    { "lewis6991/gitsigns.nvim", opts = require "config.gitsigns" },
+    { "kevinhwang91/nvim-bqf", enabled = false },
+    { "folke/trouble.nvim", enabled = false },
+    { "numToStr/Comment.nvim", opts = { } },
     { "tpope/vim-surround", enabled = false },
-    { "lewis6991/gitsigns.nvim" },
-    { "numToStr/Comment.nvim" },
-    { "norcalli/nvim-colorizer.lua" },
+
+    -- ft and lsp
+    { "preservim/vim-markdown" },
     { "neovim/nvim-lspconfig" },
-    { "kevinhwang91/nvim-bqf" },
-    { "folke/trouble.nvim" },
+    { "mhartington/formatter.nvim" },
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*",
@@ -63,24 +85,8 @@ require("lazy").setup({
   install = { missing = false }
 })
 
-local function safeRequire(module)
-  local success, req = pcall(require, module)
-  if success then
-    return req
-  end
-  print("Module " .. module .. " contains error")
-end
-
-safeRequire("config.kanagawa")
-safeRequire("config.bqf")
-safeRequire("config.trouble")
 safeRequire("config.lsp")
 safeRequire("config.formatter")
 safeRequire("config.autopairs")
 safeRequire("config.luasnip")
-safeRequire("config.treesitter")
-safeRequire("config.indentblankline")
-safeRequire("config.gitsigns")
-safeRequire("config.comment")
-safeRequire("config.colorizer")
 safeRequire("config.telescope")

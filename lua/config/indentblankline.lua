@@ -1,8 +1,10 @@
-require("ibl").setup({
+local options = {
   indent = {
     char = "│",
   },
   scope = {
     enabled = false,
   },
-})
+}
+
+return options

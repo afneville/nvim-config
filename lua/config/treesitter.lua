@@ -1,4 +1,4 @@
-require'nvim-treesitter'.install( {
+require'nvim-treesitter'.install({
     "asm",
     "bash",
     "cmake",
@@ -59,14 +59,26 @@ require'nvim-treesitter'.install( {
     "xresources",
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local filetype = args.match
+    local lang = vim.treesitter.language.get_lang(filetype)
+    if vim.treesitter.language.add(lang) then
+      vim.wo.foldmethod = "expr"
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      vim.treesitter.start()
+    end
+  end
+})
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 99
+vim.opt.foldtext = ""
+
 require("nvim-ts-autotag").setup()
-
--- vim.cmd([[
--- set foldmethod=expr
--- set foldexpr=nvim_treesitter#foldexpr()
--- set nofoldenable
--- ]])
-
 require("treesitter-context").setup({
   enable = true,
   max_lines = 0,
