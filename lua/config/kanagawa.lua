@@ -41,7 +41,7 @@ require("kanagawa").setup({
       StatusLine = { fg = colors.theme.ui.fg, bg = colors.palette.dragonBlack4 },
       StatusLineNC = { fg = colors.theme.syn.comment, bg = colors.palette.dragonBlack2 },
       StatusLineAccent = { bg = colors.palette.dragonPink },
-      StatusLineAccentNC = { bg = colors.theme.syn.comment, },
+      StatusLineAccentNC = { bg = colors.palette.dragonBlack5 },
       TreesitterContext = { bg = "none" },
       TreesitterContextLineNumber = { fg = colors.theme.ui.nontext },
       TreesitterContextSeparator = { bg = "none", fg = colors.palette.dragonBlack6 },
@@ -49,6 +49,7 @@ require("kanagawa").setup({
       TelescopeResultsBorder = { fg = colors.theme.ui.nontext },
       TelescopePreviewBorder = { fg = colors.theme.ui.nontext },
       Folded = { bg = colors.theme.ui.bg_visual },
+      LspReferenceWrite = { underline = false },
     }
   end,
   theme = "dragon",

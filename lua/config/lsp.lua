@@ -1,6 +1,13 @@
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "▶",
+      [vim.diagnostic.severity.WARN] = "▶",
+      [vim.diagnostic.severity.INFO] = "▶",
+      [vim.diagnostic.severity.HINT] = "▶",
+    },
+  },
   update_in_insert = false,
   underline = false,
   severity_sort = true,
@@ -8,47 +15,23 @@ vim.diagnostic.config({
     focusable = true,
     style = "minimal",
     border = "single",
-    source = "always",
+    -- source = "always",
     header = "",
     prefix = "",
   },
 })
 
--- vim.lsp.set_log_level('debug')
-vim.lsp.set_log_level("off")
-
-local signs = {
-  Error = Options.error,
-  Warn = Options.warn,
-  Hint = Options.hint,
-  Info = Options.info,
-}
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "single",
-})
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "single",
-})
-
-local lsp_attach = function(client, bufnr)
+local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  vim.bo[bufnr].formatexpr = nil
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_exec(
-      [[
-      augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-      ]],
-      false
-    )
+    vim.cmd([[
+augroup lsp_document_highlight
+autocmd! * <buffer>
+autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+augroup END
+]])
   end
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -59,119 +42,58 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, bufopts)
   vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, bufopts)
   vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, bufopts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
+  vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1 })
+  end, bufopts)
+  vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1 })
+  end, bufopts)
   vim.keymap.set("n", "<space>lq", vim.diagnostic.setqflist, bufopts)
   vim.keymap.set("n", "<space>ll", vim.diagnostic.setloclist, bufopts)
-  client.server_capabilities.documentFormattingProvider = false
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lspconfig = require("lspconfig")
-require("lspconfig.ui.windows").default_options = {
-  border = "single",
-}
-local lsp_flags = {
-  debounce_text_changes = 150,
-}
+capabilities =
+  require("cmp_nvim_lsp").default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport =
+  true
 
-local servers = {
-  "ts_ls",
-  "tailwindcss",
-  "pyright",
-  "bashls",
-  "html",
-  "cssls",
-  "kotlin_language_server",
-  "jsonls",
-  "gopls",
-  "terraformls",
-  "tflint"
-}
-
-local function lsp_binary_exists(server_config)
-  local valid_config = server_config.document_config
-    and server_config.document_config.default_config
-    and type(server_config.document_config.default_config.cmd) == "table"
-    and #server_config.document_config.default_config.cmd >= 1
-  if not valid_config then
-    return false
-  end
-  local binary = server_config.document_config.default_config.cmd[1]
-  return vim.fn.executable(binary) == 1
-end
-
-for _, lsp in ipairs(servers) do
-  if lsp_binary_exists(lspconfig[lsp]) then
-    lspconfig[lsp].setup({
-      on_attach = lsp_attach,
-      capabilities = capabilities,
-      flags = lsp_flags,
-    })
-  end
-end
-
-if lsp_binary_exists(lspconfig["jdtls"]) then
-  lspconfig["jdtls"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    root_dir = function(fname)
-      return require("lspconfig").util.root_pattern("pom.xml", "gradle.build", ".git")(fname) or vim.fn.getcwd()
-    end,
-  })
-end
-
-if lsp_binary_exists(lspconfig["lua_ls"]) then
-  lspconfig["lua_ls"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    flags = lsp_flags,
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = {
-            "vim",
+vim.lsp.config("*", {
+  on_attach = on_attach,
+})
+vim.lsp.config("lua_ls", {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if
+        path ~= vim.fn.stdpath("config")
+        and (
+          vim.uv.fs_stat(path .. "/.luarc.json")
+          or vim.uv.fs_stat(path .. "/.luarc.jsonc")
+        )
+      then
+        return
+      end
+    end
+    client.config.settings.Lua =
+      vim.tbl_deep_extend("force", client.config.settings.Lua, {
+        runtime = {
+          version = "LuaJIT",
+          path = {
+            "lua/?.lua",
+            "lua/?/init.lua",
           },
         },
-      },
-    },
-  })
-end
-
-if lsp_binary_exists(lspconfig["emmet_ls"]) then
-  lspconfig["emmet_ls"].setup({
-    capabilities = capabilities,
-    filetypes = {
-      "css",
-      "eruby",
-      "html",
-      "javascript",
-      "javascriptreact",
-      "less",
-      "sass",
-      "scss",
-      "svelte",
-      "pug",
-      "typescriptreact",
-      "vue",
-    },
-    init_options = {
-      html = {
-        options = {
-          ["bem.enabled"] = true, -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        workspace = {
+          checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME,
+          },
         },
-      },
-    },
-  })
-end
-
-capabilities["offsetEncoding"] = "utf-8"
-if lsp_binary_exists(lspconfig["clangd"]) then
-  lspconfig["clangd"].setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-  })
-end
+      })
+  end,
+  settings = {
+    Lua = {},
+  },
+})
+vim.lsp.enable("lua_ls")

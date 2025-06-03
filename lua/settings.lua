@@ -26,6 +26,7 @@ vim.opt.incsearch = true
 vim.opt.showmode=false
 vim.opt.list = true
 vim.opt.listchars:append("space:·")
+vim.opt.listchars:append("tab:› ")
 
 -- Extension Options
 vim.cmd("let g:vimtex_view_method = 'zathura_simple'")
@@ -109,8 +110,6 @@ function! NetrwMapping()
 endfunction
 ]])
 
--- vim.opt.statusline = '%#StatusLineAccent# %#StatusLine# %f %M %= %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#'
-
 function _G.get_active_statusline_content()
   return '%#StatusLineAccent# %#StatusLine# %f %M %=  %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#'
 end
@@ -118,8 +117,6 @@ end
 function _G.get_inactive_statusline_content()
   return '%#StatusLineAccentNC# %#StatusLineNC# %f %M %= %y   %l:%c   %p%% %#StatusLineAccentNC# %#StatusLineNC#'
 end
-
--- vim.wo.statusline = "%!v:lua.get_statusline_content()"
 
 vim.cmd([[
 augroup statusline

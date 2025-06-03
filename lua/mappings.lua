@@ -69,13 +69,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>")
 
-vim.keymap.set("n", "<leader>f", ":Format<CR>")
 vim.keymap.set("n", "<leader>x", ":bd<CR>")
 vim.keymap.set("n", "<leader>o", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>t", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>")
-vim.keymap.set(
-  "n",
-  "<leader>s",
-  ":Telescope current_buffer_fuzzy_find<CR>"
-)
