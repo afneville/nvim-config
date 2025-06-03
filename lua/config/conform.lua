@@ -2,7 +2,7 @@ require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     yaml = { "prettier" },
-    markdown = { "prettier" }
+    markdown = { "prettier" },
   },
   formatters = {
     stylua = {
@@ -31,8 +31,8 @@ require("conform").setup({
         "72",
         "--html-whitespace-sensitivity",
         "ignore",
-      }
-    }
+      },
+    },
   },
 })
 

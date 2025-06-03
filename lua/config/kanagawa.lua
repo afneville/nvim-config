@@ -1,4 +1,4 @@
-local colors = require("kanagawa.colors").setup({ theme = 'dragon' })
+local colors = require("kanagawa.colors").setup({ theme = "dragon" })
 
 require("kanagawa").setup({
   compile = false,
@@ -12,7 +12,7 @@ require("kanagawa").setup({
   dimInactive = false,
   terminalColors = true,
   colors = {
-    palette = { },
+    palette = {},
     theme = {
       wave = {},
       lotus = {},
@@ -38,13 +38,22 @@ require("kanagawa").setup({
   overrides = function(colors)
     return {
       MsgArea = { fg = colors.theme.ui.fg },
-      StatusLine = { fg = colors.theme.ui.fg, bg = colors.palette.dragonBlack4 },
-      StatusLineNC = { fg = colors.theme.syn.comment, bg = colors.palette.dragonBlack2 },
+      StatusLine = {
+        fg = colors.theme.ui.fg,
+        bg = colors.palette.dragonBlack4,
+      },
+      StatusLineNC = {
+        fg = colors.theme.syn.comment,
+        bg = colors.palette.dragonBlack2,
+      },
       StatusLineAccent = { bg = colors.palette.dragonPink },
       StatusLineAccentNC = { bg = colors.palette.dragonBlack5 },
       TreesitterContext = { bg = "none" },
       TreesitterContextLineNumber = { fg = colors.theme.ui.nontext },
-      TreesitterContextSeparator = { bg = "none", fg = colors.palette.dragonBlack6 },
+      TreesitterContextSeparator = {
+        bg = "none",
+        fg = colors.palette.dragonBlack6,
+      },
       TelescopePromptBorder = { fg = colors.theme.ui.nontext },
       TelescopeResultsBorder = { fg = colors.theme.ui.nontext },
       TelescopePreviewBorder = { fg = colors.theme.ui.nontext },

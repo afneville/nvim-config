@@ -64,12 +64,12 @@ require("telescope").setup({
     current_buffer_fuzzy_find = titles,
   },
   extensions = {
-  fzf = {
-    fuzzy = true,
-    override_generic_sorter = true,
-    override_file_sorter = true,
-    case_mode = "smart_case",
-  },
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    },
   },
 })
 

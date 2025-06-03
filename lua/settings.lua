@@ -23,7 +23,7 @@ vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.showmode=false
+vim.opt.showmode = false
 vim.opt.list = true
 vim.opt.listchars:append("space:·")
 vim.opt.listchars:append("tab:› ")
@@ -111,11 +111,11 @@ endfunction
 ]])
 
 function _G.get_active_statusline_content()
-  return '%#StatusLineAccent# %#StatusLine# %f %M %=  %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#'
+  return "%#StatusLineAccent# %#StatusLine# %f %M %=  %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#"
 end
 
 function _G.get_inactive_statusline_content()
-  return '%#StatusLineAccentNC# %#StatusLineNC# %f %M %= %y   %l:%c   %p%% %#StatusLineAccentNC# %#StatusLineNC#'
+  return "%#StatusLineAccentNC# %#StatusLineNC# %f %M %= %y   %l:%c   %p%% %#StatusLineAccentNC# %#StatusLineNC#"
 end
 
 vim.cmd([[

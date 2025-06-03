@@ -1,4 +1,3 @@
-
 local function diff_source()
   local gitsigns = vim.b.gitsigns_status_dict
   if gitsigns then
@@ -45,79 +44,79 @@ lsp_module = {
 -- custom_theme.inactive.b.fg = theme_palette["text"]
 
 local active_sections_config = {
-    lualine_a = { {
-      "mode",
-    } },
-    lualine_b = {
-      {
-        "filename",
-        path = 1,
-        symbols = {
-          modified = "[*]",
-          readonly = "[-] ",
-          unnamed = "[?] ",
-          newfile = "[+] ",
-        },
+  lualine_a = { {
+    "mode",
+  } },
+  lualine_b = {
+    {
+      "filename",
+      path = 1,
+      symbols = {
+        modified = "[*]",
+        readonly = "[-] ",
+        unnamed = "[?] ",
+        newfile = "[+] ",
       },
     },
-    lualine_c = {
-      { "branch", icon = "" },
-      {
-        "diff",
-        symbols = {
-          added = Options.added,
-          modified = Options.modified,
-          removed = Options.removed,
-        },
-        source = diff_source,
+  },
+  lualine_c = {
+    { "branch", icon = "" },
+    {
+      "diff",
+      symbols = {
+        added = Options.added,
+        modified = Options.modified,
+        removed = Options.removed,
       },
+      source = diff_source,
     },
-    lualine_x = {
-      {
-        "diagnostics",
-        symbols = {
-          error = Options.error,
-          warn = Options.warn,
-          info = Options.info,
-          hint = Options.hint,
-        },
-        always_visible = false,
+  },
+  lualine_x = {
+    {
+      "diagnostics",
+      symbols = {
+        error = Options.error,
+        warn = Options.warn,
+        info = Options.info,
+        hint = Options.hint,
       },
-      lsp_module,
+      always_visible = false,
     },
-    lualine_y = {
-      "progress",
-      "location",
-    },
-    lualine_z = {
-      "filetype",
-    },
-  }
+    lsp_module,
+  },
+  lualine_y = {
+    "progress",
+    "location",
+  },
+  lualine_z = {
+    "filetype",
+  },
+}
 
 local inactive_sections_config = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {
-      {
-        "filename",
-        path = 1,
-        symbols = {
-          modified = "[*]",
-          readonly = "[-] ",
-          unnamed = "[?] ",
-          newfile = "[+] ",
-        },
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = {
+    {
+      "filename",
+      path = 1,
+      symbols = {
+        modified = "[*]",
+        readonly = "[-] ",
+        unnamed = "[?] ",
+        newfile = "[+] ",
       },
     },
-    lualine_x = { "filetype", "progress", "location" },
-    lualine_y = {},
-    lualine_z = {},
-  }
+  },
+  lualine_x = { "filetype", "progress", "location" },
+  lualine_y = {},
+  lualine_z = {},
+}
 
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = "auto",
     -- section_separators = { left = "", right = "" },
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
@@ -144,60 +143,59 @@ require("lualine").setup({
   extensions = {},
 })
 
-
 -- local navic = require("nvim-navic")
 
 local tabline = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {
-      -- {
-      --   function()
-      --       return navic.get_location()
-      --   end,
-      --   cond = function()
-      --       return navic.is_available()
-      --   end
-      -- },
-    },
-    lualine_x = {
-      {
-        "diff",
-        symbols = {
-          added = Options.added,
-          modified = Options.modified,
-          removed = Options.removed,
-        },
-        source = diff_source,
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = {
+    -- {
+    --   function()
+    --       return navic.get_location()
+    --   end,
+    --   cond = function()
+    --       return navic.is_available()
+    --   end
+    -- },
+  },
+  lualine_x = {
+    {
+      "diff",
+      symbols = {
+        added = Options.added,
+        modified = Options.modified,
+        removed = Options.removed,
       },
-      { "branch", icon = "" },
-      {
-        "diagnostics",
-        symbols = {
-          error = Options.error,
-          warn = Options.warn,
-          info = Options.info,
-          hint = Options.hint,
-        },
-        always_visible = false,
-      },
-      lsp_module,
+      source = diff_source,
     },
-    lualine_y = {
-      {
-        "filename",
-        path = 1,
-        symbols = {
-          modified = "[*]",
-          readonly = "[-]",
-          unnamed = "[?]",
-          newfile = "[+]",
-        },
+    { "branch", icon = "" },
+    {
+      "diagnostics",
+      symbols = {
+        error = Options.error,
+        warn = Options.warn,
+        info = Options.info,
+        hint = Options.hint,
       },
+      always_visible = false,
     },
-    lualine_z = {
-      {
-        "mode",
+    lsp_module,
+  },
+  lualine_y = {
+    {
+      "filename",
+      path = 1,
+      symbols = {
+        modified = "[*]",
+        readonly = "[-]",
+        unnamed = "[?]",
+        newfile = "[+]",
       },
     },
-  }
+  },
+  lualine_z = {
+    {
+      "mode",
+    },
+  },
+}

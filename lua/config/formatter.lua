@@ -140,13 +140,13 @@ require("formatter").setup({
       latexindent,
     },
     sh = {
-      shfmt
+      shfmt,
     },
     java = {
-      clangformat
+      clangformat,
     },
     terraform = {
       require("formatter.filetypes.terraform").terraformfmt,
-    }
+    },
   },
 })
