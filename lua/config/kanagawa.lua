@@ -5,7 +5,7 @@ require("kanagawa").setup({
   undercurl = true,
   commentStyle = { italic = true },
   functionStyle = {},
-  keywordStyle = { bold = false, italic = false },
+  keywordStyle = { bold = false, italic = true },
   statementStyle = { bold = false },
   typeStyle = {},
   transparent = false,

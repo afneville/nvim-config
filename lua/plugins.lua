@@ -73,7 +73,6 @@ require("lazy").setup({
         safeRequire("config.telescope")
       end,
     },
-    { "nvim-lualine/lualine.nvim", enabled = false },
     {
       "lukas-reineke/indent-blankline.nvim",
       main = "ibl",
@@ -88,7 +87,7 @@ require("lazy").setup({
     { "tpope/vim-surround", enabled = false },
 
     -- ft and lsp
-    { "preservim/vim-markdown" },
+    { "preservim/vim-markdown", enabled = false },
     { "neovim/nvim-lspconfig" },
     { "mhartington/formatter.nvim", enabled = false },
     {
