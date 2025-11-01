@@ -7,8 +7,7 @@ cmp.setup({
     if vim.api.nvim_get_mode().mode == "c" then
       return true
     else
-      return not context.in_treesitter_capture("comment")
-        and not context.in_syntax_group("Comment")
+      return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
     end
   end,
   snippet = {
@@ -36,13 +35,14 @@ cmp.setup({
     ["<C-e>"] = cmp.mapping.abort(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
     { name = "luasnip" },
+    { name = "copilot" },
     { name = "nvim_lsp_signature_help" },
   }),
   formatting = {
@@ -51,19 +51,10 @@ cmp.setup({
       menu = {
         buffer = "[BUF]",
         nvim_lsp = "[LSP]",
-        luasnip = "[SNIP]",
+        luasnip = "[SNP]",
         nvim_lua = "[LUA]",
         latex_symbols = "[TEX]",
       },
     }),
   },
 })
-
--- cmp.setup.cmdline(":", {
---   mapping = cmp.mapping.preset.cmdline(),
---   sources = cmp.config.sources({
---     { name = "path" },
---   }, {
---     { name = "cmdline" },
---   }),
--- })

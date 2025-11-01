@@ -1,36 +1,46 @@
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    vue = { "prettier" },
+    css = { "prettier" },
+    scss = { "prettier" },
+    less = { "prettier" },
+    html = { "prettier" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
     yaml = { "prettier" },
     markdown = { "prettier" },
+    svelte = { "prettier" },
+    tex = { "latexindent" },
+    terraform = { "terraform_fmt" },
+    hcl = { "terraform_fmt" },
+    python = { "black" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
   },
   formatters = {
-    stylua = {
-      prepend_args = {
-        "--indent-type",
-        "Spaces",
-        "--indent-width",
-        "2",
-        "--quote-style",
-        "AutoPreferDouble",
-        "--call-parentheses",
-        "Always",
-        "--column-width",
-        "72",
-      },
-    },
     prettier = {
-      prepend_args = {
-        "--bracket-same-line",
-        "--no-bracket-spacing",
-        "--prose-wrap",
-        "always",
-        "--trailing-comma",
-        "none",
-        "--print-width",
-        "72",
-        "--html-whitespace-sensitivity",
-        "ignore",
+      opts = {
+        ft_parsers = {
+          javascript = "babel",
+          javascriptreact = "babel",
+          typescript = "typescript",
+          typescriptreact = "typescript",
+          vue = "vue",
+          css = "css",
+          scss = "scss",
+          less = "less",
+          html = "html",
+          json = "json",
+          jsonc = "jsonc",
+          yaml = "yaml",
+          markdown = "markdown",
+          svelte = "svelte",
+        },
       },
     },
   },
@@ -40,8 +50,7 @@ vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
   if args.count ~= -1 then
-    local end_line =
-      vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
     range = {
       start = { args.line1, 0 },
       ["end"] = { args.line2, end_line:len() },

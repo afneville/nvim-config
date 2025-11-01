@@ -31,22 +31,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    -- treesitter
-    {
-      "nvim-treesitter/nvim-treesitter",
-      lazy = false,
-      branch = "main",
-      build = ":TSUpdate",
-      config = function()
-        safeRequire("config.treesitter")
-      end,
-      dependencies = {
-        "nvim-treesitter/nvim-treesitter-context",
-        "windwp/nvim-ts-autotag",
-      },
-    },
-    { "nvim-treesitter/nvim-treesitter-context", lazy = false },
-    { "windwp/nvim-ts-autotag", lazy = false },
 
     -- themes
     {
@@ -54,9 +38,17 @@ require("lazy").setup({
       config = function()
         safeRequire("config.kanagawa")
       end,
+      enabled = false,
     },
     { "ellisonleao/gruvbox.nvim", enabled = false },
-    { "catppuccin/nvim", name = "catppuccin", enabled = false },
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      config = function()
+        safeRequire("config.catppuccin")
+      end,
+      enabled = false,
+    },
 
     --tools
     {
@@ -78,17 +70,46 @@ require("lazy").setup({
       main = "ibl",
       opts = require("config.indentblankline"),
     },
-    { "norcalli/nvim-colorizer.lua", opts = { "!*" } },
+    { "norcalli/nvim-colorizer.lua", opts = { "!*" }, enabled = false },
     {
       "lewis6991/gitsigns.nvim",
       opts = require("config.gitsigns"),
     },
     { "numToStr/Comment.nvim", opts = {} },
     { "tpope/vim-surround", enabled = false },
+    {
+      "folke/trouble.nvim",
+      opts = require("config.trouble"),
+      enabled = false,
+    },
+    {
+      "windwp/nvim-autopairs",
+      config = function()
+        safeRequire("config.autopairs")
+      end,
+    },
 
-    -- ft and lsp
+    -- treesitter tools
+    {
+      "nvim-treesitter/nvim-treesitter",
+      lazy = false,
+      branch = "main",
+      build = ":TSUpdate",
+      config = function()
+        safeRequire("config.treesitter")
+      end,
+      dependencies = {
+        "windwp/nvim-ts-autotag",
+      },
+    },
+    { "nvim-treesitter/nvim-treesitter-context", lazy = false, enabled = false },
+    { "windwp/nvim-ts-autotag", lazy = false },
+
+    -- lsp,linting and formatting
     { "preservim/vim-markdown", enabled = false },
     { "neovim/nvim-lspconfig" },
+    { "folke/neodev.nvim", opts = {} },
+    { "artemave/workspace-diagnostics.nvim", opts = {} },
     { "mhartington/formatter.nvim", enabled = false },
     {
       "stevearc/conform.nvim",
@@ -96,6 +117,24 @@ require("lazy").setup({
         safeRequire("config.conform")
       end,
     },
+    {
+      "nvimdev/lspsaga.nvim",
+      opts = {},
+      enabled = false,
+    },
+    {
+      "folke/noice.nvim",
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+      },
+      config = function ()
+        safeRequire("config.noice")
+      end,
+      enabled = false,
+    },
+
+    -- completion and snippets
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*",
@@ -112,16 +151,50 @@ require("lazy").setup({
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "saadparwaiz1/cmp_luasnip",
-        {
-          "windwp/nvim-autopairs",
-          config = function()
-            safeRequire("config.autopairs")
-          end,
-        },
+        "onsails/lspkind.nvim",
       },
+      config = function()
+        require("config.cmp")
+      end,
+      enabled = false,
+    },
+    {
+      "saghen/blink.cmp",
+      config = function()
+        require("config.blink")
+      end,
+      version = "1.*",
+    },
+
+    -- AI
+    {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+      config = function()
+        require("config.copilot")
+      end,
+      enabled = false,
+    },
+    { "fang2hou/blink-copilot", enabled = false },
+    {
+      "zbirenbaum/copilot-cmp",
+      dependencies = { "zbirenbaum/copilot.lua", "hrsh7th/nvim-cmp" },
+      opts = {},
+      enabled = false,
+    },
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      dependencies = {
+        { "github/copilot.lua" },
+        { "nvim-lua/plenary.nvim" },
+      },
+      build = "make tiktoken",
+      config = function()
+        require("config.copilotchat")
+      end,
+      enabled = false,
     },
   },
   install = { missing = true },
 })
-
-safeRequire("config.lsp")

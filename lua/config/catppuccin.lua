@@ -53,6 +53,8 @@ require("catppuccin").setup({
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
         lualine_c_normal = { bg = colors.base },
+        StatusLineAccent = { bg = colors.mauve },
+        StatusLineAccentNC = { bg = colors.mauve },
         -- VertSplit = { fg = colors.surface1 }
         -- StatusLineNC
       }

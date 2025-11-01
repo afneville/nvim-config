@@ -37,7 +37,7 @@ require("kanagawa").setup({
   },
   overrides = function(colors)
     return {
-      MsgArea = { fg = colors.theme.ui.fg },
+      MsgArea = { fg = colors.theme.syn.comment },
       StatusLine = {
         fg = colors.theme.ui.fg,
         bg = colors.palette.dragonBlack4,
@@ -59,6 +59,14 @@ require("kanagawa").setup({
       TelescopePreviewBorder = { fg = colors.theme.ui.nontext },
       Folded = { bg = colors.theme.ui.bg_visual },
       LspReferenceWrite = { underline = false },
+      NormalFloat = { bg = colors.theme.ui.bg, fg = "none" },
+      FloatBorder = {
+        fg = colors.theme.ui.nontext,
+        bg = colors.theme.ui.bg,
+      },
+      BlinkCmpLabelMatch = { fg = colors.theme.ui.fg },
+      BlinkCmpSource = { fg = colors.theme.ui.nontext, bg = colors.theme.ui.bg },
+      BlinkCmpScrollBarThumb = { bg = colors.theme.ui.nontext },
     }
   end,
   theme = "dragon",

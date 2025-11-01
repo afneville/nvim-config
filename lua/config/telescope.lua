@@ -8,17 +8,16 @@ local titles = {
 
 require("telescope").setup({
   defaults = {
-    prompt_title = "",
-    borderchars = {
-      "─",
-      "│",
-      "─",
-      "│",
-      "╭",
-      "╮",
-      "╯",
-      "╰",
-    },
+    -- borderchars = {
+    --   "─",
+    --   "│",
+    --   "─",
+    --   "│",
+    --   "╭",
+    --   "╮",
+    --   "╯",
+    --   "╰",
+    -- },
     -- preview = true,
     preview = {
       hide_on_startup = false,
@@ -46,7 +45,7 @@ require("telescope").setup({
     layout_config = {
       vertical = {
         preview_cutoff = 0,
-        preview_height = 0.7,
+        preview_height = 0.5,
         width = { padding = 0 },
         height = { padding = 0 },
       },
@@ -74,3 +73,11 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("fzf")
+
+vim.keymap.set("n", "<leader>o", ":Telescope find_files<CR>", { silent = true })
+vim.keymap.set("n", "<leader>t", ":Telescope buffers<CR>", { silent = true })
+vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>s", ":Telescope grep_string<CR>", { silent = true })
+
+vim.keymap.set("v", "<leader>s", ":Telescope grep_string<CR>", { silent = true })

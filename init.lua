@@ -1,4 +1,6 @@
+require("colour_theme").load()
 require("settings")
 require("mappings")
 require("filetypes")
 require("plugins")
+require("lsp")
