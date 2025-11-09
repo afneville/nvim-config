@@ -1,6 +1,6 @@
 local actions = require("telescope.actions")
 
-local titles = {
+local picker_config = {
   prompt_title = false,
   results_title = false,
   preview_title = false,
@@ -19,9 +19,45 @@ require("telescope").setup({
     --   "╰",
     -- },
     -- preview = true,
+    borderchars = {
+      prompt = {
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+      },
+      results = {
+        " ",
+        " ",
+        "_",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+      },
+      preview = {
+        " ",
+        " ",
+        "_",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+      },
+    },
+    -- preview = true,
     preview = {
       hide_on_startup = false,
     },
+    prompt_title = false,
+    results_title = false,
+    preview_title = false,
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -44,6 +80,7 @@ require("telescope").setup({
     layout_strategy = "vertical",
     layout_config = {
       vertical = {
+        border = true,
         preview_cutoff = 0,
         preview_height = 0.5,
         width = { padding = 0 },
@@ -57,10 +94,10 @@ require("telescope").setup({
     },
   },
   pickers = {
-    find_files = titles,
-    buffers = titles,
-    live_grep = titles,
-    current_buffer_fuzzy_find = titles,
+    find_files = picker_config,
+    buffers = picker_config,
+    live_grep = picker_config,
+    current_buffer_fuzzy_find = picker_config,
   },
   extensions = {
     fzf = {

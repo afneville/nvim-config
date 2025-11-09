@@ -25,7 +25,7 @@ require("blink.cmp").setup({
   },
   signature = {
     enabled = true,
-    window = { border = "single" },
+    -- window = { border = "single" },
     trigger = {
       enabled = true,
       show_on_insert = false,
@@ -34,10 +34,10 @@ require("blink.cmp").setup({
   },
   completion = {
     documentation = {
-      auto_show = true,
-      window = {
-        border = "single",
-      },
+      auto_show = false,
+      -- window = {
+      --   border = "single",
+      -- },
     },
     list = {
       selection = {
@@ -46,10 +46,10 @@ require("blink.cmp").setup({
       },
     },
     menu = {
-      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
-      border = "single",
+      -- winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
+      -- border = "single",
       draw = {
-        columns = { { "source_name" }, { "label", "kind", gap = 1 } },
+        columns = { { "label", "kind", gap = 1 }, { "source_name" } },
         components = {
           label = {
             width = { max = 40 },
@@ -69,12 +69,12 @@ require("blink.cmp").setup({
       end
     end,
     providers = {
-      copilot = {
-        name = "AI",
-        module = "blink-copilot",
-        score_offset = 100,
-        async = true,
-      },
+      -- copilot = {
+      --   name = "AI",
+      --   module = "blink-copilot",
+      --   score_offset = 100,
+      --   async = true,
+      -- },
       snippets = {
         name = "SNIP",
         module = "blink.cmp.sources.snippets",

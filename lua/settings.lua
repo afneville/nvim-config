@@ -9,7 +9,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 -- vim.opt.cursorcolumn = true
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.opt.conceallevel = 0
 vim.opt.guicursor = "i:hor20"
 vim.opt.backup = false
@@ -49,8 +49,10 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   end,
 })
 
+vim.cmd.colorscheme("ansiterminal")
+
 function _G.get_active_statusline_content()
-  return "%#StatusLineAccent# %#StatusLine# %f %M %=  %y   %l:%c   %p%% %#StatusLineAccent# %#StatusLine#"
+  return " %f %M %=  %y   %l:%c   %p%% "
 end
 
 function _G.get_inactive_statusline_content()
