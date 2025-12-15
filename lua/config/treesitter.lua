@@ -67,7 +67,11 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.wo.foldmethod = "expr"
       vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
       vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      vim.treesitter.start()
+
+      -- Disable treesitter highlighting for LaTeX files
+      if filetype ~= "tex" and filetype ~= "latex" then
+        vim.treesitter.start()
+      end
     end
   end,
 })
