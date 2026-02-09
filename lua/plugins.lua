@@ -6,28 +6,28 @@ local function safeRequire(module)
   print("Module " .. module .. " contains error")
 end
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--branch=stable",
-    lazyrepo,
-    lazypath,
-  })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not (vim.uv or vim.loop).fs_stat(lazypath) then
+--   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+--   local out = vim.fn.system({
+--     "git",
+--     "clone",
+--     "--filter=blob:none",
+--     "--branch=stable",
+--     lazyrepo,
+--     lazypath,
+--   })
+--   if vim.v.shell_error ~= 0 then
+--     vim.api.nvim_echo({
+--       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+--       { out, "WarningMsg" },
+--       { "\nPress any key to exit..." },
+--     }, true, {})
+--     vim.fn.getchar()
+--     os.exit(1)
+--   end
+-- end
+-- vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
@@ -90,18 +90,18 @@ require("lazy").setup({
     },
 
     -- treesitter tools
-    {
-      "nvim-treesitter/nvim-treesitter",
-      lazy = false,
-      branch = "main",
-      build = ":TSUpdate",
-      config = function()
-        safeRequire("config.treesitter")
-      end,
-      dependencies = {
-        "windwp/nvim-ts-autotag",
-      },
-    },
+    -- {
+    --   "nvim-treesitter/nvim-treesitter",
+    --   lazy = false,
+    --   branch = "main",
+    --   build = ":TSUpdate",
+    --   config = function()
+    --     safeRequire("config.treesitter")
+    --   end,
+    --   dependencies = {
+    --     "windwp/nvim-ts-autotag",
+    --   },
+    -- },
     { "nvim-treesitter/nvim-treesitter-context", lazy = false, enabled = false },
     { "windwp/nvim-ts-autotag", lazy = false },
 
@@ -128,7 +128,7 @@ require("lazy").setup({
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
       },
-      config = function ()
+      config = function()
         safeRequire("config.noice")
       end,
       enabled = false,
@@ -197,4 +197,10 @@ require("lazy").setup({
     },
   },
   install = { missing = true },
+  performance = {
+    rtp = {
+      reset = false,
+    },
+    reset_packpath = false,
+  },
 })

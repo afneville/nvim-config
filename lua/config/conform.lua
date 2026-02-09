@@ -21,6 +21,9 @@ require("conform").setup({
     python = { "black" },
     c = { "clang-format" },
     cpp = { "clang-format" },
+    -- s = { "clang-format" },
+    -- S = { "clang-format" },
+    -- asm = { "clang-format" },
   },
   formatters = {
     prettier = {
