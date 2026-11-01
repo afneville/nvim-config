@@ -25,7 +25,7 @@ require("blink.cmp").setup({
   },
   signature = {
     enabled = true,
-    -- window = { border = "single" },
+    window = { border = "single" },
     trigger = {
       enabled = true,
       show_on_insert = false,
@@ -35,9 +35,9 @@ require("blink.cmp").setup({
   completion = {
     documentation = {
       auto_show = false,
-      -- window = {
-      --   border = "single",
-      -- },
+      window = {
+        border = "single",
+      },
     },
     list = {
       selection = {
@@ -49,7 +49,7 @@ require("blink.cmp").setup({
       -- winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
       -- border = "single",
       draw = {
-        columns = { { "label", "kind", gap = 1 }, { "source_name" } },
+        columns = { { "label" }, { "kind" }, { "source_name" } },
         components = {
           label = {
             width = { max = 40 },

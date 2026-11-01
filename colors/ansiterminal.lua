@@ -166,16 +166,16 @@ reset_highlights()
 
 -- ANSI color palette (using numeric codes for explicit control)
 -- 0-7: Normal colors, 8-15: Bright colors
-local fg = 7          -- Normal white (not bright white)
-local bg = 0          -- Black
-local faded = 8       -- Bright black (gray)
-local red = 9         -- Bright red
-local green = 10      -- Bright green
-local yellow = 11     -- Bright yellow
-local blue = 12       -- Bright blue
-local magenta = 13    -- Bright magenta
-local cyan = 14       -- Bright cyan
-local black = 0       -- Black
+local fg = 7 -- Normal white (not bright white)
+local bg = 0 -- Black
+local faded = 8 -- Bright black (gray)
+local red = 9 -- Bright red
+local green = 10 -- Bright green
+local yellow = 11 -- Bright yellow
+local blue = 12 -- Bright blue
+local magenta = 13 -- Bright magenta
+local cyan = 14 -- Bright cyan
+local black = 0 -- Black
 
 -- Semantic color mappings
 local comment = green
@@ -194,8 +194,9 @@ local todo = yellow
 
 vim.api.nvim_set_hl(0, "Normal", { ctermfg = fg, ctermbg = bg })
 vim.api.nvim_set_hl(0, "NormalNC", { ctermfg = fg, ctermbg = bg })
-vim.api.nvim_set_hl(0, "Visual", { ctermbg = faded })
-vim.api.nvim_set_hl(0, "CursorLine", {})
+vim.api.nvim_set_hl(0, "Visual", { ctermbg = blue, ctermfg = bg })
+vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = faded })
+vim.api.nvim_set_hl(0, "CursorColumn", { ctermbg = faded })
 vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = faded })
 vim.api.nvim_set_hl(0, "SignColumn", { ctermfg = faded, ctermbg = bg })
 vim.api.nvim_set_hl(0, "LineNr", { ctermfg = faded, ctermbg = bg })
@@ -239,6 +240,8 @@ vim.api.nvim_set_hl(0, "DiffAdd", { ctermfg = string, ctermbg = bg })
 vim.api.nvim_set_hl(0, "DiffChange", { ctermfg = statement, ctermbg = bg })
 vim.api.nvim_set_hl(0, "DiffDelete", { ctermfg = error, ctermbg = bg })
 vim.api.nvim_set_hl(0, "DiffText", { ctermfg = fg, ctermbg = property })
+vim.api.nvim_set_hl(0, "Search", { ctermfg = black, ctermbg = yellow })
+vim.api.nvim_set_hl(0, "CurSearch", { ctermfg = black, ctermbg = yellow })
 
 -- LSP Semantic Tokens & Treesitter
 vim.api.nvim_set_hl(0, "@variable", { ctermfg = variable })
@@ -344,7 +347,7 @@ vim.api.nvim_set_hl(0, "IblIndent", { ctermfg = faded })
 vim.api.nvim_set_hl(0, "IblScope", { ctermfg = faded })
 vim.api.nvim_set_hl(0, "IblWhitespace", { ctermfg = faded })
 vim.api.nvim_set_hl(0, "TelescopeBorder", { ctermfg = faded })
-vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = 'Search' })
+vim.api.nvim_set_hl(0, "TelescopeMatching", { link = "Search" })
 
 -- GitSigns
 vim.api.nvim_set_hl(0, "GitSignsAdd", { ctermfg = green, ctermbg = bg })
@@ -394,7 +397,7 @@ vim.api.nvim_set_hl(0, "GitSignsAddPreview", { link = "GitSignsAddInline" })
 vim.api.nvim_set_hl(0, "GitSignsDeletePreview", { link = "GitSignsDeleteInline" })
 
 -- Spell
-vim.api.nvim_set_hl(0, "SpellBad", { underline = true})
+vim.api.nvim_set_hl(0, "SpellBad", { underline = true })
 vim.api.nvim_set_hl(0, "SpellCap", { underline = true })
 vim.api.nvim_set_hl(0, "SpellRare", { underline = true })
 vim.api.nvim_set_hl(0, "SpellLocal", { underline = true })
